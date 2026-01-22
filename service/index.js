@@ -5,6 +5,7 @@ import multer from "multer";
 import { printImage } from "./printer.js";
 import { preprocessAudio } from "./audio.js";
 import { suggestIcon, transcribeAudio } from "./ai.js";
+import { env } from "./config.js";
 
 const app = express();
 app.use(cors());
@@ -53,4 +54,9 @@ app.post("/whisper", upload.single("audio"), async (req, res) => {
 
 app.listen(3000, '0.0.0.0', () => {
   console.log(`Service running at http://0.0.0.0:${3000}`);
+});
+
+app.get('/config', (req, res) => {
+  // Expose whether AI features are enabled (based on presence of OPENAI_API_KEY)
+  res.json({ ai: !!env.OPENAI_API_KEY });
 });

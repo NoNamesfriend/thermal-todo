@@ -4,11 +4,15 @@ import { Readable } from "stream";
 import { ICONS } from "./icons.js";
 import { env } from "./config.js";
 
-const openai = new OpenAI({
-  apiKey: env.OPENAI_API_KEY,
-});
+let openai;
+if (env.OPENAI_API_KEY) {
+  openai = new OpenAI({ apiKey: env.OPENAI_API_KEY });
+} else {
+  openai = null;
+}
 
 export async function suggestIcon(task) {
+  if (!openai) throw new Error('OpenAI API key not configured');
   const iconList = Object.entries(ICONS)
     .map(([key, desc]) => `- ${key}: ${desc}`)
     .join("\n");
@@ -44,6 +48,7 @@ Antwortformat:
 }
 
 export async function transcribeAudio(audioBuffer, originalName = "audio.webm") {
+  if (!openai) throw new Error('OpenAI API key not configured');
     const stream = Readable.from(audioBuffer);
     stream.path = originalName; // Whisper benötigt einen Dateinamen
 

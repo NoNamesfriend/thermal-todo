@@ -20,9 +20,7 @@ export async function preprocessAudio(buffer) {
   // Goal: always produce WebM with Opus audio, 16 kHz mono (compatible with Whisper Web/API)
   // -af: remove silence at start/end and normalize loudness
   // -ac 1: mono, -ar 16000: 16 kHz, -c:a libopus: encode Opus in WebM
-  // Use system ffmpeg (installed in container) instead of ffmpeg-static
-  const ffmpegCmd = 'ffmpeg';
-  const cmd = `${ffmpegCmd} -y -hide_banner -loglevel error -i "${inPath}" -af "silenceremove=start_periods=1:start_threshold=-35dB,areverse,silenceremove=start_periods=1:start_threshold=-35dB,areverse,loudnorm" -ac 1 -ar 16000 -c:a libopus -b:a 64k -f webm "${outPath}"`;
+  const cmd = `ffmpeg -y -hide_banner -loglevel error -i "${inPath}" -af "silenceremove=start_periods=1:start_threshold=-35dB,areverse,silenceremove=start_periods=1:start_threshold=-35dB,areverse,loudnorm" -ac 1 -ar 16000 -c:a libopus -b:a 64k -f webm "${outPath}"`;
 
   try {
     await execAsync(cmd);

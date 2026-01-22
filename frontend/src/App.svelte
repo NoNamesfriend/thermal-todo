@@ -5,10 +5,27 @@
   import { apiBase, showToast } from "./lib/stores.js";
   import Icon from "@iconify/svelte";
   import IconGallery from "./lib/IconGallery.svelte";
+  import { onMount } from "svelte";
 
   const API_BASE = `http://${location.hostname}:3000`;
   // initialize global store value
   apiBase.set(API_BASE);
+
+  let aiEnabled = false;
+
+  onMount(async () => {
+    try {
+      const res = await fetch(`${API_BASE}/config`);
+      if (res.ok) {
+        const data = await res.json();
+        aiEnabled = !!data.ai;
+      } else {
+        console.warn("Could not fetch config from service");
+      }
+    } catch (e) {
+      console.warn("Config fetch failed", e);
+    }
+  });
 
   let taskText = "";
 
@@ -156,36 +173,40 @@
 
 <div class="input-container">
   <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." />
-  {#if recording}
-    <button
-      class="mic-btn stop"
-      on:pointerdown|preventDefault={startRecording}
-      on:pointerup={stopRecording}
-      on:pointercancel={stopRecording}
-      on:pointerleave={stopRecording}
-      on:touchstart|preventDefault={startRecording}
-      on:touchend={stopRecording}
-      on:mousedown|preventDefault={startRecording}
-      on:mouseup={stopRecording}
-      on:keydown={handleKeyDownToggle}
-    >
-      <Icon icon="fluent:mic-24-regular" />
-    </button>
+  {#if aiEnabled}
+    {#if recording}
+      <button
+        class="mic-btn stop"
+        on:pointerdown|preventDefault={startRecording}
+        on:pointerup={stopRecording}
+        on:pointercancel={stopRecording}
+        on:pointerleave={stopRecording}
+        on:touchstart|preventDefault={startRecording}
+        on:touchend={stopRecording}
+        on:mousedown|preventDefault={startRecording}
+        on:mouseup={stopRecording}
+        on:keydown={handleKeyDownToggle}
+      >
+        <Icon icon="fluent:mic-24-regular" />
+      </button>
+    {:else}
+      <button
+        class="mic-btn"
+        on:pointerdown|preventDefault={startRecording}
+        on:pointerup={stopRecording}
+        on:pointercancel={stopRecording}
+        on:pointerleave={stopRecording}
+        on:touchstart|preventDefault={startRecording}
+        on:touchend={stopRecording}
+        on:mousedown|preventDefault={startRecording}
+        on:mouseup={stopRecording}
+        on:keydown={handleKeyDownToggle}
+      >
+        <Icon icon="fluent:mic-24-regular" />
+      </button>
+    {/if}
   {:else}
-    <button
-      class="mic-btn"
-      on:pointerdown|preventDefault={startRecording}
-      on:pointerup={stopRecording}
-      on:pointercancel={stopRecording}
-      on:pointerleave={stopRecording}
-      on:touchstart|preventDefault={startRecording}
-      on:touchend={stopRecording}
-      on:mousedown|preventDefault={startRecording}
-      on:mouseup={stopRecording}
-      on:keydown={handleKeyDownToggle}
-    >
-      <Icon icon="fluent:mic-24-regular" />
-    </button>
+    <!-- AI disabled: hide mic button -->
   {/if}
 </div>
 
@@ -196,7 +217,13 @@
 
     <div class="separator">--------------------</div>
 
-    <TaskItem task={taskText} />
+    {#if aiEnabled}
+      <TaskItem task={taskText} />
+    {:else}
+      <div style="text-align: center; font-weight: 600;">
+        {taskText}
+      </div>
+    {/if}
 
     <div class="separator">--------------------</div>
 
