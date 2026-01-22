@@ -1,4 +1,6 @@
-# Thermal ToDo
+![Project Logo](assets/logo_background_dark.svg)
+
+Thermal ToDo is a small app that records short voice notes, transcribes them using AI, and prints receipts or notes via a connected thermal printer.
 
 This repository contains two parts:
 
@@ -7,8 +9,6 @@ This repository contains two parts:
 
 Three common workflows are described below: running with Docker, Docker Compose (recommended) and local development with hot reload.
 
----
-
 ## Run with Docker
 
 The project includes a multi-stage `Dockerfile` that builds the frontend, installs service dependencies, installs system `ffmpeg`, copies the built frontend into the service `public/` folder and runs the Node service which serves both the frontend and API on a single port (default `3000`).
@@ -16,11 +16,15 @@ The project includes a multi-stage `Dockerfile` that builds the frontend, instal
 Build the image and run it:
 
 ```bash
+# download Dockerfile
+curl -fsSL https://raw.githubusercontent.com/NoNamesfriend/thermal-todo/main/Dockerfile -o Dockerfile
+
+
 # build image (from repo root)
 docker build -t thermal-todo:latest .
 
 # run
-docker run -e OPENAI_API_KEY="sk-..." -p 31234:3000 --rm --name thermal-todo thermal-todo:latest
+docker run --rm --name thermal-todo thermal-todo:latest
 
 # then open http://localhost:31234 on your desktop or http://<host-ip>:31234 on your phone
 ```
@@ -30,8 +34,6 @@ Notes for Docker setup:
 - The container installs system `ffmpeg` (so the app uses the system binary `ffmpeg`).
 - The Express service listens on `0.0.0.0:3000` and serves the built frontend from `/public`.
 
----
-
 ## Run with Docker Compose
 
 This repo includes a `docker-compose.yml` that builds the image and runs the app container.
@@ -39,6 +41,9 @@ This repo includes a `docker-compose.yml` that builds the image and runs the app
 Quick start:
 
 ```bash
+# download docker-compose.yml
+curl -fsSL https://raw.githubusercontent.com/NoNamesfriend/thermal-todo/main/docker-compose.yml -o docker-compose.yml
+
 # build and start detached
 docker compose up -d --build
 
@@ -56,15 +61,15 @@ Access the app via `http://<host-ip>:${HOST_PORT}` after the compose stack is up
 The application uses several environment variables (can be set in a `.env` file at the project root). Below are the most important variables with description and default/example values:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/main/.env.example -o .env
+curl -fsSL https://raw.githubusercontent.com/NoNamesfriend/thermal-todo/refs/heads/master/.env.example -o .env
 ```
 
-| Variable            | Description                                                                             | Default | Required |
-| ------------------- | --------------------------------------------------------------------------------------- | ------: | :------: |
-| `HOST_PORT`         | Host port mapped to the container by `docker compose` (frontend reachable on this port) | `31234` |    No    |
-| `OPENAI_API_KEY`    | OpenAI API key used for transcription / AI calls                                        |       — |   Yes    |
-| `PRINTER_TYPE`      | Printer type for `node-thermal-printer` (e.g. `EPSON`)                                  | `EPSON` |    No    |
-| `PRINTER_INTERFACE` | Printer device or network interface (e.g. `usb` or `tcp://...`)                         |   `usb` |    No    |
+| Variable            | Description                                                                                                 | Default | Required |
+| ------------------- | ----------------------------------------------------------------------------------------------------------- | ------: | :------: |
+| `HOST_PORT`         | Host port mapped to the container by `docker compose` (frontend reachable on this port)                     | `31234` |    No    |
+| `OPENAI_API_KEY`    | OpenAI API key used for transcription and task icon selection. If not set the AI features will be disabled. |       — |    No    |
+| `PRINTER_TYPE`      | Printer type for `node-thermal-printer` (e.g. `EPSON`)                                                      | `EPSON` |    No    |
+| `PRINTER_INTERFACE` | Printer device or network interface (e.g. `usb` or `tcp://...`)                                             |   `usb` |    No    |
 
 ## Local development
 
@@ -93,13 +98,3 @@ npm run dev --prefix service
 ```
 
 Open the frontend at the Vite dev URL (usually `http://localhost:5173`) and the API at `http://localhost:3000`.
-
-If you test from another device (phone on the same LAN), open the frontend using your machine IP and ensure the service is reachable from that IP/port. The app builds API base from the host that served the frontend, so accessing the frontend by host IP lets the frontend call the service at `http://<host-ip>:3000`.
-
----
-
-## Troubleshooting
-
-- If the frontend cannot reach the API from a phone: check your firewall and confirm you used the host IP when opening the frontend on the device.
-
----
