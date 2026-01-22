@@ -1,0 +1,16 @@
+{
+  "name": "thermal-todo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix service\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:service": "npm run dev --prefix service"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "envalid": "^8.1.1"
+  }
+}

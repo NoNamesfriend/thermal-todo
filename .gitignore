@@ -1,0 +1,51 @@
+# Root gitignore for the repository
+
+# Node
+node_modules/
+**/node_modules/
+
+# Environment files (do NOT commit secrets)
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+public/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+**/.vscode/*
+!**/.vscode/extensions.json
+
+# Caches
+.cache/
+.parcel-cache/
+.vite/
+.svelte-kit/
+.turbo/
+
+# Test coverage
+coverage/
+
+# Misc
+*.local
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

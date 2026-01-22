@@ -1,0 +1,25 @@
+node_modules/
+frontend/node_modules/
+service/node_modules/
+
+dist/
+build/
+
+.git
+.vscode
+npm-debug.log*
+.env
+.env.local
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+node_modules
+frontend/node_modules
+service/node_modules
+dist
+.git
+.vscode
+npm-debug.log
+.env
