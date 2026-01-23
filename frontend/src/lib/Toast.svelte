@@ -39,10 +39,10 @@
     background: var(--accent-2);
   }
   .toast.success {
-    background: var(--accent-3);
+    background: var(--accent-4);
   }
   .toast.error {
-    background: var(--accent-strong);
+    background: var(--accent-3);
   }
 
   .toast .title {

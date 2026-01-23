@@ -70,6 +70,7 @@ curl -fsSL https://raw.githubusercontent.com/NoNamesfriend/thermal-todo/refs/hea
 | `OPENAI_API_KEY`    | OpenAI API key used for transcription and task icon selection. If not set the AI features will be disabled. |       — |    No    |
 | `PRINTER_TYPE`      | Printer type for `node-thermal-printer` (e.g. `EPSON`)                                                      | `EPSON` |    No    |
 | `PRINTER_INTERFACE` | Printer device or network interface (e.g. `usb` or `tcp://...`)                                             |   `usb` |    No    |
+| `LABEL_WIDTH_MM`    | Label width in millimeters used for on-screen preview and print layout (common: `80` or `58`)               |    `80` |    No    |
 
 ## Local development
 

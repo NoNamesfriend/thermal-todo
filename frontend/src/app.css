@@ -1,20 +1,20 @@
 /* === Grundlayout === */
 
 :root {
- --font-family: "Courier New", Courier, monospace;
+  --font-family: "Courier New", Courier, monospace;
 
-/* OKLCH color palette variables for a coherent theme */
+  --label-width-mm: 80mm;
+  --label-width-px: 302.36px;
+
   --bg-base: #ffffff;
   --bg-boost: #ddf7ff;
-  --bg-spot-1: #acf2ff;
-  --bg-spot-2: #ffceb2;
+  --bg-spot-1: #B4F3F8;
+  --bg-spot-2: #FAD4B3;
 
-  --accent-1: #6816cc;
-  --accent-2: #267ef8;
-  --accent-3: #3bf77d;
-  --accent-4: #00fce3;
-
-  --accent-strong: #ff5359;
+  --accent-1: #F18C35;
+  --accent-2: #EF585E;
+  --accent-3: #C200FB;
+  --accent-4: #0FA3B1;
 
   --text: #000000;
   --muted: #999999;
@@ -71,7 +71,7 @@ body::after {
   gap: 2rem;
   margin: auto;
   padding: 16px;
-  max-width: 392px;     /* Paper + 8px border */
+  max-width: calc(var(--label-width-px) + 8px); /* Paper + 8px border */
   width: 100%;
   box-sizing: border-box;
 }
@@ -109,7 +109,7 @@ input:focus {
   outline: none;
   border: 2px solid transparent;
   background-image: linear-gradient(var(--bg-base), var(--bg-base)),
-                    linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-4));
+                    linear-gradient(135deg, oklch(from var(--accent-1) l c h), oklch(from var(--accent-2) l c h), oklch(from var(--accent-3) l c h), oklch(from var(--accent-4) l c h));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   box-shadow: 0 0 8px var(--accent-3 / 0.5);

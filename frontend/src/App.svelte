@@ -7,7 +7,9 @@
   import IconGallery from "./lib/IconGallery.svelte";
   import { onMount } from "svelte";
 
-  const API_BASE = `http://${location.hostname}:3000`;
+  // Use relative API paths so the dev server proxy (or same-origin backend) can handle requests
+  // In development Vite will proxy `/config`, `/whisper`, etc. to the backend.
+  const API_BASE = "";
   // initialize global store value
   apiBase.set(API_BASE);
 
@@ -17,8 +19,16 @@
     try {
       const res = await fetch(`${API_BASE}/config`);
       if (res.ok) {
-        const data = await res.json();
-        aiEnabled = !!data.ai;
+          const data = await res.json();
+          aiEnabled = !!data.ai;
+          if (data && data.labelWidthMm) {
+            // set CSS variables: mm for print, px for screen
+            const mm = Number(data.labelWidthMm) || 80;
+            const pxPerMm = 96 / 25.4; // CSS reference pixel per mm
+            const px = Math.round(mm * pxPerMm * 100) / 100; // two decimals
+            document.documentElement.style.setProperty('--label-width-mm', `${mm}mm`);
+            document.documentElement.style.setProperty('--label-width-px', `${px}px`);
+          }
       } else {
         console.warn("Could not fetch config from service");
       }
@@ -170,6 +180,8 @@
     }
   }
 </script>
+
+<img src="/src/assets/logo_dark.svg" alt="Logo" class="logo" />
 
 <div class="input-container">
   <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." />

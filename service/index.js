@@ -52,11 +52,11 @@ app.post("/whisper", upload.single("audio"), async (req, res) => {
   }
 });
 
-app.listen(3000, '0.0.0.0', () => {
-  console.log(`Service running at http://0.0.0.0:${3000}`);
-});
-
 app.get('/config', (req, res) => {
   // Expose whether AI features are enabled (based on presence of OPENAI_API_KEY)
-  res.json({ ai: !!env.OPENAI_API_KEY });
+  res.json({ ai: !!env.OPENAI_API_KEY, labelWidthMm: env.LABEL_WIDTH_MM });
+});
+
+app.listen(3000, '0.0.0.0', () => {
+  console.log(`Service running at http://0.0.0.0:${3000}`);
 });
