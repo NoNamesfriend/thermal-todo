@@ -36,13 +36,13 @@
   }
 
   .toast.info {
-    background: var(--accent-2);
+    background: var(--accent-3);
   }
   .toast.success {
     background: var(--accent-4);
   }
   .toast.error {
-    background: var(--accent-3);
+    background: var(--accent-2);
   }
 
   .toast .title {

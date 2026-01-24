@@ -143,7 +143,7 @@ input:focus::placeholder {
 }
 
 .mic-btn.stop {
-  background: var(--accent-strong);
+  background: var(--accent-4);
 }
 
 .mic-btn:hover {
@@ -154,6 +154,7 @@ input:focus::placeholder {
 
 .mic-btn:active {
   transform: scale(0.98);
+
 }
 
 /* Touch devices: fixed, large mic button bottom-right */
@@ -210,7 +211,7 @@ input:focus::placeholder {
 
 @media print {
   .paper {
-    width: 58mm;
+    width: var(--label-width-mm);
   }
 }
 
