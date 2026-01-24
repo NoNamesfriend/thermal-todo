@@ -9,6 +9,16 @@ import { env } from "./config.js";
 
 const app = express();
 app.use(cors());
+
+// Basic Content Security Policy to allow common resources (images, data URIs, https)
+// Adjust as needed for stricter policies in production or to match a reverse proxy.
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss:; font-src 'self' data:"
+  );
+  next();
+});
 app.use(bodyParser.json({ limit: "10mb" }));
 
 app.post("/print", async (req, res) => {
