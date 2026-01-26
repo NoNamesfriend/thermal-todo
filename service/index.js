@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import multer from "multer";
+import path from "path";
 import { printImage } from "./printer.js";
 import { preprocessAudio } from "./audio.js";
 import { suggestIcon, transcribeAudio } from "./ai.js";
@@ -20,6 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 app.use(bodyParser.json({ limit: "10mb" }));
+
+// Serve built frontend (copied into ./public by the Dockerfile)
+app.use(express.static(path.join(process.cwd(), "public")));
 
 app.post("/print", async (req, res) => {
   try {
@@ -67,6 +71,17 @@ app.get('/config', (req, res) => {
   res.json({ ai: !!env.OPENAI_API_KEY, labelWidthMm: env.LABEL_WIDTH_MM });
 });
 
+// Fallback: serve index.html for any other GET so SPA routes work when deployed
+app.get('*', (req, res) => {
+  const indexPath = path.join(process.cwd(), 'public', 'index.html');
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      console.error('Error sending index.html:', err);
+      res.status(404).send('Not found');
+    }
+  });
+});
+
 app.listen(3000, '0.0.0.0', () => {
-  console.log(`Service running at http://0.0.0.0:${3000}`);
+  console.log(`Service running at http://0.0.0.0:3000`);
 });

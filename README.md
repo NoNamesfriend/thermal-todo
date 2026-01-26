@@ -54,8 +54,6 @@ docker compose logs -f
 docker compose down
 ```
 
-Access the app via `http://<host-ip>:${HOST_PORT}` after the compose stack is up.
-
 ## Environment Variables
 
 The application uses several environment variables (can be set in a `.env` file at the project root). Below are the most important variables with description and default/example values:
@@ -66,11 +64,10 @@ curl -fsSL https://raw.githubusercontent.com/NoNamesfriend/thermal-todo/refs/hea
 
 | Variable            | Description                                                                                                 | Default | Required |
 | ------------------- | ----------------------------------------------------------------------------------------------------------- | ------: | :------: |
-| `HOST_PORT`         | Host port mapped to the container by `docker compose` (frontend reachable on this port)                     | `31234` |    No    |
-| `OPENAI_API_KEY`    | OpenAI API key used for transcription and task icon selection. If not set the AI features will be disabled. |       — |    No    |
 | `PRINTER_TYPE`      | Printer type for `node-thermal-printer` (e.g. `EPSON`)                                                      | `EPSON` |    No    |
 | `PRINTER_INTERFACE` | Printer device or network interface (e.g. `usb` or `tcp://...`)                                             |   `usb` |    No    |
 | `LABEL_WIDTH_MM`    | Label width in millimeters used for on-screen preview and print layout (common: `80` or `58`)               |    `80` |    No    |
+| `OPENAI_API_KEY`    | OpenAI API key used for transcription and task icon selection. If not set the AI features will be disabled. |       — |    No    |
 
 ## Local development
 

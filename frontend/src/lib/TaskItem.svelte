@@ -52,12 +52,18 @@
   <span class="task-icon">
     <Icon icon={ICONS[iconKey]} />
   </span>
-  {task}
+  <span class="task-text">{task}</span>
 </p>
 
 <style>
   .task-item {
-    text-align: center;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    grid-auto-flow: column;
+    gap: 8px;
+    margin: 4px 8px;
+    /* text-align: center; */
     font-weight: 600;
   }
 

@@ -4,7 +4,6 @@
   import Toast from "./lib/Toast.svelte";
   import { apiBase, showToast } from "./lib/stores.js";
   import Icon from "@iconify/svelte";
-  import IconGallery from "./lib/IconGallery.svelte";
   import { onMount } from "svelte";
 
   // Use relative API paths so the dev server proxy (or same-origin backend) can handle requests
@@ -19,25 +18,37 @@
     try {
       const res = await fetch(`${API_BASE}/config`);
       if (res.ok) {
-          const data = await res.json();
-          aiEnabled = !!data.ai;
-          if (data && data.labelWidthMm) {
-            // set CSS variables: mm for print, px for screen
-            const mm = Number(data.labelWidthMm) || 80;
-            const pxPerMm = 96 / 25.4; // CSS reference pixel per mm
-            const px = Math.round(mm * pxPerMm * 100) / 100; // two decimals
-            document.documentElement.style.setProperty('--label-width-mm', `${mm}mm`);
-            document.documentElement.style.setProperty('--label-width-px', `${px}px`);
-          }
+        const data = await res.json();
+        aiEnabled = !!data.ai;
+        if (data && data.labelWidthMm) {
+          // set CSS variables: mm for print, px for screen
+          const mm = Number(data.labelWidthMm) || 80;
+          const pxPerMm = 96 / 25.4; // CSS reference pixel per mm
+          const px = Math.round(mm * pxPerMm * 100) / 100; // two decimals
+          document.documentElement.style.setProperty("--label-width-mm", `${mm}mm`);
+          document.documentElement.style.setProperty("--label-width-px", `${px}px`);
+        }
       } else {
         console.warn("Could not fetch config from service");
       }
     } catch (e) {
       console.warn("Config fetch failed", e);
     }
+    // ensure textarea height is correct after initial config/load
+    setTimeout(resizeTextarea, 0);
   });
 
   let taskText = "";
+
+  let textareaEl;
+
+  function resizeTextarea() {
+    if (!textareaEl) return;
+    try {
+      textareaEl.style.height = "auto";
+      textareaEl.style.height = textareaEl.scrollHeight + "px";
+    } catch (e) {}
+  }
 
   let recording = false;
   let mediaRecorder;
@@ -184,7 +195,15 @@
 <img src="/src/assets/logo_dark.svg" alt="Logo" class="logo" />
 
 <div class="input-container">
-  <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." />
+  <!-- <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." /> -->
+  <textarea
+    bind:this={textareaEl}
+    bind:value={taskText}
+    placeholder="Aufgabe eingeben..."
+    rows="1"
+    on:input={resizeTextarea}
+    class="autosize-textarea"
+  ></textarea>
   {#if aiEnabled}
     {#if recording}
       <button
@@ -227,17 +246,15 @@
     <div class="header">HEUTE</div>
     <div class="subheader">{new Date().toLocaleDateString()}</div>
 
-    <div class="separator">--------------------</div>
+    <div class="separator"></div>
 
     {#if aiEnabled}
       <TaskItem task={taskText} />
     {:else}
-      <div style="text-align: center; font-weight: 600;">
-        {taskText}
-      </div>
+      <div class="task-text" aria-label="task-text">{taskText}</div>
     {/if}
 
-    <div class="separator">--------------------</div>
+    <div class="separator"></div>
 
     <div class="footer">Fokus • Kein Multitasking</div>
   </div>
