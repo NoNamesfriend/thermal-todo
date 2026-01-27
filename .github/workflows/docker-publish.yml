@@ -44,7 +44,10 @@ jobs:
 
       - name: Get package version
         id: version
-        run: echo "ver=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
+        run: |
+          # capture package.json version into a variable then write to GITHUB_OUTPUT
+          ver=$(node -p "require('./package.json').version")
+          echo "ver=$ver" >> $GITHUB_OUTPUT
 
       - name: Normalize image name to lowercase
         run: |
