@@ -1,21 +1,19 @@
 version: '3.8'
 
 services:
-  app:
+  thermaltodo:
     image: "ghcr.io/nonamesfriend/thermal-todo:latest"
     ports:
-      - "${HOST_PORT:-31234}:3000"
+      - "3000:3000"
     environment:
       - NODE_ENV=production
+      - PRINTER_TYPE=${PRINTER_TYPE:-EPSON}
+      - PRINTER_INTERFACE=${PRINTER_INTERFACE:-usb}  
+      - LABEL_WIDTH_MM=${LABEL_WIDTH_MM:-80}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:3000/ || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health || exit 1"]
       interval: 30s
-      timeout: 10s
+      timeout: 5s
       retries: 3
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"

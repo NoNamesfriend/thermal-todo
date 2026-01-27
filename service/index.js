@@ -71,16 +71,19 @@ app.get('/config', (req, res) => {
   res.json({ ai: !!env.OPENAI_API_KEY, labelWidthMm: env.LABEL_WIDTH_MM });
 });
 
-// Fallback: serve index.html for any other GET so SPA routes work when deployed
-app.get('*', (req, res) => {
-  const indexPath = path.join(process.cwd(), 'public', 'index.html');
-  res.sendFile(indexPath, (err) => {
-    if (err) {
-      console.error('Error sending index.html:', err);
-      res.status(404).send('Not found');
-    }
-  });
+app.get('/health', (req, res) => res.sendStatus(200));
+
+const server = app.listen(process.env.PORT || 3000, '0.0.0.0', () => {
+  console.log(`Service running on ${process.env.PORT||3000}`);
 });
+
+function shutdown() {
+  console.log('Shutting down...');
+  server.close(() => process.exit(0));
+  setTimeout(() => process.exit(1), 30_000);
+}
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);
 
 app.listen(3000, '0.0.0.0', () => {
   console.log(`Service running at http://0.0.0.0:3000`);

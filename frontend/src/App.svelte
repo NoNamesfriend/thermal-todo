@@ -4,7 +4,7 @@
   import Toast from "./lib/Toast.svelte";
   import { apiBase, showToast } from "./lib/stores.js";
   import Icon from "@iconify/svelte";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
 
   // Use relative API paths so the dev server proxy (or same-origin backend) can handle requests
   // In development Vite will proxy `/config`, `/whisper`, etc. to the backend.
@@ -125,6 +125,9 @@
           } else {
             const data = await res.json();
             taskText = data.text || "";
+            // wait for DOM update then resize textarea so long transcriptions expand properly
+            await tick();
+            resizeTextarea();
           }
         } catch (err) {
           console.error("Error sending to Whisper:", err);
@@ -243,7 +246,7 @@
 
 <div class="receipt-wrapper">
   <div class="paper" id="print-area">
-    <div class="header">HEUTE</div>
+    <!-- <div class="header">HEUTE</div> -->
     <div class="subheader">{new Date().toLocaleDateString()}</div>
 
     <div class="separator"></div>

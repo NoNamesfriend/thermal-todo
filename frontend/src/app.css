@@ -239,7 +239,7 @@ textarea:focus::placeholder {
   color: var(--text);
 
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.4;
 
@@ -257,13 +257,13 @@ textarea:focus::placeholder {
 
 .header {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 6px;
 }
 
 .subheader {
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
@@ -279,7 +279,7 @@ textarea:focus::placeholder {
 
 .footer {
   margin-top: 8px;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 }
 

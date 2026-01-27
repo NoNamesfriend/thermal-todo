@@ -26,7 +26,7 @@ docker build -t thermal-todo:latest .
 # run
 docker run --rm --name thermal-todo thermal-todo:latest
 
-# then open http://localhost:31234 on your desktop or http://<host-ip>:31234 on your phone
+# then open http://localhost:3000 on your desktop or http://<host-ip>:3000 on your phone
 ```
 
 Notes for Docker setup:

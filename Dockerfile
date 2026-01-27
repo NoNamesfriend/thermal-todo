@@ -27,6 +27,10 @@ COPY --from=build /app/service/ ./
 # copy built frontend into service public folder
 COPY --from=build /app/frontend/dist ./public
 
+# Healthcheck to monitor if the service is running
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:3000/health || exit 1
+
 ENV NODE_ENV=production
 EXPOSE 3000
 CMD ["node", "index.js"]

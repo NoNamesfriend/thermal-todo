@@ -1,11 +1,15 @@
 {
   "name": "thermal-todo",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix service\"",
     "dev:frontend": "npm run dev --prefix frontend",
-    "dev:service": "npm run dev --prefix service"
+    "dev:service": "npm run dev --prefix service",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major",
+    "build-image": "node ./scripts/build-image.js"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"

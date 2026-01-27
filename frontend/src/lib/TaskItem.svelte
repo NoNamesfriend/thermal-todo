@@ -1,7 +1,8 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
-  import { apiBase } from "./stores.js";
+  import { apiBase, showToast } from "./stores.js";
   import { ICONS } from "./icons.js";
+
   export let task: string;
   let timeout;
   let iconKey: string = "other"; // Fallback
@@ -19,8 +20,6 @@
       console.error(e);
     }
   }
-
-  import { showToast } from "./stores.js";
 
   async function fetchIcon(task) {
     try {
