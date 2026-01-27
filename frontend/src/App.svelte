@@ -195,7 +195,7 @@
   }
 </script>
 
-<img src="/src/assets/logo_dark.svg" alt="Logo" class="logo" />
+<img src="/logo_dark.svg" alt="Logo" class="logo" />
 
 <div class="input-container">
   <!-- <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." /> -->
