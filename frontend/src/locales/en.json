@@ -1,0 +1,18 @@
+{
+  "placeholder": "Enter task...",
+  "footer": "Focus • No multitasking",
+  "recording_too_short": "Recording too short",
+  "audio_no_speech": "Audio contains no speech",
+  "transcription_failed": "Transcription failed",
+  "microphone_access_failed": "Microphone access failed",
+  "icon_suggest_failed": "Icon suggestion failed",
+  "print_area_missing": "Print area not found",
+  "print_request_failed": "Print request failed",
+  "print_sent": "Print sent",
+  "print_failed": "Print failed",
+  "print_button": "Print",
+  "print_button_loading": "Printing",
+  "mic_start": "Start voice input",
+  "mic_stop": "Stop voice input",
+  "task_label": "Task"
+}

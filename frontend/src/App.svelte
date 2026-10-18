@@ -5,6 +5,7 @@
   import { apiBase, showToast } from "./lib/stores.js";
   import Icon from "@iconify/svelte";
   import { onMount, tick } from "svelte";
+  import { t, locale, setLocale } from "./lib/i18n.js";
 
   // Use relative API paths so the dev server proxy (or same-origin backend) can handle requests
   // In development Vite will proxy `/config`, `/whisper`, etc. to the backend.
@@ -97,7 +98,7 @@
         const durationMs = Date.now() - recordStart;
         if (durationMs < 1000) {
           console.warn("Recording too short (", durationMs, "ms). Ignoring.");
-          showToast("error", "Recording too short");
+          showToast("error", $t("recording_too_short"));
           // cleanup tracks
           try {
             stream.getTracks().forEach((t) => t.stop());
@@ -121,7 +122,7 @@
           if (!res.ok) {
             const txt = await res.text();
             console.error("Whisper response error", res.status, txt);
-            showToast("error", "Audio contains no speech");
+            showToast("error", $t("audio_no_speech"));
           } else {
             const data = await res.json();
             taskText = data.text || "";
@@ -131,7 +132,7 @@
           }
         } catch (err) {
           console.error("Error sending to Whisper:", err);
-          showToast("error", "Transcription failed");
+          showToast("error", $t("transcription_failed"));
         }
 
         // cleanup tracks
@@ -163,7 +164,7 @@
       }, MAX_RECORD_MS);
     } catch (err) {
       console.error("Microphone access failed:", err);
-      showToast("error", "Microphone access failed");
+      showToast("error", $t("microphone_access_failed"));
     }
   }
 
@@ -195,17 +196,20 @@
   }
 </script>
 
-<img src="/logo_dark.svg" alt="Logo" class="logo" />
+<img src="/logo_dark.svg" alt="Thermal ToDo" class="logo" />
 
 <div class="input-container">
   <!-- <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." /> -->
+  <label for="task-input" class="sr-only">{$t("task_label")}</label>
   <textarea
+    id="task-input"
     bind:this={textareaEl}
     bind:value={taskText}
-    placeholder="Aufgabe eingeben..."
+    placeholder={$t("placeholder")}
     rows="1"
     on:input={resizeTextarea}
     class="autosize-textarea"
+    aria-label={$t("task_label")}
   ></textarea>
   {#if aiEnabled}
     {#if recording}
@@ -220,6 +224,8 @@
         on:mousedown|preventDefault={startRecording}
         on:mouseup={stopRecording}
         on:keydown={handleKeyDownToggle}
+        aria-pressed="true"
+        aria-label={$t("mic_stop")}
       >
         <Icon icon="fluent:mic-24-regular" />
       </button>
@@ -235,6 +241,8 @@
         on:mousedown|preventDefault={startRecording}
         on:mouseup={stopRecording}
         on:keydown={handleKeyDownToggle}
+        aria-pressed="false"
+        aria-label={$t("mic_start")}
       >
         <Icon icon="fluent:mic-24-regular" />
       </button>
@@ -254,12 +262,12 @@
     {#if aiEnabled}
       <TaskItem task={taskText} />
     {:else}
-      <div class="task-text" aria-label="task-text">{taskText}</div>
+      <div class="task-text" aria-label={$t("task_label")}>{taskText}</div>
     {/if}
 
     <div class="separator"></div>
 
-    <div class="footer">Fokus • Kein Multitasking</div>
+    <div class="footer">{$t("footer")}</div>
   </div>
 </div>
 

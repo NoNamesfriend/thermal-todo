@@ -1,0 +1,18 @@
+{
+  "placeholder": "Aufgabe eingeben...",
+  "footer": "Fokus • Kein Multitasking",
+  "recording_too_short": "Aufnahme zu kurz",
+  "audio_no_speech": "Audio enthält keine Sprache",
+  "transcription_failed": "Transkription fehlgeschlagen",
+  "microphone_access_failed": "Mikrofonzugriff fehlgeschlagen",
+  "icon_suggest_failed": "Icon-Vorschlag fehlgeschlagen",
+  "print_area_missing": "Druckbereich nicht gefunden",
+  "print_request_failed": "Druckanforderung fehlgeschlagen",
+  "print_sent": "Druck gesendet",
+  "print_failed": "Druck fehlgeschlagen",
+  "print_button": "Drucken",
+  "print_button_loading": "Wird gedruckt",
+  "mic_start": "Spracheingabe starten",
+  "mic_stop": "Spracheingabe stoppen",
+  "task_label": "Aufgabe"
+}

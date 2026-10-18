@@ -3,6 +3,7 @@
   import { apiBase, showToast } from "./stores.js";
   import Icon from "@iconify/svelte";
   import { onMount } from "svelte";
+  import { t } from "./i18n.js";
 
   let loading = false;
 
@@ -12,7 +13,7 @@
       const element = document.getElementById("print-area");
       if (!element) {
         console.warn("print-area element not found");
-        showToast("error", "Print area not found");
+        showToast("error", $t("print_area_missing"));
         return;
       }
 
@@ -27,26 +28,32 @@
 
       if (!res.ok) {
         console.warn("print request failed", res.status);
-        showToast("error", "Print request failed");
+        showToast("error", $t("print_request_failed"));
       } else {
-        showToast("success", "Print sent");
+        showToast("success", $t("print_sent"));
       }
     } catch (err) {
       console.error("print failed", err);
-      showToast("error", "Print failed");
+      showToast("error", $t("print_failed"));
     } finally {
       loading = false;
     }
   }
 </script>
 
-<button class="btn-gradient" on:click={print} disabled={loading} aria-busy={loading}>
+<button
+  class="btn-gradient"
+  on:click={print}
+  disabled={loading}
+  aria-busy={loading}
+  aria-label={loading ? $t("print_button_loading") : $t("print_button")}
+>
   {#if loading}
     <span class="spinner" aria-hidden="true"></span>
-    Wird gedruckt
+    {$t("print_button_loading")}
   {:else}
     <Icon icon="fluent:print-24-regular" />
-    Drucken
+    {$t("print_button")}
   {/if}
 </button>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
   import { apiBase, showToast } from "./stores.js";
+  import { t } from "./i18n.js";
   import { ICONS } from "./icons.js";
 
   export let task: string;
@@ -35,24 +36,24 @@
       if (!res.ok) {
         const txt = await res.text();
         console.error("icon-suggest failed", res.status, txt);
-        showToast("error", "Icon suggestion failed");
+        showToast("error", $t("icon_suggest_failed"));
         return null;
       }
       return res.json();
     } catch (e) {
       console.error("icon-suggest error", e);
-      showToast("error", "Icon suggestion failed");
+      showToast("error", $t("icon_suggest_failed"));
       return null;
     }
   }
 </script>
 
-<p class="task-item">
-  <span class="task-icon">
+<div class="task-item" role="listitem" aria-label={task}>
+  <span class="task-icon" aria-hidden="true">
     <Icon icon={ICONS[iconKey]} />
   </span>
   <span class="task-text">{task}</span>
-</p>
+</div>
 
 <style>
   .task-item {
