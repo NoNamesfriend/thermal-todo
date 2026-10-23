@@ -1,8 +1,7 @@
-import 'dotenv/config';
 import OpenAI from "openai";
 import { Readable } from "stream";
-import { ICONS } from "./icons.js";
 import { env } from "./config.js";
+import { createIconSuggester } from './icon-provider.js';
 
 let openai;
 if (env.OPENAI_API_KEY) {
@@ -11,41 +10,8 @@ if (env.OPENAI_API_KEY) {
   openai = null;
 }
 
-export async function suggestIcon(task) {
-  if (!openai) throw new Error('OpenAI API key not configured');
-  const iconList = Object.entries(ICONS)
-    .map(([key, desc]) => `- ${key}: ${desc}`)
-    .join("\n");
-
-  const response = await openai.chat.completions.create({
-    model: "gpt-4.1-mini",
-    temperature: 0,
-    messages: [
-      {
-        role: "system",
-        content: `
-Du bist ein Klassifikator.
-Wähle genau EIN Icon aus der Liste.
-Antworte ausschließlich als JSON.
-`,
-      },
-      {
-        role: "user",
-        content: `
-Aufgabe: "${task}"
-
-Verfügbare Icons:
-${iconList}
-
-Antwortformat:
-{ "icon": "<icon-key>" }
-`,
-      },
-    ],
-  });
-
-  return JSON.parse(response.choices[0].message.content);
-}
+export const suggestIcon = createIconSuggester({ openai });
+export const evaluateIcon = createIconSuggester({ openai, includeMetadata: true });
 
 export async function transcribeAudio(audioBuffer, originalName = "audio.webm") {
   if (!openai) throw new Error('OpenAI API key not configured');

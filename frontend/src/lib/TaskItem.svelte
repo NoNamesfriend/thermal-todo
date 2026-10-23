@@ -1,81 +1,61 @@
-<script lang="ts">
-  import Icon from "@iconify/svelte";
-  import { apiBase, showToast } from "./stores.js";
-  import { t } from "./i18n.js";
-  import { ICONS } from "./icons.js";
-
-  export let task: string;
+<script>
+  import { onDestroy } from 'svelte';
+  import { apiBase, showToast } from './stores.js';
+  import { t } from './i18n.js';
+  import FluentIcon from './FluentIcon.svelte';
+  export let task;
+  export let provider;
+  export let loading = false;
+  let iconKey = 'other';
   let timeout;
-  let iconKey: string = "other"; // Fallback
+  let controller;
+  let generation = 0;
 
-  $: if (task) {
+  $: scheduleIcon(task, provider);
+  function scheduleIcon(value, selectedProvider) {
     clearTimeout(timeout);
-    timeout = setTimeout(loadIcon, 500);
+    controller?.abort();
+    const current = ++generation;
+    iconKey = 'other';
+    loading = !!value.trim();
+    if (loading) timeout = setTimeout(() => loadIcon(value, selectedProvider, current), 500);
   }
-
-  async function loadIcon() {
+  async function loadIcon(value, selectedProvider, current) {
+    const request = new AbortController();
+    controller = request;
+    const deadline = setTimeout(() => request.abort('timeout'), 8000);
     try {
-      const result = await fetchIcon(task);
-      iconKey = result?.icon ?? "other";
-    } catch (e) {
-      console.error(e);
-    }
-  }
-
-  async function fetchIcon(task) {
-    try {
-      const controller = new AbortController();
-      const id = setTimeout(() => controller.abort(), 8000);
       const res = await fetch(`${$apiBase}/icon-suggest`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ task }),
-        signal: controller.signal,
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ task: value, provider: selectedProvider }), signal: request.signal,
       });
-      clearTimeout(id);
       if (!res.ok) {
-        const txt = await res.text();
-        console.error("icon-suggest failed", res.status, txt);
-        showToast("error", $t("icon_suggest_failed"));
-        return null;
+        const problem = await res.json().catch(() => ({}));
+        throw Object.assign(new Error('Icon suggestion failed'), { code: problem.code });
       }
-      return res.json();
-    } catch (e) {
-      console.error("icon-suggest error", e);
-      showToast("error", $t("icon_suggest_failed"));
-      return null;
+      const result = await res.json();
+      if (current === generation) iconKey = result?.icon ?? 'other';
+    } catch (error) {
+      const message = { ICON_AUTH_FAILED: 'icon_auth_failed', ICON_CREDIT_REQUIRED: 'icon_credit_required',
+        ICON_RATE_LIMITED: 'icon_busy', ICON_TIMEOUT: 'icon_timeout' }[error.code] || 'icon_suggest_failed';
+      if (current === generation) showToast('error', $t(message));
+    } finally {
+      clearTimeout(deadline);
+      if (current === generation) loading = false;
     }
   }
+  onDestroy(() => {
+    generation++;
+    clearTimeout(timeout);
+    controller?.abort();
+    loading = false;
+  });
 </script>
-
-<div class="task-item" role="listitem" aria-label={task}>
-  <span class="task-icon" aria-hidden="true">
-    <Icon icon={ICONS[iconKey]} />
-  </span>
+<div class="task-item">
+  <span class="task-icon" aria-hidden="true"><FluentIcon name={iconKey} /></span>
   <span class="task-text">{task}</span>
 </div>
-
 <style>
-  .task-item {
-    display: grid;
-    place-items: center;
-    place-content: center;
-    grid-auto-flow: column;
-    gap: 8px;
-    margin: 4px 8px;
-    /* text-align: center; */
-    font-weight: 600;
-  }
-
-  .task-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-  }
-
-  .task-icon :global(svg) {
-    width: 20px;
-    height: 20px;
-  }
+  .task-item { display: grid; grid-template-columns: 20px minmax(0, 1fr); align-items: start; gap: 8px; font-weight: 600; }
+  .task-icon { display: flex; padding-top: 1px; }
 </style>

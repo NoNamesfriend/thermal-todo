@@ -1,0 +1,1543 @@
+{
+  "measurement": "Unraid CPU-only; two threads, two CPU quota; preprocessing and docker-exec overhead included; network upload excluded",
+  "models": {
+    "base": {
+      "statistics": {
+        "all_speech": {
+          "median_seconds": 2.3307512145000002,
+          "max_seconds": 2.668329339,
+          "word_errors": 32,
+          "reference_words": 284
+        },
+        "synthetic": {
+          "median_seconds": 2.245225393,
+          "max_seconds": 2.496808365,
+          "word_errors": 20,
+          "reference_words": 176
+        },
+        "human": {
+          "median_seconds": 2.374735559,
+          "max_seconds": 2.668329339,
+          "word_errors": 12,
+          "reference_words": 108
+        }
+      },
+      "last_start_to_ready_seconds": 0.768517364,
+      "server_memory_bytes": {
+        "VmRSS": 267894784,
+        "VmHWM": 267894784
+      },
+      "cgroup_current_and_peak_bytes": [
+        545243136,
+        621084672
+      ],
+      "requests": [
+        {
+          "fixture": "phrase-1",
+          "round": 1,
+          "seconds": 2.365798473,
+          "preparation_seconds": 0.356778449,
+          "request_seconds": 2.009020024,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 1,
+          "seconds": 2.168788191,
+          "preparation_seconds": 0.163120072,
+          "request_seconds": 2.005668119,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 1,
+          "seconds": 2.063735907,
+          "preparation_seconds": 0.152147399,
+          "request_seconds": 1.911588508,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "anerwege der Besprechung zurückrufen.",
+          "word_errors": 2,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 1,
+          "seconds": 2.215445195,
+          "preparation_seconds": 0.165787194,
+          "request_seconds": 2.049658001,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 1,
+          "seconds": 2.353309136,
+          "preparation_seconds": 0.238354412,
+          "request_seconds": 2.114954724,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 1,
+          "seconds": 2.371457943,
+          "preparation_seconds": 0.240665773,
+          "request_seconds": 2.13079217,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 1,
+          "seconds": 2.33730722,
+          "preparation_seconds": 0.222094264,
+          "request_seconds": 2.115212956,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin wuchen und den Koffer packen.",
+          "word_errors": 1,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 1,
+          "seconds": 2.391727902,
+          "preparation_seconds": 0.257780225,
+          "request_seconds": 2.133947677,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine zahnbürste kaufen?",
+          "word_errors": 2,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 1,
+          "seconds": 2.496808365,
+          "preparation_seconds": 0.30273404,
+          "request_seconds": 2.194074325,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch.\n Brot.\n Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 2,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 1,
+          "seconds": 2.18659924,
+          "preparation_seconds": 0.162414389,
+          "request_seconds": 2.024184851,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 1,
+          "seconds": 0.167550862,
+          "preparation_seconds": 0.115952685,
+          "request_seconds": 0.051598177,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "phrase-1",
+          "round": 2,
+          "seconds": 2.168331592,
+          "preparation_seconds": 0.155285654,
+          "request_seconds": 2.013045938,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 2,
+          "seconds": 2.157487591,
+          "preparation_seconds": 0.155821976,
+          "request_seconds": 2.001665615,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 2,
+          "seconds": 2.178418392,
+          "preparation_seconds": 0.155150923,
+          "request_seconds": 2.023267469,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "anerwege der Besprechung zurückrufen.",
+          "word_errors": 2,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 2,
+          "seconds": 2.091625137,
+          "preparation_seconds": 0.163109912,
+          "request_seconds": 1.928515225,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 2,
+          "seconds": 2.160047348,
+          "preparation_seconds": 0.216417088,
+          "request_seconds": 1.94363026,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 2,
+          "seconds": 2.37713267,
+          "preparation_seconds": 0.279269054,
+          "request_seconds": 2.097863616,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 2,
+          "seconds": 2.324720333,
+          "preparation_seconds": 0.222669047,
+          "request_seconds": 2.102051286,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin wuchen und den Koffer packen.",
+          "word_errors": 1,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 2,
+          "seconds": 2.275005591,
+          "preparation_seconds": 0.255603542,
+          "request_seconds": 2.019402049,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine zahnbürste kaufen?",
+          "word_errors": 2,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 2,
+          "seconds": 2.35538059,
+          "preparation_seconds": 0.297825731,
+          "request_seconds": 2.057554859,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch.\n Brot.\n Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 2,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 2,
+          "seconds": 2.150836849,
+          "preparation_seconds": 0.166507884,
+          "request_seconds": 1.984328965,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 2,
+          "seconds": 0.167435617,
+          "preparation_seconds": 0.117660523,
+          "request_seconds": 0.049775094,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "human-1",
+          "round": 1,
+          "seconds": 2.668329339,
+          "preparation_seconds": 0.434123915,
+          "request_seconds": 2.234205424,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Die Höhle befindet sich auf der Spitze eines der Bergennördlich von Mecker und ist\n vom Rest der Welt völlig isoliert.",
+          "word_errors": 3,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 1,
+          "seconds": 2.383881867,
+          "preparation_seconds": 0.268198245,
+          "request_seconds": 2.115683622,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Sediment war nötig, um Sandbank und Strände zu bilden, die als Lebensräume für\n Wildtiere dienten.",
+          "word_errors": 1,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 1,
+          "seconds": 2.285898781,
+          "preparation_seconds": 0.263985554,
+          "request_seconds": 2.021913227,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme.\n Was jeder beklagt sich über die Transportsysteme.",
+          "word_errors": 2,
+          "reference_words": 17
+        },
+        {
+          "fixture": "human-1",
+          "round": 2,
+          "seconds": 2.405095179,
+          "preparation_seconds": 0.269933024,
+          "request_seconds": 2.135162155,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Die Höhle befindet sich auf der Spitze eines der Bergennördlich von Mecker und ist\n vom Rest der Welt völlig isoliert.",
+          "word_errors": 3,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 2,
+          "seconds": 2.365589251,
+          "preparation_seconds": 0.255687676,
+          "request_seconds": 2.109901575,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Sediment war nötig, um Sandbank und Strände zu bilden, die als Lebensräume für\n Wildtiere dienten.",
+          "word_errors": 1,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 2,
+          "seconds": 2.336782096,
+          "preparation_seconds": 0.249485037,
+          "request_seconds": 2.087297059,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme.\n Was jeder beklagt sich über die Transportsysteme.",
+          "word_errors": 2,
+          "reference_words": 17
+        }
+      ]
+    },
+    "base-q5_1": {
+      "statistics": {
+        "all_speech": {
+          "median_seconds": 2.067066379,
+          "max_seconds": 2.289591461,
+          "word_errors": 40,
+          "reference_words": 284
+        },
+        "synthetic": {
+          "median_seconds": 2.0072785635,
+          "max_seconds": 2.260915229,
+          "word_errors": 18,
+          "reference_words": 176
+        },
+        "human": {
+          "median_seconds": 2.1922192805,
+          "max_seconds": 2.289591461,
+          "word_errors": 22,
+          "reference_words": 108
+        }
+      },
+      "last_start_to_ready_seconds": 0.792132557,
+      "server_memory_bytes": {
+        "VmRSS": 179150848,
+        "VmHWM": 179150848
+      },
+      "cgroup_current_and_peak_bytes": [
+        403009536,
+        474431488
+      ],
+      "requests": [
+        {
+          "fixture": "phrase-1",
+          "round": 1,
+          "seconds": 2.027137958,
+          "preparation_seconds": 0.276825233,
+          "request_seconds": 1.750312725,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen?",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 1,
+          "seconds": 1.922356184,
+          "preparation_seconds": 0.161020737,
+          "request_seconds": 1.761335447,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 1,
+          "seconds": 1.873756887,
+          "preparation_seconds": 0.150679859,
+          "request_seconds": 1.723077028,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "anerwegen der Besprechung zurückrufen.",
+          "word_errors": 2,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 1,
+          "seconds": 1.965692339,
+          "preparation_seconds": 0.160189153,
+          "request_seconds": 1.805503186,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 1,
+          "seconds": 1.987061961,
+          "preparation_seconds": 0.236404722,
+          "request_seconds": 1.750657239,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 1,
+          "seconds": 2.004333163,
+          "preparation_seconds": 0.227306529,
+          "request_seconds": 1.777026634,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 1,
+          "seconds": 2.123983466,
+          "preparation_seconds": 0.216096607,
+          "request_seconds": 1.907886859,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin wuchen und den Koffer packen.",
+          "word_errors": 1,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 1,
+          "seconds": 2.193401324,
+          "preparation_seconds": 0.260016424,
+          "request_seconds": 1.9333849,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunnestag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine zahnbürste kaufen?",
+          "word_errors": 1,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 1,
+          "seconds": 2.14141959,
+          "preparation_seconds": 0.314152489,
+          "request_seconds": 1.827267101,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 2,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 1,
+          "seconds": 1.889145873,
+          "preparation_seconds": 0.172409871,
+          "request_seconds": 1.716736002,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 1,
+          "seconds": 0.170160151,
+          "preparation_seconds": 0.119788964,
+          "request_seconds": 0.050371187,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "phrase-1",
+          "round": 2,
+          "seconds": 1.840058302,
+          "preparation_seconds": 0.145043202,
+          "request_seconds": 1.6950151,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen?",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 2,
+          "seconds": 1.97528417,
+          "preparation_seconds": 0.167113447,
+          "request_seconds": 1.808170723,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 2,
+          "seconds": 2.010223964,
+          "preparation_seconds": 0.152604678,
+          "request_seconds": 1.857619286,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "anerwegen der Besprechung zurückrufen.",
+          "word_errors": 2,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 2,
+          "seconds": 2.031019803,
+          "preparation_seconds": 0.16549301,
+          "request_seconds": 1.865526793,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 2,
+          "seconds": 1.972428248,
+          "preparation_seconds": 0.217274853,
+          "request_seconds": 1.755153395,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 2,
+          "seconds": 2.167769428,
+          "preparation_seconds": 0.237966231,
+          "request_seconds": 1.929803197,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 2,
+          "seconds": 2.147991986,
+          "preparation_seconds": 0.220050176,
+          "request_seconds": 1.92794181,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin wuchen und den Koffer packen.",
+          "word_errors": 1,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 2,
+          "seconds": 2.22726667,
+          "preparation_seconds": 0.25463725,
+          "request_seconds": 1.97262942,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunnestag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine zahnbürste kaufen?",
+          "word_errors": 1,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 2,
+          "seconds": 2.260915229,
+          "preparation_seconds": 0.305448529,
+          "request_seconds": 1.9554667,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 2,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 2,
+          "seconds": 1.875373213,
+          "preparation_seconds": 0.164647875,
+          "request_seconds": 1.710725338,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 2,
+          "seconds": 0.181024832,
+          "preparation_seconds": 0.127724362,
+          "request_seconds": 0.05330047,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "human-1",
+          "round": 1,
+          "seconds": 2.289591461,
+          "preparation_seconds": 0.416622041,
+          "request_seconds": 1.87296942,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Höhle befindet sich auf der Spitze eines der Bergennördlich von Mecker und ist vom Rest der Welt völlig isoliert.",
+          "word_errors": 4,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 1,
+          "seconds": 2.103112955,
+          "preparation_seconds": 0.261960857,
+          "request_seconds": 1.841152098,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Sediment war nötig, um Sandbank und Strände zu bilden, die als Lebensräume für Wild hier redienten.",
+          "word_errors": 4,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 1,
+          "seconds": 2.186677513,
+          "preparation_seconds": 0.253924598,
+          "request_seconds": 1.932752915,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme.\n Was jeder beglagt sich über die Transportsysteme.",
+          "word_errors": 3,
+          "reference_words": 17
+        },
+        {
+          "fixture": "human-1",
+          "round": 2,
+          "seconds": 2.198222869,
+          "preparation_seconds": 0.268458758,
+          "request_seconds": 1.929764111,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Höhle befindet sich auf der Spitze eines der Bergennördlich von Mecker und ist vom Rest der Welt völlig isoliert.",
+          "word_errors": 4,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 2,
+          "seconds": 2.115236814,
+          "preparation_seconds": 0.258339869,
+          "request_seconds": 1.856896945,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Sediment war nötig, um Sandbank und Strände zu bilden, die als Lebensräume für Wild hier redienten.",
+          "word_errors": 4,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 2,
+          "seconds": 2.197761048,
+          "preparation_seconds": 0.255858457,
+          "request_seconds": 1.941902591,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme.\n Was jeder beglagt sich über die Transportsysteme.",
+          "word_errors": 3,
+          "reference_words": 17
+        }
+      ]
+    },
+    "small-q5_1": {
+      "statistics": {
+        "all_speech": {
+          "median_seconds": 6.7702386835,
+          "max_seconds": 7.309427826,
+          "word_errors": 12,
+          "reference_words": 284
+        },
+        "synthetic": {
+          "median_seconds": 6.550277855499999,
+          "max_seconds": 7.16643974,
+          "word_errors": 6,
+          "reference_words": 176
+        },
+        "human": {
+          "median_seconds": 6.894648935999999,
+          "max_seconds": 7.309427826,
+          "word_errors": 6,
+          "reference_words": 108
+        }
+      },
+      "last_start_to_ready_seconds": 1.080367631,
+      "server_memory_bytes": {
+        "VmRSS": 378527744,
+        "VmHWM": 378527744
+      },
+      "cgroup_current_and_peak_bytes": [
+        646742016,
+        741797888
+      ],
+      "requests": [
+        {
+          "fixture": "phrase-1",
+          "round": 1,
+          "seconds": 6.413841556,
+          "preparation_seconds": 0.299396731,
+          "request_seconds": 6.114444825,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 1,
+          "seconds": 6.33922073,
+          "preparation_seconds": 0.158828528,
+          "request_seconds": 6.180392202,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 1,
+          "seconds": 6.430025664,
+          "preparation_seconds": 0.155238412,
+          "request_seconds": 6.274787252,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "anerwegen der Besprechung zurückrufen.",
+          "word_errors": 2,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 1,
+          "seconds": 6.363180494,
+          "preparation_seconds": 0.161389161,
+          "request_seconds": 6.201791333,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 0,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 1,
+          "seconds": 6.612025543,
+          "preparation_seconds": 0.242889045,
+          "request_seconds": 6.369136498,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "Morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 1,
+          "seconds": 6.75206929,
+          "preparation_seconds": 0.233717362,
+          "request_seconds": 6.518351928,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 1,
+          "seconds": 6.872179183,
+          "preparation_seconds": 0.220731281,
+          "request_seconds": 6.651447902,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "word_errors": 0,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 1,
+          "seconds": 6.962984017,
+          "preparation_seconds": 0.260623569,
+          "request_seconds": 6.702360448,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen?",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 1,
+          "seconds": 7.057285998,
+          "preparation_seconds": 0.310275634,
+          "request_seconds": 6.747010364,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 1,
+          "seconds": 6.341069554,
+          "preparation_seconds": 0.168304194,
+          "request_seconds": 6.17276536,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 0,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 1,
+          "seconds": 0.16724744,
+          "preparation_seconds": 0.116210798,
+          "request_seconds": 0.051036642,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "phrase-1",
+          "round": 2,
+          "seconds": 6.301082242,
+          "preparation_seconds": 0.148709802,
+          "request_seconds": 6.15237244,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 2,
+          "seconds": 6.361414501,
+          "preparation_seconds": 0.157673714,
+          "request_seconds": 6.203740787,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 2,
+          "seconds": 6.488530168,
+          "preparation_seconds": 0.153274034,
+          "request_seconds": 6.335256134,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "anerwegen der Besprechung zurückrufen.",
+          "word_errors": 2,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 2,
+          "seconds": 6.408776297,
+          "preparation_seconds": 0.165334301,
+          "request_seconds": 6.243441996,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 0,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 2,
+          "seconds": 6.667162422,
+          "preparation_seconds": 0.218281701,
+          "request_seconds": 6.448880721,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "Morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 2,
+          "seconds": 6.961244108,
+          "preparation_seconds": 0.241014659,
+          "request_seconds": 6.720229449,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 2,
+          "seconds": 6.853995307,
+          "preparation_seconds": 0.225620296,
+          "request_seconds": 6.628375011,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "word_errors": 0,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 2,
+          "seconds": 7.16643974,
+          "preparation_seconds": 0.26231833,
+          "request_seconds": 6.90412141,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen?",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 2,
+          "seconds": 6.836727009,
+          "preparation_seconds": 0.301411215,
+          "request_seconds": 6.535315794,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 2,
+          "seconds": 6.448499408,
+          "preparation_seconds": 0.167821633,
+          "request_seconds": 6.280677775,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 0,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 2,
+          "seconds": 0.166396477,
+          "preparation_seconds": 0.116167709,
+          "request_seconds": 0.050228768,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "human-1",
+          "round": 1,
+          "seconds": 7.309427826,
+          "preparation_seconds": 0.428388389,
+          "request_seconds": 6.881039437,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Die Höhle befindet sich auf der Spitze eines der Berge nördlich von Mecca und ist vom\n Rest der Welt völlig isoliert.",
+          "word_errors": 1,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 1,
+          "seconds": 6.898475176,
+          "preparation_seconds": 0.273652672,
+          "request_seconds": 6.624822504,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Sediment war nötig, um Sandbänke und Schrenne zu bilden, die als Lebensräume\n für Wildtiere dienten.",
+          "word_errors": 1,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 1,
+          "seconds": 6.788408077,
+          "preparation_seconds": 0.26682453,
+          "request_seconds": 6.521583547,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme.\n Fast jeder beklagt sich über die Transportsysteme.",
+          "word_errors": 1,
+          "reference_words": 17
+        },
+        {
+          "fixture": "human-1",
+          "round": 2,
+          "seconds": 6.826562945,
+          "preparation_seconds": 0.291147657,
+          "request_seconds": 6.535415288,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Die Höhle befindet sich auf der Spitze eines der Berge nördlich von Mecca und ist vom\n Rest der Welt völlig isoliert.",
+          "word_errors": 1,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 2,
+          "seconds": 6.890822696,
+          "preparation_seconds": 0.263921697,
+          "request_seconds": 6.626900999,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Sediment war nötig, um Sandbänke und Schrenne zu bilden, die als Lebensräume\n für Wildtiere dienten.",
+          "word_errors": 1,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 2,
+          "seconds": 7.003842199,
+          "preparation_seconds": 0.271317632,
+          "request_seconds": 6.732524567,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme.\n Fast jeder beklagt sich über die Transportsysteme.",
+          "word_errors": 1,
+          "reference_words": 17
+        }
+      ]
+    },
+    "tiny": {
+      "statistics": {
+        "all_speech": {
+          "median_seconds": 1.1555094535000001,
+          "max_seconds": 1.763795735,
+          "word_errors": 52,
+          "reference_words": 284
+        },
+        "synthetic": {
+          "median_seconds": 1.1224025850000001,
+          "max_seconds": 1.763795735,
+          "word_errors": 20,
+          "reference_words": 176
+        },
+        "human": {
+          "median_seconds": 1.2776011335000002,
+          "max_seconds": 1.416327374,
+          "word_errors": 32,
+          "reference_words": 108
+        }
+      },
+      "last_start_to_ready_seconds": 0.665893875,
+      "server_memory_bytes": {
+        "VmRSS": 174809088,
+        "VmHWM": 174809088
+      },
+      "cgroup_current_and_peak_bytes": [
+        430473216,
+        507183104
+      ],
+      "requests": [
+        {
+          "fixture": "phrase-1",
+          "round": 1,
+          "seconds": 1.763795735,
+          "preparation_seconds": 0.802330812,
+          "request_seconds": 0.961464923,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 1,
+          "seconds": 1.069929063,
+          "preparation_seconds": 0.169726722,
+          "request_seconds": 0.900202341,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 1,
+          "seconds": 1.056229338,
+          "preparation_seconds": 0.159832656,
+          "request_seconds": 0.896396682,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "Anerwegen der Besprechung zu rekrofen.",
+          "word_errors": 4,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 1,
+          "seconds": 1.04609328,
+          "preparation_seconds": 0.176454726,
+          "request_seconds": 0.869638554,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den Kaputenwasserhahn in der Küche reparieren.",
+          "word_errors": 2,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 1,
+          "seconds": 1.119990432,
+          "preparation_seconds": 0.222833797,
+          "request_seconds": 0.897156635,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "Morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 1,
+          "seconds": 1.166121684,
+          "preparation_seconds": 0.237467207,
+          "request_seconds": 0.928654477,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 1,
+          "seconds": 1.144897223,
+          "preparation_seconds": 0.226975107,
+          "request_seconds": 0.917922116,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin-Buchen und den Kofferpacken.",
+          "word_errors": 2,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 1,
+          "seconds": 1.212348706,
+          "preparation_seconds": 0.263370682,
+          "request_seconds": 0.948978024,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch.\n Brot, Äpfel und eine zahnbürste kaufen.",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 1,
+          "seconds": 1.250921021,
+          "preparation_seconds": 0.30699494,
+          "request_seconds": 0.943926081,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch.\n Brot, Äpfel und eine zahnbürste kaufen.",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 1,
+          "seconds": 1.03769538,
+          "preparation_seconds": 0.167335401,
+          "request_seconds": 0.870359979,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputtem Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 1,
+          "seconds": 0.169597502,
+          "preparation_seconds": 0.117186411,
+          "request_seconds": 0.052411091,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "phrase-1",
+          "round": 2,
+          "seconds": 1.038631875,
+          "preparation_seconds": 0.148928084,
+          "request_seconds": 0.889703791,
+          "reference": "Milch und Brot einkaufen.",
+          "text": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-2",
+          "round": 2,
+          "seconds": 1.001071755,
+          "preparation_seconds": 0.152072588,
+          "request_seconds": 0.848999167,
+          "reference": "Morgen die Stromrechnung bezahlen.",
+          "text": "morgen die Stromrechnung bezahlen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-3",
+          "round": 2,
+          "seconds": 1.025546552,
+          "preparation_seconds": 0.161213613,
+          "request_seconds": 0.864332939,
+          "reference": "Anna wegen der Besprechung zurückrufen.",
+          "text": "Anerwegen der Besprechung zu rekrofen.",
+          "word_errors": 4,
+          "reference_words": 5
+        },
+        {
+          "fixture": "phrase-4",
+          "round": 2,
+          "seconds": 1.032219414,
+          "preparation_seconds": 0.165127531,
+          "request_seconds": 0.867091883,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den Kaputenwasserhahn in der Küche reparieren.",
+          "word_errors": 2,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-5",
+          "round": 2,
+          "seconds": 1.124814738,
+          "preparation_seconds": 0.21496925,
+          "request_seconds": 0.909845488,
+          "reference": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "text": "Morgen um 15 Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+          "word_errors": 1,
+          "reference_words": 9
+        },
+        {
+          "fixture": "phrase-6",
+          "round": 2,
+          "seconds": 1.19415013,
+          "preparation_seconds": 0.24416499,
+          "request_seconds": 0.94998514,
+          "reference": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "text": "die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+          "word_errors": 0,
+          "reference_words": 11
+        },
+        {
+          "fixture": "phrase-7",
+          "round": 2,
+          "seconds": 1.126373755,
+          "preparation_seconds": 0.221807943,
+          "request_seconds": 0.904565812,
+          "reference": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+          "text": "Für das nächste Wochenende die Zugfahrt nach Berlin-Buchen und den Kofferpacken.",
+          "word_errors": 2,
+          "reference_words": 13
+        },
+        {
+          "fixture": "phrase-8",
+          "round": 2,
+          "seconds": 1.187420778,
+          "preparation_seconds": 0.255674495,
+          "request_seconds": 0.931746283,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch.\n Brot, Äpfel und eine zahnbürste kaufen.",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "round": 2,
+          "seconds": 1.242360581,
+          "preparation_seconds": 0.298128448,
+          "request_seconds": 0.944232133,
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch.\n Brot, Äpfel und eine zahnbürste kaufen.",
+          "word_errors": 0,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "round": 2,
+          "seconds": 1.057642456,
+          "preparation_seconds": 0.161088891,
+          "request_seconds": 0.896553565,
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "text": "den kaputtem Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "round": 2,
+          "seconds": 0.169346391,
+          "preparation_seconds": 0.118764239,
+          "request_seconds": 0.050582152,
+          "reference": "",
+          "text": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "human-1",
+          "round": 1,
+          "seconds": 1.416327374,
+          "preparation_seconds": 0.421894196,
+          "request_seconds": 0.994433178,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Die Höhle befindet sich auf der Spitze, eines der Bergen nurhtlich von Mecker und ist\n Tomreste welt völlig isoliert.",
+          "word_errors": 6,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 1,
+          "seconds": 1.317026612,
+          "preparation_seconds": 0.257220753,
+          "request_seconds": 1.059805859,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Settiment war Nötig, um Sandbänkonschrände zu bilden, die als Lebensröme verwildt\n ihre Dinden.",
+          "word_errors": 8,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 1,
+          "seconds": 1.289100968,
+          "preparation_seconds": 0.257180233,
+          "request_seconds": 1.031920735,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "jeder nimmt an der Gesellschaft Teil und benutzt Transportsysteme, was jeder beklagt sich über die Transportsysteme.",
+          "word_errors": 2,
+          "reference_words": 17
+        },
+        {
+          "fixture": "human-1",
+          "round": 2,
+          "seconds": 1.266101299,
+          "preparation_seconds": 0.27341272,
+          "request_seconds": 0.992688579,
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "text": "Die Höhle befindet sich auf der Spitze, eines der Bergen nurhtlich von Mecker und ist\n Tomreste welt völlig isoliert.",
+          "word_errors": 6,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "round": 2,
+          "seconds": 1.227170785,
+          "preparation_seconds": 0.255505885,
+          "request_seconds": 0.9716649,
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "text": "Dieses Settiment war Nötig, um Sandbänkonschrände zu bilden, die als Lebensröme verwildt\n ihre Dinden.",
+          "word_errors": 8,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "round": 2,
+          "seconds": 1.181424158,
+          "preparation_seconds": 0.247709428,
+          "request_seconds": 0.93371473,
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "text": "jeder nimmt an der Gesellschaft Teil und benutzt Transportsysteme, was jeder beklagt sich über die Transportsysteme.",
+          "word_errors": 2,
+          "reference_words": 17
+        }
+      ]
+    }
+  },
+  "cold": {
+    "base-q5_1": {
+      "max_seconds": 3.182921977,
+      "requests": [
+        {
+          "fixture": "phrase-1",
+          "seconds": 2.769217805,
+          "container_memory_peak_bytes": 351014912,
+          "text": "Milch und Brot einkaufen.",
+          "reference": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-4",
+          "seconds": 2.865012813,
+          "container_memory_peak_bytes": 336506880,
+          "text": "den kaputen Wasserhahn in der Küche reparieren?",
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-8",
+          "seconds": 3.113538167,
+          "container_memory_peak_bytes": 337100800,
+          "text": "Am Dunnestag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine zahnbürste kaufen?",
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 1,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "seconds": 3.169987918,
+          "container_memory_peak_bytes": 337260544,
+          "text": "Am Dunnestag nach der Arbeit im Supermarkt Milch Brot, Äpfel und eine Zahnbürste kaufen",
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 1,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "seconds": 2.963596866,
+          "container_memory_peak_bytes": 336629760,
+          "text": "den kaputen Wasserhahn in der Küche reparieren.",
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "seconds": 1.005382902,
+          "container_memory_peak_bytes": 200359936,
+          "text": "",
+          "reference": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "human-1",
+          "seconds": 3.05821301,
+          "container_memory_peak_bytes": 337838080,
+          "text": "Höhle befindet sich auf der Spitze eines der Berge nötlich von Mecker und ist vom Rest der Welt völlig isoliert.",
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "word_errors": 3,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "seconds": 3.031156992,
+          "container_memory_peak_bytes": 336621568,
+          "text": "Dieses Sediment war nötig, um Sandbank und Strände zu bilden, die als Lebensräume für Wild hier redienten.",
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "word_errors": 4,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "seconds": 3.182921977,
+          "container_memory_peak_bytes": 332345344,
+          "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme. Was jeder beglagt sich über die Transportsysteme.",
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "word_errors": 3,
+          "reference_words": 17
+        }
+      ]
+    },
+    "tiny": {
+      "max_seconds": 2.213011602,
+      "requests": [
+        {
+          "fixture": "phrase-1",
+          "seconds": 2.213011602,
+          "container_memory_peak_bytes": 397287424,
+          "text": "Milch und Brot einkaufen.",
+          "reference": "Milch und Brot einkaufen.",
+          "word_errors": 0,
+          "reference_words": 4
+        },
+        {
+          "fixture": "phrase-4",
+          "seconds": 1.993011025,
+          "container_memory_peak_bytes": 333545472,
+          "text": "den Kaputenwasserhahn in der Küche reparieren.",
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 2,
+          "reference_words": 7
+        },
+        {
+          "fixture": "phrase-8",
+          "seconds": 2.038819153,
+          "container_memory_peak_bytes": 333901824,
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch. Brot, Epfel und eine Zahnbürste kaufen.",
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 1,
+          "reference_words": 14
+        },
+        {
+          "fixture": "phrase-9",
+          "seconds": 2.13043771,
+          "container_memory_peak_bytes": 334319616,
+          "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch. Brot, epil und eine zahnbürste kaufen.",
+          "reference": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+          "word_errors": 1,
+          "reference_words": 14
+        },
+        {
+          "fixture": "noise",
+          "seconds": 1.989562509,
+          "container_memory_peak_bytes": 333410304,
+          "text": "den kaputtem Wasserhahn in der Küche reparieren.",
+          "reference": "Den kaputten Wasserhahn in der Küche reparieren.",
+          "word_errors": 1,
+          "reference_words": 7
+        },
+        {
+          "fixture": "silence",
+          "seconds": 0.917930213,
+          "container_memory_peak_bytes": 203108352,
+          "text": "",
+          "reference": "",
+          "word_errors": 0,
+          "reference_words": 0
+        },
+        {
+          "fixture": "human-1",
+          "seconds": 2.105938438,
+          "container_memory_peak_bytes": 333856768,
+          "text": "Die Höhle befindet sich auf der Spitze eines der Bergen nurhtlich von Mecker und ist zum Rest der Welt völlig isoliert.",
+          "reference": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+          "word_errors": 4,
+          "reference_words": 21
+        },
+        {
+          "fixture": "human-2",
+          "seconds": 2.193288065,
+          "container_memory_peak_bytes": 330264576,
+          "text": "Dieses Settiment war Nötig, um Sandbänkonschrände zu bilden, die als Lebensröme verwildt ihre Dinden.",
+          "reference": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+          "word_errors": 8,
+          "reference_words": 16
+        },
+        {
+          "fixture": "human-3",
+          "seconds": 2.14805829,
+          "container_memory_peak_bytes": 333185024,
+          "text": "jeder nimmt an der Gesellschaft Teil und benutzt Transportsysteme, was jeder beklagt sich über die Transportsysteme.",
+          "reference": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+          "word_errors": 2,
+          "reference_words": 17
+        }
+      ]
+    }
+  }
+}

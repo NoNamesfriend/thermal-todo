@@ -1,0 +1,55 @@
+{
+  "cpu": "AMD Ryzen 5 PRO 4650G",
+  "threads": 2,
+  "process_cold_file_cache_not_flushed": true,
+  "max_seconds": 3.467892324,
+  "max_container_memory_peak_bytes": 449146880,
+  "requests": [
+    {
+      "fixture": "phrase-1",
+      "seconds": 3.274863286,
+      "container_memory_peak_bytes": 449146880
+    },
+    {
+      "fixture": "phrase-4",
+      "seconds": 3.156106272,
+      "container_memory_peak_bytes": 418840576
+    },
+    {
+      "fixture": "phrase-8",
+      "seconds": 3.315386154,
+      "container_memory_peak_bytes": 428912640
+    },
+    {
+      "fixture": "phrase-9",
+      "seconds": 3.467892324,
+      "container_memory_peak_bytes": 424009728
+    },
+    {
+      "fixture": "noise",
+      "seconds": 3.160029893,
+      "container_memory_peak_bytes": 436473856
+    },
+    {
+      "fixture": "silence",
+      "seconds": 1.057380297,
+      "container_memory_peak_bytes": 204840960
+    },
+    {
+      "fixture": "human-1",
+      "seconds": 3.378778564,
+      "container_memory_peak_bytes": 423247872
+    },
+    {
+      "fixture": "human-2",
+      "seconds": 3.349595214,
+      "container_memory_peak_bytes": 432033792
+    },
+    {
+      "fixture": "human-3",
+      "seconds": 3.400558732,
+      "container_memory_peak_bytes": 422395904
+    }
+  ],
+  "temporary_directory_removed": true
+}

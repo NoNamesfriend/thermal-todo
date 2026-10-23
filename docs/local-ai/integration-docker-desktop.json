@@ -1,0 +1,71 @@
+{
+  "platform": "Docker Desktop on Ryzen 7 3700X, not Unraid",
+  "config": {
+    "ai": false,
+    "labelWidthMm": 80,
+    "speech": {
+      "local": true,
+      "openai": false,
+      "defaultProvider": "local"
+    }
+  },
+  "requests": [
+    {
+      "fixture": "phrase-1",
+      "status": 200,
+      "seconds": 2.946689900010824,
+      "text": "Milch und Brot einkaufen"
+    },
+    {
+      "fixture": "phrase-9",
+      "status": 200,
+      "seconds": 2.5318224999355152,
+      "text": "Am Dunes Tag nach der Arbeit im Supermarkt Milch Brot, Äpfel und eine Zahnbürste kaufen"
+    },
+    {
+      "fixture": "human-1",
+      "status": 200,
+      "seconds": 2.4380460999673232,
+      "text": "Höhle befindet sich auf der Spitze eines der Bergennördlich von Mecker und ist vom Rest der Welt völlig isoliert"
+    },
+    {
+      "fixture": "human-2",
+      "status": 200,
+      "seconds": 2.390553200035356,
+      "text": "Dieses Sediment war nötig, um Sandbank und Strände zu bilden, die als Lebensräume für Wild hier redienten"
+    },
+    {
+      "fixture": "human-3",
+      "status": 200,
+      "seconds": 2.3684645999455824,
+      "text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme. Was jeder beglagt sich über die Transportsysteme"
+    },
+    {
+      "fixture": "noise",
+      "status": 200,
+      "seconds": 2.213057899964042,
+      "text": "den kaputen Wasserhahn in der Küche reparieren"
+    },
+    {
+      "fixture": "silence",
+      "status": 200,
+      "seconds": 0.11464580008760095,
+      "text": ""
+    }
+  ],
+  "concurrent": [
+    {
+      "fixture": "phrase-9",
+      "status": 429,
+      "seconds": 0.005590699962340295,
+      "error": "Speech recognition is busy. Please try again.",
+      "code": "SPEECH_BUSY"
+    },
+    {
+      "fixture": "phrase-1",
+      "status": 200,
+      "seconds": 2.1548909000121057,
+      "text": "Milch und Brot einkaufen"
+    }
+  ]
+}

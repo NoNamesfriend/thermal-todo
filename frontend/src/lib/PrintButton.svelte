@@ -1,13 +1,14 @@
 <script>
   import html2canvas from "html2canvas";
   import { apiBase, showToast } from "./stores.js";
-  import Icon from "@iconify/svelte";
-  import { onMount } from "svelte";
+  import FluentIcon from './FluentIcon.svelte';
   import { t } from "./i18n.js";
 
   let loading = false;
+  export let disabled = false;
 
   async function print() {
+    if (loading || disabled) return;
     loading = true;
     try {
       const element = document.getElementById("print-area");
@@ -17,7 +18,8 @@
         return;
       }
 
-      const canvas = await html2canvas(element, { backgroundColor: "white", scale: 2 });
+      await document.fonts.ready;
+      const canvas = await html2canvas(element, { backgroundColor: "white", scale: 2, logging: false });
       const image = canvas.toDataURL("image/png");
 
       const res = await fetch(`${$apiBase}/print`, {
@@ -44,7 +46,7 @@
 <button
   class="btn-gradient"
   on:click={print}
-  disabled={loading}
+  disabled={loading || disabled}
   aria-busy={loading}
   aria-label={loading ? $t("print_button_loading") : $t("print_button")}
 >
@@ -52,7 +54,7 @@
     <span class="spinner" aria-hidden="true"></span>
     {$t("print_button_loading")}
   {:else}
-    <Icon icon="fluent:print-24-regular" />
+    <FluentIcon name="print" />
     {$t("print_button")}
   {/if}
 </button>
@@ -68,7 +70,7 @@
     font-family: var(--font-family);
     font-size: 16px;
     font-weight: bold;
-    color: var(--bg-base);
+    color: var(--text);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -86,18 +88,17 @@
   }
 
   button:disabled {
-    opacity: 0.7;
-    cursor: wait;
+    opacity: 0.65;
+    cursor: not-allowed;
     transform: none;
-    pointer-events: none;
   }
 
   .spinner {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    border-top-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--muted);
+    border-top-color: var(--text);
     animation: spin 0.8s linear infinite;
     display: inline-block;
     vertical-align: middle;
@@ -108,5 +109,10 @@
     to {
       transform: rotate(360deg);
     }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-gradient { transition: none; }
+    .btn-gradient:hover { transform: none; }
+    .spinner { animation: none; border-style: dotted; }
   }
 </style>

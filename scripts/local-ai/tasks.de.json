@@ -1,0 +1,467 @@
+[
+  {
+    "id": "mail-1",
+    "task": "Die E-Mail von Anna beantworten",
+    "expected": [
+      "mail"
+    ]
+  },
+  {
+    "id": "mail-2",
+    "task": "Dem Kunden eine Nachricht schreiben",
+    "expected": [
+      "mail"
+    ]
+  },
+  {
+    "id": "mail-3",
+    "task": "Den Posteingang durchsehen",
+    "expected": [
+      "mail"
+    ]
+  },
+  {
+    "id": "calendar-1",
+    "task": "Einen Termin für die Besprechung vereinbaren",
+    "expected": [
+      "calendar"
+    ]
+  },
+  {
+    "id": "calendar-2",
+    "task": "Das Treffen am Donnerstag in den Kalender eintragen",
+    "expected": [
+      "calendar"
+    ]
+  },
+  {
+    "id": "calendar-3",
+    "task": "Die nächste Teamsitzung planen",
+    "expected": [
+      "calendar"
+    ]
+  },
+  {
+    "id": "checklist-1",
+    "task": "Die Aufgabenliste für morgen ordnen",
+    "expected": [
+      "checklist"
+    ]
+  },
+  {
+    "id": "checklist-2",
+    "task": "Den Tagesablauf organisieren",
+    "expected": [
+      "checklist"
+    ]
+  },
+  {
+    "id": "checklist-3",
+    "task": "Die erledigten Punkte auf der Liste abhaken",
+    "expected": [
+      "checklist"
+    ]
+  },
+  {
+    "id": "priority-1",
+    "task": "Die wichtigste Aufgabe zuerst erledigen",
+    "expected": [
+      "priority"
+    ]
+  },
+  {
+    "id": "priority-2",
+    "task": "Die dringende Angelegenheit sofort bearbeiten",
+    "expected": [
+      "priority"
+    ]
+  },
+  {
+    "id": "priority-3",
+    "task": "Heute auf die wichtigste Sache konzentrieren",
+    "expected": [
+      "priority"
+    ]
+  },
+  {
+    "id": "work-1",
+    "task": "Am Projektbericht für die Arbeit weiterarbeiten",
+    "expected": [
+      "work"
+    ]
+  },
+  {
+    "id": "work-2",
+    "task": "Die Präsentation für den Chef fertigstellen",
+    "expected": [
+      "work"
+    ]
+  },
+  {
+    "id": "work-3",
+    "task": "Den aktuellen Projektfortschritt dokumentieren",
+    "expected": [
+      "work"
+    ]
+  },
+  {
+    "id": "code-1",
+    "task": "Den Fehler im JavaScript beheben",
+    "expected": [
+      "code"
+    ]
+  },
+  {
+    "id": "code-2",
+    "task": "Den Quellcode prüfen",
+    "expected": [
+      "code"
+    ]
+  },
+  {
+    "id": "code-3",
+    "task": "Die Software auf die neue Version aktualisieren",
+    "expected": [
+      "code"
+    ]
+  },
+  {
+    "id": "study-1",
+    "task": "Das nächste Kapitel im Lehrbuch lesen",
+    "expected": [
+      "study"
+    ]
+  },
+  {
+    "id": "study-2",
+    "task": "Für die Prüfung lernen",
+    "expected": [
+      "study"
+    ]
+  },
+  {
+    "id": "study-3",
+    "task": "Informationen über Wärmepumpen recherchieren",
+    "expected": [
+      "study"
+    ]
+  },
+  {
+    "id": "creative-1",
+    "task": "Eine Geschichte schreiben",
+    "expected": [
+      "creative"
+    ]
+  },
+  {
+    "id": "creative-2",
+    "task": "Ein Logo für den Verein entwerfen",
+    "expected": [
+      "creative"
+    ]
+  },
+  {
+    "id": "creative-3",
+    "task": "Ideen für ein neues Plakat skizzieren",
+    "expected": [
+      "creative"
+    ]
+  },
+  {
+    "id": "health-1",
+    "task": "Einen Kontrolltermin beim Zahnarzt vereinbaren",
+    "expected": [
+      "health"
+    ]
+  },
+  {
+    "id": "health-2",
+    "task": "Das verschriebene Medikament einnehmen",
+    "expected": [
+      "health"
+    ]
+  },
+  {
+    "id": "health-3",
+    "task": "Zum Hausarzt zur Untersuchung gehen",
+    "expected": [
+      "health"
+    ]
+  },
+  {
+    "id": "fitness-1",
+    "task": "Eine halbe Stunde joggen gehen",
+    "expected": [
+      "fitness"
+    ]
+  },
+  {
+    "id": "fitness-2",
+    "task": "Im Fitnessstudio trainieren",
+    "expected": [
+      "fitness"
+    ]
+  },
+  {
+    "id": "fitness-3",
+    "task": "Die Dehnübungen machen",
+    "expected": [
+      "fitness"
+    ]
+  },
+  {
+    "id": "home-1",
+    "task": "Die Küche aufräumen",
+    "expected": [
+      "home"
+    ]
+  },
+  {
+    "id": "home-2",
+    "task": "Die Wäsche waschen",
+    "expected": [
+      "home"
+    ]
+  },
+  {
+    "id": "home-3",
+    "task": "Den Boden im Wohnzimmer saugen",
+    "expected": [
+      "home"
+    ]
+  },
+  {
+    "id": "shopping-1",
+    "task": "Milch und Brot einkaufen",
+    "expected": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "shopping-2",
+    "task": "Im Supermarkt Obst kaufen",
+    "expected": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "shopping-3",
+    "task": "Eine neue Zahnbürste besorgen",
+    "expected": [
+      "shopping"
+    ]
+  },
+  {
+    "id": "food-1",
+    "task": "Das Abendessen kochen",
+    "expected": [
+      "food"
+    ]
+  },
+  {
+    "id": "food-2",
+    "task": "Eine Suppe zubereiten",
+    "expected": [
+      "food"
+    ]
+  },
+  {
+    "id": "food-3",
+    "task": "Das Rezept für den Kuchen ausprobieren",
+    "expected": [
+      "food"
+    ]
+  },
+  {
+    "id": "finance-1",
+    "task": "Die Stromrechnung bezahlen",
+    "expected": [
+      "finance"
+    ]
+  },
+  {
+    "id": "finance-2",
+    "task": "Die Kontoauszüge prüfen",
+    "expected": [
+      "finance"
+    ]
+  },
+  {
+    "id": "finance-3",
+    "task": "Die monatlichen Ausgaben zusammenrechnen",
+    "expected": [
+      "finance"
+    ]
+  },
+  {
+    "id": "admin-1",
+    "task": "Den Antrag für den Reisepass ausfüllen",
+    "expected": [
+      "admin"
+    ]
+  },
+  {
+    "id": "admin-2",
+    "task": "Die Versicherungsunterlagen abheften",
+    "expected": [
+      "admin"
+    ]
+  },
+  {
+    "id": "admin-3",
+    "task": "Das Formular für die Behörde abschicken",
+    "expected": [
+      "admin"
+    ]
+  },
+  {
+    "id": "call-1",
+    "task": "Anna anrufen",
+    "expected": [
+      "call"
+    ]
+  },
+  {
+    "id": "call-2",
+    "task": "Beim Kunden telefonisch nachfragen",
+    "expected": [
+      "call"
+    ]
+  },
+  {
+    "id": "call-3",
+    "task": "Den verpassten Anruf zurückrufen",
+    "expected": [
+      "call"
+    ]
+  },
+  {
+    "id": "travel-1",
+    "task": "Die Zugfahrt nach Berlin buchen",
+    "expected": [
+      "travel"
+    ]
+  },
+  {
+    "id": "travel-2",
+    "task": "Den Koffer für die Reise packen",
+    "expected": [
+      "travel"
+    ]
+  },
+  {
+    "id": "travel-3",
+    "task": "Die Route für den Urlaub planen",
+    "expected": [
+      "travel"
+    ]
+  },
+  {
+    "id": "maintenance-1",
+    "task": "Den undichten Wasserhahn reparieren",
+    "expected": [
+      "maintenance"
+    ]
+  },
+  {
+    "id": "maintenance-2",
+    "task": "Das Fahrrad zur Wartung bringen",
+    "expected": [
+      "maintenance"
+    ]
+  },
+  {
+    "id": "maintenance-3",
+    "task": "Die kaputte Lampe austauschen",
+    "expected": [
+      "maintenance"
+    ]
+  },
+  {
+    "id": "personal-1",
+    "task": "Zeit mit der Familie verbringen",
+    "expected": [
+      "personal"
+    ]
+  },
+  {
+    "id": "personal-2",
+    "task": "Meinen Bruder besuchen",
+    "expected": [
+      "personal"
+    ]
+  },
+  {
+    "id": "personal-3",
+    "task": "Mit meiner Tochter spielen",
+    "expected": [
+      "personal"
+    ]
+  },
+  {
+    "id": "other-1",
+    "task": "Irgendwas mit dem Ding machen",
+    "expected": [
+      "other"
+    ]
+  },
+  {
+    "id": "other-2",
+    "task": "Das später noch klären",
+    "expected": [
+      "other"
+    ]
+  },
+  {
+    "id": "other-3",
+    "task": "Blablabla xyz",
+    "expected": [
+      "other"
+    ]
+  },
+  {
+    "id": "ambiguous-1",
+    "task": "Die Arztrechnung bezahlen",
+    "expected": [
+      "finance",
+      "health"
+    ],
+    "ambiguous": true
+  },
+  {
+    "id": "ambiguous-2",
+    "task": "Mama anrufen",
+    "expected": [
+      "call",
+      "personal"
+    ],
+    "ambiguous": true
+  },
+  {
+    "id": "ambiguous-3",
+    "task": "Einen Arzttermin in den Kalender eintragen",
+    "expected": [
+      "calendar",
+      "health"
+    ],
+    "ambiguous": true
+  },
+  {
+    "id": "ambiguous-4",
+    "task": "Ersatzteile für das Fahrrad kaufen",
+    "expected": [
+      "shopping",
+      "maintenance"
+    ],
+    "ambiguous": true
+  },
+  {
+    "id": "ambiguous-5",
+    "task": "Den Bericht für die Arbeit schreiben",
+    "expected": [
+      "work",
+      "creative"
+    ],
+    "ambiguous": true
+  }
+]

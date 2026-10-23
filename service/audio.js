@@ -1,38 +1,27 @@
-import { mkdir, writeFile, readFile, unlink } from "fs/promises";
-import { exec } from "child_process";
-import { promisify } from "util";
-import { join } from "path";
-import os from "os";
+import { mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
 
-const execAsync = promisify(exec);
-
-const tmpRoot = join(os.tmpdir(), "thermal-todo/audio");
-
-export async function preprocessAudio(buffer) {
-  await mkdir(tmpRoot, { recursive: true });
-
-  const ts = Date.now();
-  const inPath = join(tmpRoot, `input-${ts}`); // no forced extension, ffmpeg detects format
-  const outPath = join(tmpRoot, `output-${ts}.webm`);
-
-  await writeFile(inPath, buffer);
-
-  // Goal: always produce WebM with Opus audio, 16 kHz mono (compatible with Whisper Web/API)
-  // -af: remove silence at start/end and normalize loudness
-  // -ac 1: mono, -ar 16000: 16 kHz, -c:a libopus: encode Opus in WebM
-  const cmd = `ffmpeg -y -hide_banner -loglevel error -i "${inPath}" -af "silenceremove=start_periods=1:start_threshold=-35dB,areverse,silenceremove=start_periods=1:start_threshold=-35dB,areverse,loudnorm" -ac 1 -ar 16000 -c:a libopus -b:a 64k -f webm "${outPath}"`;
-
+const execFileAsync = promisify(execFile);
+export async function preprocessAudio(buffer, format = 'webm') {
+  if (!['webm', 'wav'].includes(format)) throw new Error('Unsupported audio output format');
+  const directory = await mkdtemp(join(tmpdir(), 'thermal-todo-audio-'));
+  const input = join(directory, 'input');
+  const output = join(directory, `output.${format}`);
   try {
-    await execAsync(cmd);
-    const processedBuffer = await readFile(outPath);
-    return processedBuffer;
-  } catch (err) {
-    // enrich error with ffmpeg stderr when available
-    const message = err.stderr ? `ffmpeg error: ${err.stderr}` : err.message || String(err);
-    throw new Error(`Audio preprocessing failed: ${message}`);
+    await writeFile(input, buffer);
+    await execFileAsync('ffmpeg', [
+      '-nostdin', '-y', '-hide_banner', '-loglevel', 'error',
+      '-protocol_whitelist', 'file,pipe', '-format_whitelist', 'matroska,webm,mov,mp3,wav,ogg,aac',
+      '-t', '10', '-i', input,
+      '-af', 'silenceremove=start_periods=1:start_threshold=-35dB,areverse,silenceremove=start_periods=1:start_threshold=-35dB,areverse,loudnorm',
+      '-vn', '-ac', '1', '-ar', '16000',
+      ...(format === 'wav' ? ['-c:a', 'pcm_s16le', '-f', 'wav'] : ['-c:a', 'libopus', '-b:a', '64k', '-f', 'webm']), output,
+    ], { timeout: 5_000, killSignal: 'SIGKILL', maxBuffer: 1024 * 1024, windowsHide: true });
+    return await readFile(output);
   } finally {
-    // try to remove temp files; ignore errors during cleanup
-    try { await unlink(inPath); } catch (e) {}
-    try { await unlink(outPath); } catch (e) {}
+    await rm(directory, { recursive: true, force: true });
   }
 }

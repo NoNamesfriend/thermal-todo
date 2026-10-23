@@ -1,0 +1,1 @@
+{"config":{"ai":true,"labelWidthMm":80,"icons":{"mini":true,"luna":true,"jev":true,"none":true,"defaultProvider":"jev"},"speech":{"local":true,"openai":true,"defaultProvider":"local"}},"transcription":{"text":"Milch und Brot einkaufen"},"seconds":2.711724261,"remainingAudioDirs":[],"processes":["MainThread"],"envFileExists":false}

@@ -11,6 +11,9 @@ npm-debug.log*
 .env
 .env.local
 .env.*
+**/.env
+**/.env.*
+.cache/
 
 # OS
 .DS_Store

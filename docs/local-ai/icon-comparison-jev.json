@@ -1,0 +1,1005 @@
+{
+  "createdAt": "2026-10-23T23:13:42.545Z",
+  "protocol": "Unchanged synthetic German tasks; same 20 icon descriptions; no tuning; no retries; sequential live requests.",
+  "providers": {
+    "jev": {
+      "results": [
+        {
+          "id": "mail-1",
+          "task": "Die E-Mail von Anna beantworten",
+          "expected": [
+            "mail"
+          ],
+          "icon": "mail",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.42181499999999994,
+          "correct": true
+        },
+        {
+          "id": "mail-2",
+          "task": "Dem Kunden eine Nachricht schreiben",
+          "expected": [
+            "mail"
+          ],
+          "icon": "mail",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 661,
+            "outputTokens": 159
+          },
+          "seconds": 0.13196979999999997,
+          "correct": true
+        },
+        {
+          "id": "mail-3",
+          "task": "Den Posteingang durchsehen",
+          "expected": [
+            "mail"
+          ],
+          "icon": "mail",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.20947120000000008,
+          "correct": true
+        },
+        {
+          "id": "calendar-1",
+          "task": "Einen Termin für die Besprechung vereinbaren",
+          "expected": [
+            "calendar"
+          ],
+          "icon": "calendar",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 667,
+            "outputTokens": 159
+          },
+          "seconds": 0.21518610000000002,
+          "correct": true
+        },
+        {
+          "id": "calendar-2",
+          "task": "Das Treffen am Donnerstag in den Kalender eintragen",
+          "expected": [
+            "calendar"
+          ],
+          "icon": "calendar",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.15642200000000003,
+          "correct": true
+        },
+        {
+          "id": "calendar-3",
+          "task": "Die nächste Teamsitzung planen",
+          "expected": [
+            "calendar"
+          ],
+          "icon": "calendar",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 663,
+            "outputTokens": 159
+          },
+          "seconds": 0.1672387000000001,
+          "correct": true
+        },
+        {
+          "id": "checklist-1",
+          "task": "Die Aufgabenliste für morgen ordnen",
+          "expected": [
+            "checklist"
+          ],
+          "icon": "priority",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.1548614,
+          "correct": false
+        },
+        {
+          "id": "checklist-2",
+          "task": "Den Tagesablauf organisieren",
+          "expected": [
+            "checklist"
+          ],
+          "icon": "calendar",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.15103960000000005,
+          "correct": false
+        },
+        {
+          "id": "checklist-3",
+          "task": "Die erledigten Punkte auf der Liste abhaken",
+          "expected": [
+            "checklist"
+          ],
+          "icon": "checklist",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 161
+          },
+          "seconds": 0.3206943999999999,
+          "correct": true
+        },
+        {
+          "id": "priority-1",
+          "task": "Die wichtigste Aufgabe zuerst erledigen",
+          "expected": [
+            "priority"
+          ],
+          "icon": "priority",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.14255859999999984,
+          "correct": true
+        },
+        {
+          "id": "priority-2",
+          "task": "Die dringende Angelegenheit sofort bearbeiten",
+          "expected": [
+            "priority"
+          ],
+          "icon": "priority",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 665,
+            "outputTokens": 159
+          },
+          "seconds": 0.15689110000000028,
+          "correct": true
+        },
+        {
+          "id": "priority-3",
+          "task": "Heute auf die wichtigste Sache konzentrieren",
+          "expected": [
+            "priority"
+          ],
+          "icon": "priority",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 668,
+            "outputTokens": 159
+          },
+          "seconds": 0.13748810000000003,
+          "correct": true
+        },
+        {
+          "id": "work-1",
+          "task": "Am Projektbericht für die Arbeit weiterarbeiten",
+          "expected": [
+            "work"
+          ],
+          "icon": "work",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 668,
+            "outputTokens": 159
+          },
+          "seconds": 0.15048000000000003,
+          "correct": true
+        },
+        {
+          "id": "work-2",
+          "task": "Die Präsentation für den Chef fertigstellen",
+          "expected": [
+            "work"
+          ],
+          "icon": "work",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 667,
+            "outputTokens": 159
+          },
+          "seconds": 0.14165090000000008,
+          "correct": true
+        },
+        {
+          "id": "work-3",
+          "task": "Den aktuellen Projektfortschritt dokumentieren",
+          "expected": [
+            "work"
+          ],
+          "icon": "work",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.14883799999999975,
+          "correct": true
+        },
+        {
+          "id": "code-1",
+          "task": "Den Fehler im JavaScript beheben",
+          "expected": [
+            "code"
+          ],
+          "icon": "code",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.16019389999999975,
+          "correct": true
+        },
+        {
+          "id": "code-2",
+          "task": "Den Quellcode prüfen",
+          "expected": [
+            "code"
+          ],
+          "icon": "code",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 661,
+            "outputTokens": 159
+          },
+          "seconds": 0.14386209999999983,
+          "correct": true
+        },
+        {
+          "id": "code-3",
+          "task": "Die Software auf die neue Version aktualisieren",
+          "expected": [
+            "code"
+          ],
+          "icon": "maintenance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.14231850000000032,
+          "correct": false
+        },
+        {
+          "id": "study-1",
+          "task": "Das nächste Kapitel im Lehrbuch lesen",
+          "expected": [
+            "study"
+          ],
+          "icon": "study",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 665,
+            "outputTokens": 159
+          },
+          "seconds": 0.20305059999999958,
+          "correct": true
+        },
+        {
+          "id": "study-2",
+          "task": "Für die Prüfung lernen",
+          "expected": [
+            "study"
+          ],
+          "icon": "study",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 660,
+            "outputTokens": 159
+          },
+          "seconds": 0.13989480000000004,
+          "correct": true
+        },
+        {
+          "id": "study-3",
+          "task": "Informationen über Wärmepumpen recherchieren",
+          "expected": [
+            "study"
+          ],
+          "icon": "study",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 671,
+            "outputTokens": 159
+          },
+          "seconds": 0.16629699999999958,
+          "correct": true
+        },
+        {
+          "id": "creative-1",
+          "task": "Eine Geschichte schreiben",
+          "expected": [
+            "creative"
+          ],
+          "icon": "creative",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 659,
+            "outputTokens": 159
+          },
+          "seconds": 0.15351060000000008,
+          "correct": true
+        },
+        {
+          "id": "creative-2",
+          "task": "Ein Logo für den Verein entwerfen",
+          "expected": [
+            "creative"
+          ],
+          "icon": "creative",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.14599429999999938,
+          "correct": true
+        },
+        {
+          "id": "creative-3",
+          "task": "Ideen für ein neues Plakat skizzieren",
+          "expected": [
+            "creative"
+          ],
+          "icon": "creative",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.1449359000000004,
+          "correct": true
+        },
+        {
+          "id": "health-1",
+          "task": "Einen Kontrolltermin beim Zahnarzt vereinbaren",
+          "expected": [
+            "health"
+          ],
+          "icon": "health",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 670,
+            "outputTokens": 159
+          },
+          "seconds": 0.13271230000000014,
+          "correct": true
+        },
+        {
+          "id": "health-2",
+          "task": "Das verschriebene Medikament einnehmen",
+          "expected": [
+            "health"
+          ],
+          "icon": "health",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 665,
+            "outputTokens": 159
+          },
+          "seconds": 0.13187390000000052,
+          "correct": true
+        },
+        {
+          "id": "health-3",
+          "task": "Zum Hausarzt zur Untersuchung gehen",
+          "expected": [
+            "health"
+          ],
+          "icon": "health",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 663,
+            "outputTokens": 159
+          },
+          "seconds": 0.14254230000000007,
+          "correct": true
+        },
+        {
+          "id": "fitness-1",
+          "task": "Eine halbe Stunde joggen gehen",
+          "expected": [
+            "fitness"
+          ],
+          "icon": "fitness",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 663,
+            "outputTokens": 159
+          },
+          "seconds": 0.18789460000000055,
+          "correct": true
+        },
+        {
+          "id": "fitness-2",
+          "task": "Im Fitnessstudio trainieren",
+          "expected": [
+            "fitness"
+          ],
+          "icon": "fitness",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.18121609999999963,
+          "correct": true
+        },
+        {
+          "id": "fitness-3",
+          "task": "Die Dehnübungen machen",
+          "expected": [
+            "fitness"
+          ],
+          "icon": "fitness",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.15323309999999946,
+          "correct": true
+        },
+        {
+          "id": "home-1",
+          "task": "Die Küche aufräumen",
+          "expected": [
+            "home"
+          ],
+          "icon": "home",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.19251860000000035,
+          "correct": true
+        },
+        {
+          "id": "home-2",
+          "task": "Die Wäsche waschen",
+          "expected": [
+            "home"
+          ],
+          "icon": "home",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.18314440000000012,
+          "correct": true
+        },
+        {
+          "id": "home-3",
+          "task": "Den Boden im Wohnzimmer saugen",
+          "expected": [
+            "home"
+          ],
+          "icon": "home",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.1755671000000002,
+          "correct": true
+        },
+        {
+          "id": "shopping-1",
+          "task": "Milch und Brot einkaufen",
+          "expected": [
+            "shopping"
+          ],
+          "icon": "shopping",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 663,
+            "outputTokens": 159
+          },
+          "seconds": 0.1628792000000003,
+          "correct": true
+        },
+        {
+          "id": "shopping-2",
+          "task": "Im Supermarkt Obst kaufen",
+          "expected": [
+            "shopping"
+          ],
+          "icon": "shopping",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.17761300000000027,
+          "correct": true
+        },
+        {
+          "id": "shopping-3",
+          "task": "Eine neue Zahnbürste besorgen",
+          "expected": [
+            "shopping"
+          ],
+          "icon": "shopping",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.16599029999999948,
+          "correct": true
+        },
+        {
+          "id": "food-1",
+          "task": "Das Abendessen kochen",
+          "expected": [
+            "food"
+          ],
+          "icon": "food",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.15090270000000056,
+          "correct": true
+        },
+        {
+          "id": "food-2",
+          "task": "Eine Suppe zubereiten",
+          "expected": [
+            "food"
+          ],
+          "icon": "food",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.16853769999999985,
+          "correct": true
+        },
+        {
+          "id": "food-3",
+          "task": "Das Rezept für den Kuchen ausprobieren",
+          "expected": [
+            "food"
+          ],
+          "icon": "food",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.17091600000000018,
+          "correct": true
+        },
+        {
+          "id": "finance-1",
+          "task": "Die Stromrechnung bezahlen",
+          "expected": [
+            "finance"
+          ],
+          "icon": "finance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 663,
+            "outputTokens": 159
+          },
+          "seconds": 0.18195610000000034,
+          "correct": true
+        },
+        {
+          "id": "finance-2",
+          "task": "Die Kontoauszüge prüfen",
+          "expected": [
+            "finance"
+          ],
+          "icon": "finance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.18765709999999944,
+          "correct": true
+        },
+        {
+          "id": "finance-3",
+          "task": "Die monatlichen Ausgaben zusammenrechnen",
+          "expected": [
+            "finance"
+          ],
+          "icon": "finance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 668,
+            "outputTokens": 159
+          },
+          "seconds": 0.17962359999999988,
+          "correct": true
+        },
+        {
+          "id": "admin-1",
+          "task": "Den Antrag für den Reisepass ausfüllen",
+          "expected": [
+            "admin"
+          ],
+          "icon": "admin",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 668,
+            "outputTokens": 159
+          },
+          "seconds": 0.2200106999999998,
+          "correct": true
+        },
+        {
+          "id": "admin-2",
+          "task": "Die Versicherungsunterlagen abheften",
+          "expected": [
+            "admin"
+          ],
+          "icon": "admin",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 665,
+            "outputTokens": 159
+          },
+          "seconds": 0.155114700000001,
+          "correct": true
+        },
+        {
+          "id": "admin-3",
+          "task": "Das Formular für die Behörde abschicken",
+          "expected": [
+            "admin"
+          ],
+          "icon": "admin",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.15438540000000103,
+          "correct": true
+        },
+        {
+          "id": "call-1",
+          "task": "Anna anrufen",
+          "expected": [
+            "call"
+          ],
+          "icon": "call",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 659,
+            "outputTokens": 159
+          },
+          "seconds": 0.14539010000000052,
+          "correct": true
+        },
+        {
+          "id": "call-2",
+          "task": "Beim Kunden telefonisch nachfragen",
+          "expected": [
+            "call"
+          ],
+          "icon": "call",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 661,
+            "outputTokens": 159
+          },
+          "seconds": 0.17338329999999952,
+          "correct": true
+        },
+        {
+          "id": "call-3",
+          "task": "Den verpassten Anruf zurückrufen",
+          "expected": [
+            "call"
+          ],
+          "icon": "call",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.15974499999999897,
+          "correct": true
+        },
+        {
+          "id": "travel-1",
+          "task": "Die Zugfahrt nach Berlin buchen",
+          "expected": [
+            "travel"
+          ],
+          "icon": "travel",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.13298760000000037,
+          "correct": true
+        },
+        {
+          "id": "travel-2",
+          "task": "Den Koffer für die Reise packen",
+          "expected": [
+            "travel"
+          ],
+          "icon": "travel",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 665,
+            "outputTokens": 159
+          },
+          "seconds": 0.1411988999999994,
+          "correct": true
+        },
+        {
+          "id": "travel-3",
+          "task": "Die Route für den Urlaub planen",
+          "expected": [
+            "travel"
+          ],
+          "icon": "travel",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.149981600000001,
+          "correct": true
+        },
+        {
+          "id": "maintenance-1",
+          "task": "Den undichten Wasserhahn reparieren",
+          "expected": [
+            "maintenance"
+          ],
+          "icon": "maintenance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 666,
+            "outputTokens": 159
+          },
+          "seconds": 0.1775684000000001,
+          "correct": true
+        },
+        {
+          "id": "maintenance-2",
+          "task": "Das Fahrrad zur Wartung bringen",
+          "expected": [
+            "maintenance"
+          ],
+          "icon": "maintenance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.17291690000000018,
+          "correct": true
+        },
+        {
+          "id": "maintenance-3",
+          "task": "Die kaputte Lampe austauschen",
+          "expected": [
+            "maintenance"
+          ],
+          "icon": "maintenance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.14341269999999895,
+          "correct": true
+        },
+        {
+          "id": "personal-1",
+          "task": "Zeit mit der Familie verbringen",
+          "expected": [
+            "personal"
+          ],
+          "icon": "personal",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 661,
+            "outputTokens": 159
+          },
+          "seconds": 0.15096030000000063,
+          "correct": true
+        },
+        {
+          "id": "personal-2",
+          "task": "Meinen Bruder besuchen",
+          "expected": [
+            "personal"
+          ],
+          "icon": "personal",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 660,
+            "outputTokens": 159
+          },
+          "seconds": 0.1885023000000001,
+          "correct": true
+        },
+        {
+          "id": "personal-3",
+          "task": "Mit meiner Tochter spielen",
+          "expected": [
+            "personal"
+          ],
+          "icon": "personal",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 660,
+            "outputTokens": 159
+          },
+          "seconds": 0.19146600000000036,
+          "correct": true
+        },
+        {
+          "id": "other-1",
+          "task": "Irgendwas mit dem Ding machen",
+          "expected": [
+            "other"
+          ],
+          "icon": "other",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.14373970000000008,
+          "correct": true
+        },
+        {
+          "id": "other-2",
+          "task": "Das später noch klären",
+          "expected": [
+            "other"
+          ],
+          "icon": "checklist",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 161
+          },
+          "seconds": 0.18845579999999973,
+          "correct": false
+        },
+        {
+          "id": "other-3",
+          "task": "Blablabla xyz",
+          "expected": [
+            "other"
+          ],
+          "icon": "other",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 660,
+            "outputTokens": 159
+          },
+          "seconds": 0.15655400000000008,
+          "correct": true
+        },
+        {
+          "id": "ambiguous-1",
+          "task": "Die Arztrechnung bezahlen",
+          "expected": [
+            "finance",
+            "health"
+          ],
+          "ambiguous": true,
+          "icon": "finance",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 663,
+            "outputTokens": 159
+          },
+          "seconds": 0.16195589999999901,
+          "correct": true
+        },
+        {
+          "id": "ambiguous-2",
+          "task": "Mama anrufen",
+          "expected": [
+            "call",
+            "personal"
+          ],
+          "ambiguous": true,
+          "icon": "call",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 660,
+            "outputTokens": 159
+          },
+          "seconds": 0.1676884000000009,
+          "correct": true
+        },
+        {
+          "id": "ambiguous-3",
+          "task": "Einen Arzttermin in den Kalender eintragen",
+          "expected": [
+            "calendar",
+            "health"
+          ],
+          "ambiguous": true,
+          "icon": "calendar",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 668,
+            "outputTokens": 159
+          },
+          "seconds": 0.18883309999999984,
+          "correct": true
+        },
+        {
+          "id": "ambiguous-4",
+          "task": "Ersatzteile für das Fahrrad kaufen",
+          "expected": [
+            "shopping",
+            "maintenance"
+          ],
+          "ambiguous": true,
+          "icon": "shopping",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 664,
+            "outputTokens": 159
+          },
+          "seconds": 0.15602909999999975,
+          "correct": true
+        },
+        {
+          "id": "ambiguous-5",
+          "task": "Den Bericht für die Arbeit schreiben",
+          "expected": [
+            "work",
+            "creative"
+          ],
+          "ambiguous": true,
+          "icon": "work",
+          "metadata": {
+            "model": "jev-1.14.0",
+            "inputTokens": 662,
+            "outputTokens": 159
+          },
+          "seconds": 0.15185980000000018,
+          "correct": true
+        }
+      ],
+      "clearCorrect": 56,
+      "clearAttempted": 60,
+      "ambiguousCorrect": 5,
+      "ambiguousAttempted": 5,
+      "errors": 0,
+      "plannedCases": 65,
+      "inputTokens": 43154,
+      "outputTokens": 10339,
+      "medianSeconds": 0.15689110000000028,
+      "p95Seconds": 0.21518610000000002
+    }
+  }
+}

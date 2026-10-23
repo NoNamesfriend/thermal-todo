@@ -9,12 +9,14 @@
     "release:patch": "npm version patch",
     "release:minor": "npm version minor",
     "release:major": "npm version major",
-    "build-image": "node ./scripts/build-image.js"
+    "build": "npm run build --prefix frontend",
+    "test": "npm test --prefix service",
+    "build-image": "docker build -t thermal-todo:latest ."
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
   },
-  "dependencies": {
-    "envalid": "^8.1.1"
+  "engines": {
+    "node": ">=24.22.1 <25"
   }
 }

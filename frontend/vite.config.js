@@ -17,22 +17,22 @@ export default defineConfig({
     proxy: {
       '/config': {
         target: 'http://localhost:3000',
-        changeOrigin: true,
+        changeOrigin: false,
         secure: false,
       },
       '/whisper': {
         target: 'http://localhost:3000',
-        changeOrigin: true,
+        changeOrigin: false,
         secure: false,
       },
       '/print': {
         target: 'http://localhost:3000',
-        changeOrigin: true,
+        changeOrigin: false,
         secure: false,
       },
       '/icon-suggest': {
         target: 'http://localhost:3000',
-        changeOrigin: true,
+        changeOrigin: false,
         secure: false,
       },
     },

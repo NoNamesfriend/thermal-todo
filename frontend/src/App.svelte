@@ -1,280 +1,229 @@
 <script>
-  import TaskItem from "./lib/TaskItem.svelte";
-  import PrintButton from "./lib/PrintButton.svelte";
-  import Toast from "./lib/Toast.svelte";
-  import { apiBase, showToast } from "./lib/stores.js";
-  import Icon from "@iconify/svelte";
-  import { onMount, tick } from "svelte";
-  import { t, locale, setLocale } from "./lib/i18n.js";
+  import TaskItem from './lib/TaskItem.svelte';
+  import PrintButton from './lib/PrintButton.svelte';
+  import Toast from './lib/Toast.svelte';
+  import FluentIcon from './lib/FluentIcon.svelte';
+  import SettingsDialog from './lib/SettingsDialog.svelte';
+  import { showToast } from './lib/stores.js';
+  import { onMount, onDestroy, tick } from 'svelte';
+  import { t, locale } from './lib/i18n.js';
 
-  // Use relative API paths so the dev server proxy (or same-origin backend) can handle requests
-  // In development Vite will proxy `/config`, `/whisper`, etc. to the backend.
-  const API_BASE = "";
-  // initialize global store value
-  apiBase.set(API_BASE);
-
-  let aiEnabled = false;
+  let icons = { mini: false, luna: false, jev: false, none: true, defaultProvider: 'none' };
+  let iconProvider = 'none';
+  const iconPreferenceKey = 'thermal-todo.icon-provider';
+  $: iconEnabled = iconProvider !== 'none' && !!icons[iconProvider];
+  let configLoading = true;
+  let taskText = '';
+  let textareaEl;
+  let state = 'idle';
+  let mediaRecorder;
+  let stream;
+  let stopTimeout;
+  let wantsRecording = false;
+  let destroyed = false;
+  let iconLoading = false;
+  let recordingSupported = false;
+  let speech = { local: false, openai: false, defaultProvider: null };
+  let speechProvider = null;
+  let settingsDialog;
+  const preferenceKey = 'thermal-todo.speech-provider';
+  $: speechEnabled = !!speech[speechProvider];
+  const configController = new AbortController();
+  let transcriptionController;
 
   onMount(async () => {
+    recordingSupported = !!navigator.mediaDevices?.getUserMedia && typeof MediaRecorder !== 'undefined';
+    const timeout = setTimeout(() => configController.abort(), 10_000);
     try {
-      const res = await fetch(`${API_BASE}/config`);
-      if (res.ok) {
-        const data = await res.json();
-        aiEnabled = !!data.ai;
-        if (data && data.labelWidthMm) {
-          // set CSS variables: mm for print, px for screen
-          const mm = Number(data.labelWidthMm) || 80;
-          const pxPerMm = 96 / 25.4; // CSS reference pixel per mm
-          const px = Math.round(mm * pxPerMm * 100) / 100; // two decimals
-          document.documentElement.style.setProperty("--label-width-mm", `${mm}mm`);
-          document.documentElement.style.setProperty("--label-width-px", `${px}px`);
-        }
-      } else {
-        console.warn("Could not fetch config from service");
+      const res = await fetch('/config', { signal: configController.signal });
+      if (!res.ok) throw new Error('Config unavailable');
+      const data = await res.json();
+      icons = data.icons || icons;
+      let savedIcon;
+      try { savedIcon = localStorage.getItem(iconPreferenceKey); } catch {}
+      iconProvider = ['mini', 'luna', 'jev', 'none'].includes(savedIcon) ? savedIcon : icons.defaultProvider;
+      speech = data.speech || speech;
+      let saved;
+      try { saved = localStorage.getItem(preferenceKey); } catch {}
+      // Preserve an explicit choice even if unavailable; never silently switch to cloud.
+      speechProvider = ['local', 'openai'].includes(saved) ? saved : speech.defaultProvider;
+      if (Number.isFinite(data.labelWidthMm) && data.labelWidthMm > 0) {
+        document.documentElement.style.setProperty('--label-width-mm', `${data.labelWidthMm}mm`);
+        document.documentElement.style.setProperty('--label-width-px', `${data.labelWidthMm * 96 / 25.4}px`);
       }
-    } catch (e) {
-      console.warn("Config fetch failed", e);
+    } catch (error) {
+      if (!destroyed) showToast('error', $t('config_failed'));
+    } finally {
+      clearTimeout(timeout);
+      configLoading = false;
+      resizeTextarea();
     }
-    // ensure textarea height is correct after initial config/load
-    setTimeout(resizeTextarea, 0);
   });
 
-  let taskText = "";
-
-  let textareaEl;
+  function saveSettings(event) {
+    speechProvider = event.detail.provider;
+    iconProvider = event.detail.iconProvider;
+    try {
+      localStorage.setItem(preferenceKey, speechProvider);
+      localStorage.setItem(iconPreferenceKey, iconProvider);
+    }
+    catch { showToast('error', $t('settings_not_persisted')); }
+  }
 
   function resizeTextarea() {
     if (!textareaEl) return;
-    try {
-      textareaEl.style.height = "auto";
-      textareaEl.style.height = textareaEl.scrollHeight + "px";
-    } catch (e) {}
+    textareaEl.style.height = 'auto';
+    textareaEl.style.height = `${textareaEl.scrollHeight}px`;
   }
-
-  let recording = false;
-  let mediaRecorder;
-  let chunks = [];
-  let stopTimeout;
-  let recordStart = 0;
-  const MAX_RECORD_MS = 10_000;
+  function releaseMicrophone() {
+    clearTimeout(stopTimeout);
+    stream?.getTracks().forEach(track => track.stop());
+    stream = undefined;
+  }
+  onDestroy(() => {
+    destroyed = true;
+    wantsRecording = false;
+    configController.abort();
+    transcriptionController?.abort();
+    if (mediaRecorder?.state === 'recording') mediaRecorder.stop();
+    releaseMicrophone();
+  });
 
   async function startRecording() {
-    if (recording) return;
-    chunks = [];
+    if (state !== 'idle' || !recordingSupported || !speechEnabled) return;
+    wantsRecording = true;
+    state = 'requesting';
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      console.log("got stream", stream);
-      // expose for debugging in console
-      window["__stream"] = stream;
-
-      // prefer opus/webm when available
-      let options;
-      try {
-        if (MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported("audio/webm;codecs=opus")) {
-          options = { mimeType: "audio/webm;codecs=opus" };
-        } else if (MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported("audio/webm")) {
-          options = { mimeType: "audio/webm" };
-        }
-      } catch (e) {
-        console.warn("mime check failed", e);
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      if (!wantsRecording || destroyed) {
+        releaseMicrophone();
+        state = 'idle';
+        return;
       }
-
-      mediaRecorder = options ? new MediaRecorder(stream, options) : new MediaRecorder(stream);
-      window["__mediaRecorder"] = mediaRecorder;
-
-      mediaRecorder.ondataavailable = (e) => {
-        console.log("dataavailable", e.data && e.data.size);
-        if (e.data && e.data.size) chunks.push(e.data);
+      const mimeType = ['audio/webm;codecs=opus', 'audio/webm', 'audio/mp4'].find(type => MediaRecorder.isTypeSupported(type));
+      const recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+      mediaRecorder = recorder;
+      const chunks = [];
+      let failed = false;
+      const started = Date.now();
+      recorder.ondataavailable = event => {
+        if (event.data.size) chunks.push(event.data);
       };
-
-      mediaRecorder.onstart = () => console.log("recorder start", mediaRecorder.state);
-      mediaRecorder.onpause = () => console.log("recorder pause");
-      mediaRecorder.onresume = () => console.log("recorder resume");
-      mediaRecorder.onerror = (e) => console.error("recorder error", e);
-
-      mediaRecorder.onstop = async () => {
-        console.log("recorder stop", chunks.length);
-        clearTimeout(stopTimeout);
-        const durationMs = Date.now() - recordStart;
-        if (durationMs < 1000) {
-          console.warn("Recording too short (", durationMs, "ms). Ignoring.");
-          showToast("error", $t("recording_too_short"));
-          // cleanup tracks
-          try {
-            stream.getTracks().forEach((t) => t.stop());
-          } catch (e) {
-            console.warn("stopping tracks failed", e);
-          }
-          chunks = [];
-          recording = false;
+      recorder.onerror = () => {
+        failed = true;
+        wantsRecording = false;
+        releaseMicrophone();
+        state = 'idle';
+        showToast('error', $t('microphone_access_failed'));
+      };
+      recorder.onstop = async () => {
+        releaseMicrophone();
+        if (destroyed || failed) return;
+        if (Date.now() - started < 1000 || !chunks.length) {
+          state = 'idle';
+          showToast('error', $t('recording_too_short'));
           return;
         }
-        const blob = new Blob(chunks, { type: "audio/webm" });
+        state = 'transcribing';
+        transcriptionController = new AbortController();
+        const blob = new Blob(chunks, { type: recorder.mimeType || mimeType || 'audio/webm' });
         const form = new FormData();
-        form.append("audio", blob, "task.webm");
-
+        form.append('audio', blob, blob.type.includes('mp4') ? 'task.mp4' : 'task.webm');
+        const timeout = setTimeout(() => transcriptionController.abort(), 60_000);
         try {
-          const res = await fetch(`${API_BASE}/whisper`, {
-            method: "POST",
-            body: form,
-          });
-
+          const res = await fetch(`/whisper?provider=${speechProvider}`, { method: 'POST', body: form, signal: transcriptionController.signal });
           if (!res.ok) {
-            const txt = await res.text();
-            console.error("Whisper response error", res.status, txt);
-            showToast("error", $t("audio_no_speech"));
+            const message = { 400: 'audio_no_speech', 429: 'speech_busy', 503: 'speech_unavailable', 504: 'speech_timeout' }[res.status] || 'transcription_failed';
+            showToast('error', $t(message));
           } else {
             const data = await res.json();
-            taskText = data.text || "";
-            // wait for DOM update then resize textarea so long transcriptions expand properly
-            await tick();
-            resizeTextarea();
+            if (data.text?.trim()) {
+              taskText = data.text.slice(0, 4000);
+              await tick();
+              resizeTextarea();
+            } else showToast('error', $t('audio_no_speech'));
           }
-        } catch (err) {
-          console.error("Error sending to Whisper:", err);
-          showToast("error", $t("transcription_failed"));
+        } catch (error) {
+          if (!destroyed) showToast('error', $t('transcription_failed'));
+        } finally {
+          clearTimeout(timeout);
+          state = 'idle';
         }
-
-        // cleanup tracks
-        try {
-          stream.getTracks().forEach((t) => t.stop());
-        } catch (e) {
-          console.warn("stopping tracks failed", e);
-        }
-        // reset chunks
-        chunks = [];
       };
-
-      // record start timestamp, then call start with timeslice so ondataavailable fires periodically
-      recordStart = Date.now();
-      mediaRecorder.start(1000);
-      recording = true;
-
-      // safety timeout: auto-stop after MAX_RECORD_MS
-      stopTimeout = setTimeout(() => {
-        if (mediaRecorder && mediaRecorder.state === "recording") {
-          console.warn("Auto-stopping recording after", MAX_RECORD_MS, "ms");
-          try {
-            mediaRecorder.stop();
-          } catch (e) {
-            console.error("auto stop failed", e);
-          }
-          recording = false;
-        }
-      }, MAX_RECORD_MS);
-    } catch (err) {
-      console.error("Microphone access failed:", err);
-      showToast("error", $t("microphone_access_failed"));
+      recorder.start(1000);
+      state = 'recording';
+      stopTimeout = setTimeout(stopRecording, 10_000);
+    } catch (error) {
+      releaseMicrophone();
+      state = 'idle';
+      wantsRecording = false;
+      if (!destroyed) showToast('error', $t('microphone_access_failed'));
     }
   }
-
   function stopRecording() {
-    if (!recording) return;
-    try {
-      if (mediaRecorder && mediaRecorder.state === "recording") {
-        mediaRecorder.stop();
-      } else {
-        console.warn("stopRecording called but recorder state is", mediaRecorder && mediaRecorder.state);
-      }
-    } catch (err) {
-      console.error("Error stopping recorder:", err);
-    }
-    // ensure tracks are stopped and timeout cleared
-    try {
-      if (window["__stream"]) window["__stream"].getTracks().forEach((t) => t.stop());
-    } catch (e) {}
+    wantsRecording = false;
     clearTimeout(stopTimeout);
-    recording = false;
+    if (mediaRecorder?.state === 'recording') mediaRecorder.stop();
   }
-
-  function handleKeyDownToggle(e) {
-    if (e.key === " " || e.key === "Enter") {
-      e.preventDefault();
-      if (recording) stopRecording();
-      else startRecording();
-    }
+  function pointerStart(event) {
+    if (event.button !== 0 || state !== 'idle') return;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    startRecording();
+  }
+  function keyboardClick(event) {
+    if (event.detail !== 0) return;
+    if (state === 'recording' || state === 'requesting') stopRecording();
+    else startRecording();
   }
 </script>
 
-<img src="/logo_dark.svg" alt="Thermal ToDo" class="logo" />
-
-<div class="input-container">
-  <!-- <input type="text" bind:value={taskText} placeholder="Aufgabe eingeben..." /> -->
-  <label for="task-input" class="sr-only">{$t("task_label")}</label>
-  <textarea
-    id="task-input"
-    bind:this={textareaEl}
-    bind:value={taskText}
-    placeholder={$t("placeholder")}
-    rows="1"
-    on:input={resizeTextarea}
-    class="autosize-textarea"
-    aria-label={$t("task_label")}
-  ></textarea>
-  {#if aiEnabled}
-    {#if recording}
-      <button
-        class="mic-btn stop"
-        on:pointerdown|preventDefault={startRecording}
-        on:pointerup={stopRecording}
-        on:pointercancel={stopRecording}
-        on:pointerleave={stopRecording}
-        on:touchstart|preventDefault={startRecording}
-        on:touchend={stopRecording}
-        on:mousedown|preventDefault={startRecording}
-        on:mouseup={stopRecording}
-        on:keydown={handleKeyDownToggle}
-        aria-pressed="true"
-        aria-label={$t("mic_stop")}
-      >
-        <Icon icon="fluent:mic-24-regular" />
-      </button>
-    {:else}
-      <button
-        class="mic-btn"
-        on:pointerdown|preventDefault={startRecording}
-        on:pointerup={stopRecording}
-        on:pointercancel={stopRecording}
-        on:pointerleave={stopRecording}
-        on:touchstart|preventDefault={startRecording}
-        on:touchend={stopRecording}
-        on:mousedown|preventDefault={startRecording}
-        on:mouseup={stopRecording}
-        on:keydown={handleKeyDownToggle}
-        aria-pressed="false"
-        aria-label={$t("mic_start")}
-      >
-        <Icon icon="fluent:mic-24-regular" />
-      </button>
-    {/if}
-  {:else}
-    <!-- AI disabled: hide mic button -->
-  {/if}
-</div>
-
-<div class="receipt-wrapper">
-  <div class="paper" id="print-area">
-    <!-- <div class="header">HEUTE</div> -->
-    <div class="subheader">{new Date().toLocaleDateString()}</div>
-
-    <div class="separator"></div>
-
-    {#if aiEnabled}
-      <TaskItem task={taskText} />
-    {:else}
-      <div class="task-text" aria-label={$t("task_label")}>{taskText}</div>
-    {/if}
-
-    <div class="separator"></div>
-
-    <div class="footer">{$t("footer")}</div>
+<main aria-label="Thermal ToDo">
+  <div class="app-header">
+    <img src="/logo_dark.svg" alt="Thermal ToDo" class="logo" width="1729" height="262" />
+    <button class="settings-trigger" type="button" on:click={() => settingsDialog.open()}
+      disabled={configLoading || state !== 'idle'} aria-label={$t('settings')} title={$t('settings')}>
+      <FluentIcon name="settings" />
+    </button>
   </div>
-</div>
-
-<PrintButton />
-
-<!-- Icon gallery for quick inspection (component) -->
-<!-- <IconGallery /> -->
-
-<!-- Toast notifications (global) -->
+  <div class="composer">
+    <label for="task-input">{$t('task_label')}</label>
+    <div class="input-container">
+      <textarea id="task-input" bind:this={textareaEl} bind:value={taskText}
+        placeholder={$t('placeholder')} rows="2" maxlength="4000"
+        on:input={resizeTextarea} disabled={state !== 'idle'} aria-describedby="input-status"></textarea>
+      {#if speechEnabled}
+        <button class="mic-btn" class:stop={state === 'recording'}
+          on:pointerdown={pointerStart} on:pointerup={stopRecording} on:pointercancel={stopRecording}
+          on:click={keyboardClick} disabled={!recordingSupported || state === 'transcribing'}
+          aria-pressed={state === 'recording'}
+          aria-label={$t(state === 'recording' ? 'mic_stop' : 'mic_start')}>
+          <FluentIcon name={state === 'recording' ? 'stop' : 'mic'} />
+        </button>
+      {/if}
+    </div>
+    <p id="input-status" class="input-status" role="status">
+      {#if configLoading}{$t('config_loading')}
+      {:else if state === 'requesting'}{$t('mic_permission')}
+      {:else if state === 'recording'}{$t('recording_active')}
+      {:else if state === 'transcribing'}{$t('transcribing')}
+      {:else if speechEnabled}{$t(recordingSupported ? 'mic_hint' : 'mic_unavailable')}
+      {:else if speechProvider}{$t('speech_unavailable')}
+      {/if}
+    </p>
+  </div>
+  <div class="receipt-wrapper" aria-label={$t('preview_label')}>
+    <div class="paper" id="print-area">
+      <div class="subheader">{new Date().toLocaleDateString($locale)}</div>
+      <div class="separator"></div>
+      {#if taskText.trim()}
+        {#if iconEnabled}<TaskItem task={taskText} provider={iconProvider} bind:loading={iconLoading} />
+        {:else}<div class="task-text">{taskText}</div>{/if}
+      {:else}<div class="empty-preview">{$t('preview_empty')}</div>{/if}
+      <div class="separator"></div>
+      <div class="footer">{$t('footer')}</div>
+    </div>
+  </div>
+  <PrintButton disabled={!taskText.trim() || configLoading || state !== 'idle' || iconLoading} />
+</main>
+<SettingsDialog bind:this={settingsDialog} {speech} provider={speechProvider} {icons} {iconProvider} on:save={saveSettings} />
 <Toast />

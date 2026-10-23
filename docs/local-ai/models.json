@@ -1,0 +1,31 @@
+{
+  "julia": {
+    "repository": "SupersonicLabs/Julia-1",
+    "revision": "a85b127321d580d65176c89ced8273f305745d85",
+    "weights_sha256": "df853bf7fe424420011f3d0c47a05d7341aa9eefa7fb9f203ea4aada4ad95b72"
+  },
+  "whisper": {
+    "repository": "ggerganov/whisper.cpp",
+    "revision": "5359861c739e955e79d9a303bcbc70fb988958b1",
+    "image": "ghcr.io/ggml-org/whisper.cpp@sha256:7a4e5f481192899f6c3853ff181ea6347b219ca2f388e1d84870b84ad80f6b7f",
+    "files": {
+      "ggml-base-q5_1.bin": {
+        "bytes": 59707625,
+        "sha256": "422f1ae452ade6f30a004d7e5c6a43195e4433bc370bf23fac9cc591f01a8898"
+      },
+      "ggml-base.bin": {
+        "bytes": 147951465,
+        "sha256": "60ed5bc3dd14eea856493d334349b405782ddcaf0028d4b5df4088345fba2efe"
+      },
+      "ggml-small-q5_1.bin": {
+        "bytes": 190085487,
+        "sha256": "ae85e4a935d7a567bd102fe55afc16bb595bdb618e11b2fc7591bc08120411bb"
+      },
+      "ggml-tiny.bin": {
+        "bytes": 77691713,
+        "sha256": "be07e048e1e599ad46341c8d2a135645097a538221678b7acdd1b1919c6e1b21"
+      }
+    },
+    "source_revision": "231638a0717b7822784297e5980965ffcec05810"
+  }
+}

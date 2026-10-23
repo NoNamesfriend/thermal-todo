@@ -1,0 +1,32 @@
+[
+  {
+    "id": "human-1",
+    "text": "die höhle befindet sich auf der spitze eines der berge nördlich von mekka und ist vom rest der welt völlig isoliert",
+    "raw_text": "Die Höhle befindet sich auf der Spitze eines der Berge nördlich von Mekka und ist vom Rest der Welt völlig isoliert.",
+    "source": "google/fleurs, de_de, test, CC-BY-4.0",
+    "source_url": "https://huggingface.co/datasets/google/fleurs/resolve/refs%2Fconvert%2Fparquet/de_de/test/0000.parquet",
+    "source_id": 1739,
+    "seconds": 9.9,
+    "sha256": "8859c90aaeeb54915cc3a7d0010aba564f996f1bc6f393f184a06825d0940090"
+  },
+  {
+    "id": "human-2",
+    "text": "dieses sediment war nötig um sandbänke und strände zu bilden die als lebensräume für wildtiere dienten",
+    "raw_text": "Dieses Sediment war nötig, um Sandbänke und Strände zu bilden, die als Lebensräume für Wildtiere dienten.",
+    "source": "google/fleurs, de_de, test, CC-BY-4.0",
+    "source_url": "https://huggingface.co/datasets/google/fleurs/resolve/refs%2Fconvert%2Fparquet/de_de/test/0000.parquet",
+    "source_id": 1796,
+    "seconds": 8.4,
+    "sha256": "4dba8160f102695aa4f5b5407241037e9d91bb6febd1854e7cda499e953abb7a"
+  },
+  {
+    "id": "human-3",
+    "text": "jeder nimmt an der gesellschaft teil und benutzt transportsysteme. fast jeder beklagt sich über die transportsysteme.x",
+    "raw_text": "Jeder nimmt an der Gesellschaft teil und benutzt Transportsysteme. Fast jeder beklagt sich über die Transportsysteme.x",
+    "source": "google/fleurs, de_de, test, CC-BY-4.0",
+    "source_url": "https://huggingface.co/datasets/google/fleurs/resolve/refs%2Fconvert%2Fparquet/de_de/test/0000.parquet",
+    "source_id": 1797,
+    "seconds": 7.14,
+    "sha256": "bd32736573baee445faef9d586796c76adfc105dde0c666120e778f5b4ff5838"
+  }
+]

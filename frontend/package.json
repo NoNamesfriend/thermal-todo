@@ -16,8 +16,9 @@
   },
   "dependencies": {
     "@fluentui/svg-icons": "^1.1.316",
-    "@iconify/svelte": "^5.2.1",
-    "html2canvas": "^1.4.1",
-    "thermal-todo": "file:.."
+    "html2canvas": "^1.4.1"
+  },
+  "engines": {
+    "node": ">=24.22.1 <25"
   }
 }

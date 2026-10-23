@@ -1,0 +1,49 @@
+[
+  {
+    "id": "phrase-1",
+    "text": "Milch und Brot einkaufen.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-2",
+    "text": "Morgen die Stromrechnung bezahlen.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-3",
+    "text": "Anna wegen der Besprechung zurückrufen.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-4",
+    "text": "Den kaputten Wasserhahn in der Küche reparieren.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-5",
+    "text": "Morgen um fünfzehn Uhr den Kontrolltermin beim Zahnarzt vereinbaren.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-6",
+    "text": "Die Versicherungsunterlagen sortieren und den ausgefüllten Antrag an die Behörde schicken.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-7",
+    "text": "Für das nächste Wochenende die Zugfahrt nach Berlin buchen und den Koffer packen.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-8",
+    "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+    "source": "synthetic: Microsoft Hedda Desktop, German"
+  },
+  {
+    "id": "phrase-9",
+    "text": "Am Donnerstag nach der Arbeit im Supermarkt Milch, Brot, Äpfel und eine Zahnbürste kaufen.",
+    "source": "synthetic: Microsoft Hedda Desktop, German",
+    "rate": -3,
+    "seconds": 9.995873
+  }
+]

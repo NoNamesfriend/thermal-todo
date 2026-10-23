@@ -1,0 +1,2400 @@
+{
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "python": "3.12.15 (main, Oct 21 2026, 01:08:07) [GCC 12.2.0]",
+  "cpu": "",
+  "threads": 2,
+  "torch": "2.14.1+cpu",
+  "transformers": "5.0.0",
+  "model_weights_sha256": "df853bf7fe424420011f3d0c47a05d7341aa9eefa7fb9f203ea4aada4ad95b72",
+  "protocol": "Hand-authored synthetic German tasks; incumbent category descriptions; no tuning on results.",
+  "load_seconds_including_imports": 153.21588402999998,
+  "first_inference_seconds": 44.45723614999997,
+  "cold_to_first_result_seconds": 197.67312017999996,
+  "first_prediction": {
+    "type": "choice",
+    "probabilities": {
+      "mail": 0.017499295349722496,
+      "calendar": 0.0015226780297520571,
+      "checklist": 0.028279813201817793,
+      "priority": 0.016746544472983443,
+      "work": 0.8212412924960171,
+      "code": 0.0006207604335414321,
+      "study": 4.323020364723966e-05,
+      "creative": 0.011425881275976397,
+      "health": 0.0009940818444494116,
+      "fitness": 2.7100334677817474e-05,
+      "home": 0.01304783270830477,
+      "shopping": 0.012979041020754036,
+      "food": 0.0002045122757876785,
+      "finance": 0.019699013908697424,
+      "admin": 0.05389818038258796,
+      "call": 0.0013364228849806609,
+      "travel": 0.00010345267023158782,
+      "maintenance": 8.022323166024826e-05,
+      "personal": 0.00021784548721813719,
+      "other": 3.279778719240674e-05
+    },
+    "choice": "work",
+    "max_probability": 0.8212412924960171
+  },
+  "warm_median_seconds": 2.067711147999944,
+  "warm_p95_seconds": 3.099857537000048,
+  "warm_max_seconds": 4.723015050000072,
+  "rss_after_requests_bytes": 1059565568,
+  "sampled_peak_rss_bytes": 1059565568,
+  "idle_cpu_seconds_over_3_seconds": 0.04000000000000625,
+  "clear_correct": 33,
+  "clear_total": 60,
+  "results": [
+    {
+      "id": "mail-1",
+      "task": "Die E-Mail von Anna beantworten",
+      "expected": [
+        "mail"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.9996224802472328,
+          "calendar": 3.759300471519573e-07,
+          "checklist": 7.385176699134906e-07,
+          "priority": 1.9742320120921963e-06,
+          "work": 2.876608963851257e-05,
+          "code": 1.0083173772202368e-07,
+          "study": 1.8625226605179956e-08,
+          "creative": 2.5110707999291208e-05,
+          "health": 1.5750933634153677e-07,
+          "fitness": 1.4692626331246719e-08,
+          "home": 1.9724046843837445e-06,
+          "shopping": 1.3104783537603192e-08,
+          "food": 1.2797574031197044e-08,
+          "finance": 8.499621098931475e-05,
+          "admin": 0.00013304099277312552,
+          "call": 0.00010003832673903518,
+          "travel": 4.314031555869017e-08,
+          "maintenance": 2.2645065386939496e-08,
+          "personal": 8.710179640784133e-08,
+          "other": 3.5891752420092166e-08
+        },
+        "choice": "mail",
+        "max_probability": 0.9996224802472328
+      },
+      "seconds": 0.4622334350000301,
+      "correct": true
+    },
+    {
+      "id": "mail-2",
+      "task": "Dem Kunden eine Nachricht schreiben",
+      "expected": [
+        "mail"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.9945600920242119,
+          "calendar": 7.596905478243611e-07,
+          "checklist": 1.9312996662811966e-06,
+          "priority": 8.216119650982435e-05,
+          "work": 2.0518503438985804e-05,
+          "code": 8.539459379381527e-07,
+          "study": 7.949163591831092e-08,
+          "creative": 0.004942033734372421,
+          "health": 2.2744662983892183e-07,
+          "fitness": 3.648208358133438e-08,
+          "home": 8.39041151467297e-06,
+          "shopping": 3.95822371379006e-08,
+          "food": 3.0705675512599137e-08,
+          "finance": 0.00014068428267818085,
+          "admin": 0.00019548092683152927,
+          "call": 4.616314531132346e-05,
+          "travel": 8.628858883741699e-08,
+          "maintenance": 9.229822052358263e-08,
+          "personal": 2.974905816656305e-07,
+          "other": 4.10533259502882e-08
+        },
+        "choice": "mail",
+        "max_probability": 0.9945600920242119
+      },
+      "seconds": 2.292251087000068,
+      "correct": true
+    },
+    {
+      "id": "mail-3",
+      "task": "Den Posteingang durchsehen",
+      "expected": [
+        "mail"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.9996612041079559,
+          "calendar": 2.106058511727722e-06,
+          "checklist": 1.7163611141589461e-06,
+          "priority": 4.3900749216457005e-05,
+          "work": 0.000152520357495595,
+          "code": 3.79932735541372e-07,
+          "study": 9.808770720217891e-08,
+          "creative": 1.020761419524868e-05,
+          "health": 1.9430277783314214e-07,
+          "fitness": 2.7645386254246476e-08,
+          "home": 2.284775352113118e-06,
+          "shopping": 2.386606523073757e-08,
+          "food": 2.1855081244626565e-08,
+          "finance": 9.063709335146787e-06,
+          "admin": 0.00011336451793668555,
+          "call": 2.469441871439466e-06,
+          "travel": 9.115285716498508e-08,
+          "maintenance": 1.5508788134771683e-07,
+          "personal": 1.0556515559210705e-07,
+          "other": 6.481136816727519e-08
+        },
+        "choice": "mail",
+        "max_probability": 0.9996612041079559
+      },
+      "seconds": 2.477357649000055,
+      "correct": true
+    },
+    {
+      "id": "calendar-1",
+      "task": "Einen Termin für die Besprechung vereinbaren",
+      "expected": [
+        "calendar"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0020860254551123155,
+          "calendar": 0.9659168015391527,
+          "checklist": 0.0024084320665001993,
+          "priority": 0.008142782247576492,
+          "work": 0.015382860104461962,
+          "code": 4.686455552800166e-05,
+          "study": 1.879156251613522e-06,
+          "creative": 0.0004335007084205319,
+          "health": 1.1838355026199514e-05,
+          "fitness": 1.2739015037518898e-06,
+          "home": 0.00036419434878323247,
+          "shopping": 1.5608688481549467e-06,
+          "food": 1.2119965773167878e-06,
+          "finance": 0.0010590319522042247,
+          "admin": 0.0030571546862074106,
+          "call": 0.0010313307992237267,
+          "travel": 2.290700507083017e-05,
+          "maintenance": 6.293469845733182e-06,
+          "personal": 2.1248545746461633e-05,
+          "other": 2.8082379592017796e-06
+        },
+        "choice": "calendar",
+        "max_probability": 0.9659168015391527
+      },
+      "seconds": 3.2521428119999882,
+      "correct": true
+    },
+    {
+      "id": "calendar-2",
+      "task": "Das Treffen am Donnerstag in den Kalender eintragen",
+      "expected": [
+        "calendar"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0006950978437713154,
+          "calendar": 0.9864154873119854,
+          "checklist": 0.0006849337817212756,
+          "priority": 0.005944920138222021,
+          "work": 0.0016339459285320906,
+          "code": 5.5834012697715723e-05,
+          "study": 2.123623393061005e-06,
+          "creative": 0.00023688190812546896,
+          "health": 1.5198890288709717e-05,
+          "fitness": 2.0842853501539467e-06,
+          "home": 0.0002479302288563225,
+          "shopping": 1.651880801418021e-06,
+          "food": 1.8749205445908343e-06,
+          "finance": 0.0005379963779237453,
+          "admin": 0.0025057462783174746,
+          "call": 0.000992839933446927,
+          "travel": 7.084248784091717e-06,
+          "maintenance": 2.886169936731541e-06,
+          "personal": 1.3079104128891168e-05,
+          "other": 2.4031331727525413e-06
+        },
+        "choice": "calendar",
+        "max_probability": 0.9864154873119854
+      },
+      "seconds": 2.1930088020000085,
+      "correct": true
+    },
+    {
+      "id": "calendar-3",
+      "task": "Die nächste Teamsitzung planen",
+      "expected": [
+        "calendar"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 2.7194580369357784e-05,
+          "calendar": 0.8344236587509478,
+          "checklist": 0.0009579771292551956,
+          "priority": 0.04635438889201193,
+          "work": 0.007225913865363208,
+          "code": 0.09854175143133558,
+          "study": 3.5055666581660755e-06,
+          "creative": 0.00037440384580666997,
+          "health": 5.977318520589554e-06,
+          "fitness": 1.3990508718977726e-06,
+          "home": 2.9860610908607568e-05,
+          "shopping": 1.0488134558842514e-06,
+          "food": 1.4984567132889942e-06,
+          "finance": 0.0001778078950206096,
+          "admin": 0.011200529902585559,
+          "call": 0.0006569798455387467,
+          "travel": 3.844846407589307e-06,
+          "maintenance": 2.4674317299434385e-06,
+          "personal": 8.302429206149367e-06,
+          "other": 1.489337293215536e-06
+        },
+        "choice": "calendar",
+        "max_probability": 0.8344236587509478
+      },
+      "seconds": 2.4222569449999583,
+      "correct": true
+    },
+    {
+      "id": "checklist-1",
+      "task": "Die Aufgabenliste für morgen ordnen",
+      "expected": [
+        "checklist"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 5.402792570808758e-08,
+          "calendar": 6.125883802417586e-06,
+          "checklist": 0.9975328989544819,
+          "priority": 0.0021356011653706707,
+          "work": 0.00015855130296157195,
+          "code": 2.3147941876706688e-07,
+          "study": 1.551640170844805e-08,
+          "creative": 2.042290358344745e-06,
+          "health": 1.4030881363895284e-07,
+          "fitness": 1.2593613617936155e-08,
+          "home": 1.2681419464916184e-06,
+          "shopping": 1.0147519862612864e-08,
+          "food": 1.3282505214711116e-08,
+          "finance": 4.851489357249203e-07,
+          "admin": 0.00016229697916563557,
+          "call": 1.4571550585572897e-07,
+          "travel": 2.4292588357145962e-08,
+          "maintenance": 2.2645730415048447e-08,
+          "personal": 4.36654852379257e-08,
+          "other": 1.6457468705685373e-08
+        },
+        "choice": "checklist",
+        "max_probability": 0.9975328989544819
+      },
+      "seconds": 0.47424943199996505,
+      "correct": true
+    },
+    {
+      "id": "checklist-2",
+      "task": "Den Tagesablauf organisieren",
+      "expected": [
+        "checklist"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00035548398102229495,
+          "calendar": 0.8743807342180047,
+          "checklist": 0.10254609670588084,
+          "priority": 0.002187638327567572,
+          "work": 0.0011833876058947649,
+          "code": 0.0003109917752175031,
+          "study": 3.4331474361949628e-06,
+          "creative": 0.0004112907266940499,
+          "health": 2.3339279792008814e-05,
+          "fitness": 2.2837740823759673e-06,
+          "home": 0.0004039209297839597,
+          "shopping": 2.079257188891889e-06,
+          "food": 2.637592634999922e-06,
+          "finance": 0.0006075002867458248,
+          "admin": 0.017412499454255843,
+          "call": 0.00011674059310780367,
+          "travel": 1.2972661015723973e-05,
+          "maintenance": 1.1899070938609225e-05,
+          "personal": 2.2338947798516183e-05,
+          "other": 2.731664937624819e-06
+        },
+        "choice": "calendar",
+        "max_probability": 0.8743807342180047
+      },
+      "seconds": 2.436376606999943,
+      "correct": false
+    },
+    {
+      "id": "checklist-3",
+      "task": "Die erledigten Punkte auf der Liste abhaken",
+      "expected": [
+        "checklist"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 1.6007299213279724e-06,
+          "calendar": 0.05982229715160163,
+          "checklist": 0.3537216727149379,
+          "priority": 0.1829983378709472,
+          "work": 0.402954929711525,
+          "code": 5.966339284613614e-06,
+          "study": 8.27906227182721e-07,
+          "creative": 9.767892338610159e-05,
+          "health": 1.6759147191815855e-06,
+          "fitness": 2.0024901547532496e-07,
+          "home": 3.648585202883612e-05,
+          "shopping": 2.0314697395617562e-07,
+          "food": 2.729049043778528e-07,
+          "finance": 1.9021497369382716e-05,
+          "admin": 0.00031987797469234874,
+          "call": 2.2106236437298052e-06,
+          "travel": 1.4287846931683507e-05,
+          "maintenance": 1.4827772828539312e-06,
+          "personal": 7.399282681794148e-07,
+          "other": 2.2993633900310296e-07
+        },
+        "choice": "work",
+        "max_probability": 0.402954929711525
+      },
+      "seconds": 2.6381194419999474,
+      "correct": false
+    },
+    {
+      "id": "priority-1",
+      "task": "Die wichtigste Aufgabe zuerst erledigen",
+      "expected": [
+        "priority"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 1.079819624542337e-07,
+          "calendar": 3.4022082442550804e-07,
+          "checklist": 0.8980688258322352,
+          "priority": 0.09819085670459543,
+          "work": 0.002621486216069696,
+          "code": 8.503428341474728e-07,
+          "study": 2.5300997511195317e-08,
+          "creative": 7.645663136811822e-06,
+          "health": 3.350527361490138e-07,
+          "fitness": 1.698631856296691e-08,
+          "home": 9.855273374455812e-06,
+          "shopping": 1.2103888165899662e-08,
+          "food": 1.4714515692484632e-08,
+          "finance": 5.1898884335484936e-06,
+          "admin": 0.0010940560140572783,
+          "call": 1.2495427805711273e-07,
+          "travel": 4.547118682004713e-08,
+          "maintenance": 9.969256633341614e-08,
+          "personal": 8.059264853969229e-08,
+          "other": 3.0993340702702835e-08
+        },
+        "choice": "checklist",
+        "max_probability": 0.8980688258322352
+      },
+      "seconds": 2.807059503000005,
+      "correct": false
+    },
+    {
+      "id": "priority-2",
+      "task": "Die dringende Angelegenheit sofort bearbeiten",
+      "expected": [
+        "priority"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 1.4305733393293926e-05,
+          "calendar": 2.1796815278572828e-05,
+          "checklist": 1.8696017269140008e-05,
+          "priority": 0.9993775245537269,
+          "work": 0.00044677538516130487,
+          "code": 1.4676298147619564e-07,
+          "study": 4.3928800568721696e-08,
+          "creative": 6.904860558684484e-06,
+          "health": 9.872807449635147e-08,
+          "fitness": 9.023972829132811e-09,
+          "home": 1.7390846644351762e-06,
+          "shopping": 1.307564656632685e-08,
+          "food": 8.190259619056692e-09,
+          "finance": 5.476292313515194e-05,
+          "admin": 5.578716074003591e-05,
+          "call": 1.2753555288127662e-06,
+          "travel": 3.350786053955789e-08,
+          "maintenance": 3.041808778110533e-08,
+          "personal": 3.6000560574362604e-08,
+          "other": 1.247429922430702e-08
+        },
+        "choice": "priority",
+        "max_probability": 0.9993775245537269
+      },
+      "seconds": 3.099857537000048,
+      "correct": true
+    },
+    {
+      "id": "priority-3",
+      "task": "Heute auf die wichtigste Sache konzentrieren",
+      "expected": [
+        "priority"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 1.6397962421035176e-05,
+          "calendar": 1.84817295625544e-05,
+          "checklist": 0.0001291613711860249,
+          "priority": 0.9816762948685146,
+          "work": 0.014861987441460311,
+          "code": 3.7101016376571288e-06,
+          "study": 1.4013104446570094e-07,
+          "creative": 4.354975686857613e-05,
+          "health": 2.735091319450532e-06,
+          "fitness": 8.298072620507179e-08,
+          "home": 4.245905493913106e-05,
+          "shopping": 1.558933473171254e-07,
+          "food": 7.16944224693336e-08,
+          "finance": 0.0023170985688114373,
+          "admin": 0.0008764884490994039,
+          "call": 9.63625252174827e-06,
+          "travel": 3.155583746341369e-07,
+          "maintenance": 2.3151234190142364e-07,
+          "personal": 9.038472303433837e-07,
+          "other": 9.773417075426918e-08
+        },
+        "choice": "priority",
+        "max_probability": 0.9816762948685146
+      },
+      "seconds": 2.2723115219999954,
+      "correct": true
+    },
+    {
+      "id": "work-1",
+      "task": "Am Projektbericht für die Arbeit weiterarbeiten",
+      "expected": [
+        "work"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.02300921954869786,
+          "calendar": 0.01644847846199303,
+          "checklist": 0.0005638678793265691,
+          "priority": 0.049570660730716504,
+          "work": 0.8139120821428735,
+          "code": 0.0022603625154567386,
+          "study": 1.3945900888708953e-06,
+          "creative": 0.005017510854849355,
+          "health": 7.82390386896492e-07,
+          "fitness": 3.913606854889917e-07,
+          "home": 5.519839139482801e-05,
+          "shopping": 5.072099739285908e-07,
+          "food": 3.4807974771987314e-07,
+          "finance": 0.0799641935312926,
+          "admin": 0.009027182073112542,
+          "call": 0.00016180699870944334,
+          "travel": 1.0632849820172286e-06,
+          "maintenance": 2.982013819157797e-06,
+          "personal": 1.6600572427963566e-06,
+          "other": 3.078846501624963e-07
+        },
+        "choice": "work",
+        "max_probability": 0.8139120821428735
+      },
+      "seconds": 1.7980798790000563,
+      "correct": true
+    },
+    {
+      "id": "work-2",
+      "task": "Die Präsentation für den Chef fertigstellen",
+      "expected": [
+        "work"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00015903295631161294,
+          "calendar": 0.0016352258997241794,
+          "checklist": 0.02748801882045085,
+          "priority": 0.0884054708546623,
+          "work": 0.40281171992841536,
+          "code": 0.14352507842619527,
+          "study": 0.00019631142327393967,
+          "creative": 0.02531341294836658,
+          "health": 4.7491352817264434e-05,
+          "fitness": 5.615417547997916e-06,
+          "home": 0.001430540658370813,
+          "shopping": 6.611261619512366e-06,
+          "food": 1.0579022135645953e-05,
+          "finance": 0.001027635962468578,
+          "admin": 0.305710844615002,
+          "call": 6.148452316333028e-05,
+          "travel": 2.040181108186522e-05,
+          "maintenance": 0.0020741571015579735,
+          "personal": 6.067775145314792e-05,
+          "other": 9.689265381831487e-06
+        },
+        "choice": "work",
+        "max_probability": 0.40281171992841536
+      },
+      "seconds": 3.732623171,
+      "correct": true
+    },
+    {
+      "id": "work-3",
+      "task": "Den aktuellen Projektfortschritt dokumentieren",
+      "expected": [
+        "work"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.01644499815854431,
+          "calendar": 0.004488907183186481,
+          "checklist": 0.0005508616682169657,
+          "priority": 0.06457987210645837,
+          "work": 0.4972956525085326,
+          "code": 0.10282146478475994,
+          "study": 3.415014478577543e-05,
+          "creative": 0.009680057950549084,
+          "health": 2.2674435340743672e-05,
+          "fitness": 1.0321723879815212e-05,
+          "home": 0.0007951251792129397,
+          "shopping": 9.77763217989236e-06,
+          "food": 8.128414311322074e-06,
+          "finance": 0.25567478205947197,
+          "admin": 0.045945660843613456,
+          "call": 0.0012448488606281493,
+          "travel": 3.744255311031421e-05,
+          "maintenance": 0.0002974834564755756,
+          "personal": 4.882009303646478e-05,
+          "other": 8.97024370582872e-06
+        },
+        "choice": "work",
+        "max_probability": 0.4972956525085326
+      },
+      "seconds": 2.4737519519999296,
+      "correct": true
+    },
+    {
+      "id": "code-1",
+      "task": "Den Fehler im JavaScript beheben",
+      "expected": [
+        "code"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00027655834636601046,
+          "calendar": 7.402443501916712e-06,
+          "checklist": 0.00026489142597602036,
+          "priority": 0.004261554532661848,
+          "work": 0.022319006872892025,
+          "code": 0.9639687462760254,
+          "study": 0.00010827867125088254,
+          "creative": 0.0008157378607286035,
+          "health": 4.6094441416039256e-05,
+          "fitness": 3.6409165494973675e-06,
+          "home": 0.00022867299487303603,
+          "shopping": 2.695415664003195e-06,
+          "food": 2.0186671676294173e-06,
+          "finance": 0.000355523382632658,
+          "admin": 0.007192044070050932,
+          "call": 1.0047602220781896e-05,
+          "travel": 6.029777366973385e-06,
+          "maintenance": 5.089733673963012e-05,
+          "personal": 8.346612856124877e-06,
+          "other": 7.181235306004665e-05
+        },
+        "choice": "code",
+        "max_probability": 0.9639687462760254
+      },
+      "seconds": 2.0091755650000778,
+      "correct": true
+    },
+    {
+      "id": "code-2",
+      "task": "Den Quellcode prüfen",
+      "expected": [
+        "code"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0021028743605551238,
+          "calendar": 0.00011820954798235308,
+          "checklist": 0.0006782179076947227,
+          "priority": 0.015047184309573212,
+          "work": 0.1594712597226281,
+          "code": 0.6719644604943449,
+          "study": 0.00022448848363094013,
+          "creative": 0.0787361369839102,
+          "health": 8.377109653607141e-05,
+          "fitness": 8.656981048334615e-06,
+          "home": 0.0015833912743465353,
+          "shopping": 7.093472249176567e-06,
+          "food": 5.029986650940183e-06,
+          "finance": 0.044000981429900866,
+          "admin": 0.02563090060426568,
+          "call": 0.00024136696168471718,
+          "travel": 1.5816065578470957e-05,
+          "maintenance": 4.316424933057892e-05,
+          "personal": 2.694121183223163e-05,
+          "other": 1.0054856256875866e-05
+        },
+        "choice": "code",
+        "max_probability": 0.6719644604943449
+      },
+      "seconds": 1.1041360310000528,
+      "correct": true
+    },
+    {
+      "id": "code-3",
+      "task": "Die Software auf die neue Version aktualisieren",
+      "expected": [
+        "code"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00011949983714904791,
+          "calendar": 5.884779145522408e-06,
+          "checklist": 2.5126271530865124e-05,
+          "priority": 0.00017522055463731312,
+          "work": 0.007335128929855598,
+          "code": 0.8687626672702734,
+          "study": 0.09695009396080231,
+          "creative": 0.003026443539432056,
+          "health": 8.364531922306872e-06,
+          "fitness": 3.7767898956826754e-06,
+          "home": 0.000277010973190049,
+          "shopping": 2.172891953065512e-06,
+          "food": 1.5453229892303558e-06,
+          "finance": 0.003520912124517379,
+          "admin": 0.019639464010638177,
+          "call": 1.86342263779331e-05,
+          "travel": 4.402601785513989e-06,
+          "maintenance": 0.00010907955338489103,
+          "personal": 7.333559692682443e-06,
+          "other": 7.238270827004118e-06
+        },
+        "choice": "code",
+        "max_probability": 0.8687626672702734
+      },
+      "seconds": 2.288452270999983,
+      "correct": true
+    },
+    {
+      "id": "study-1",
+      "task": "Das nächste Kapitel im Lehrbuch lesen",
+      "expected": [
+        "study"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00013255162135913205,
+          "calendar": 0.00014621492017951714,
+          "checklist": 0.0018011648163388514,
+          "priority": 0.023478986472303252,
+          "work": 0.016858937137193004,
+          "code": 0.00012912721694372935,
+          "study": 0.8451451121017297,
+          "creative": 0.003017242236824768,
+          "health": 9.375686992435896e-05,
+          "fitness": 6.027142204851122e-06,
+          "home": 0.0008334909698735548,
+          "shopping": 5.363141522033408e-06,
+          "food": 6.508422823727249e-06,
+          "finance": 0.05156589765385835,
+          "admin": 0.05621752384930799,
+          "call": 0.0005087443997658662,
+          "travel": 1.971487691856597e-05,
+          "maintenance": 9.516804441608375e-06,
+          "personal": 1.2930219760692764e-05,
+          "other": 1.1189126726406791e-05
+        },
+        "choice": "study",
+        "max_probability": 0.8451451121017297
+      },
+      "seconds": 2.188076148999926,
+      "correct": true
+    },
+    {
+      "id": "study-2",
+      "task": "Für die Prüfung lernen",
+      "expected": [
+        "study"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0002654681316055179,
+          "calendar": 2.3832530994309217e-05,
+          "checklist": 0.0003415739755846496,
+          "priority": 0.0004449134995733408,
+          "work": 0.014240031096857007,
+          "code": 0.00010148724464065386,
+          "study": 0.9724041989984176,
+          "creative": 0.0012285369476017062,
+          "health": 4.177744255083384e-05,
+          "fitness": 2.374918327133531e-06,
+          "home": 0.0004947324720617483,
+          "shopping": 2.321784733210075e-06,
+          "food": 2.4425767454713577e-06,
+          "finance": 0.0032202076423748323,
+          "admin": 0.007048964386807618,
+          "call": 0.00011379399765469788,
+          "travel": 6.470089088216924e-06,
+          "maintenance": 4.888390140133198e-06,
+          "personal": 9.548703128506577e-06,
+          "other": 2.4351711128573577e-06
+        },
+        "choice": "study",
+        "max_probability": 0.9724041989984176
+      },
+      "seconds": 2.06853245100001,
+      "correct": true
+    },
+    {
+      "id": "study-3",
+      "task": "Informationen über Wärmepumpen recherchieren",
+      "expected": [
+        "study"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.007337468503971396,
+          "calendar": 0.0001815201862461872,
+          "checklist": 0.0008640148611639512,
+          "priority": 0.02882396241215704,
+          "work": 0.034519416674711305,
+          "code": 0.0010894577212131518,
+          "study": 7.678344660805029e-05,
+          "creative": 0.009168440498335005,
+          "health": 0.0004583829922581679,
+          "fitness": 8.830264344211746e-06,
+          "home": 0.0015483696128371872,
+          "shopping": 7.999320779314528e-06,
+          "food": 2.3407814932969855e-05,
+          "finance": 0.00669276136044255,
+          "admin": 0.023774863637480197,
+          "call": 0.00018231642106536055,
+          "travel": 2.9824406140746706e-05,
+          "maintenance": 0.8851415618532942,
+          "personal": 4.86446094494053e-05,
+          "other": 2.1973402569709286e-05
+        },
+        "choice": "maintenance",
+        "max_probability": 0.8851415618532942
+      },
+      "seconds": 2.9998251360000268,
+      "correct": false
+    },
+    {
+      "id": "creative-1",
+      "task": "Eine Geschichte schreiben",
+      "expected": [
+        "creative"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0002725965377907016,
+          "calendar": 0.00011273684988241145,
+          "checklist": 0.0004754621411154909,
+          "priority": 0.0025289266412178357,
+          "work": 0.009902078290602565,
+          "code": 7.213286648477872e-05,
+          "study": 2.880740836605613e-05,
+          "creative": 0.9592359236180672,
+          "health": 2.1090668228341485e-05,
+          "fitness": 2.7094554213123574e-06,
+          "home": 0.0003664196272748648,
+          "shopping": 3.4020632747635625e-06,
+          "food": 2.6091664372244456e-06,
+          "finance": 0.016312610369838502,
+          "admin": 0.010394924732808794,
+          "call": 0.00023701899715233306,
+          "travel": 8.436584855028394e-06,
+          "maintenance": 6.21051638839937e-06,
+          "personal": 1.278400241364269e-05,
+          "other": 3.1194623797672737e-06
+        },
+        "choice": "creative",
+        "max_probability": 0.9592359236180672
+      },
+      "seconds": 1.5656495690000156,
+      "correct": true
+    },
+    {
+      "id": "creative-2",
+      "task": "Ein Logo für den Verein entwerfen",
+      "expected": [
+        "creative"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.001170075557677089,
+          "calendar": 0.001242473944241352,
+          "checklist": 0.044417052507395714,
+          "priority": 0.18342278598086673,
+          "work": 0.38732831650465466,
+          "code": 0.0017925714248527849,
+          "study": 8.44690822631307e-06,
+          "creative": 0.0627899924285614,
+          "health": 2.2476720766759302e-05,
+          "fitness": 4.062045424315256e-06,
+          "home": 0.0001883158362553582,
+          "shopping": 3.176969120471259e-06,
+          "food": 3.414461151345638e-06,
+          "finance": 0.04260572370538336,
+          "admin": 0.27427970095915527,
+          "call": 0.0006595313072148165,
+          "travel": 8.792513156473469e-06,
+          "maintenance": 1.1787470889791868e-05,
+          "personal": 3.4823617041493653e-05,
+          "other": 6.47913796448231e-06
+        },
+        "choice": "work",
+        "max_probability": 0.38732831650465466
+      },
+      "seconds": 2.198174733999963,
+      "correct": false
+    },
+    {
+      "id": "creative-3",
+      "task": "Ideen für ein neues Plakat skizzieren",
+      "expected": [
+        "creative"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 3.6507617181844925e-05,
+          "calendar": 0.34304781527130773,
+          "checklist": 1.748935470501579e-05,
+          "priority": 0.637699762166142,
+          "work": 0.014439750536520577,
+          "code": 0.00018041834050056433,
+          "study": 1.2336864666987486e-06,
+          "creative": 0.0009674820115806644,
+          "health": 2.289188939018566e-06,
+          "fitness": 5.058661510744063e-07,
+          "home": 9.11731333150145e-05,
+          "shopping": 4.953887333070799e-07,
+          "food": 4.6795635774521915e-07,
+          "finance": 0.0010169379170798165,
+          "admin": 0.00247249611979626,
+          "call": 1.7567654589088432e-05,
+          "travel": 1.227912644000269e-06,
+          "maintenance": 3.7547725516875215e-06,
+          "personal": 1.98340209479484e-06,
+          "other": 6.417033431863617e-07
+        },
+        "choice": "priority",
+        "max_probability": 0.637699762166142
+      },
+      "seconds": 2.9902047529999436,
+      "correct": false
+    },
+    {
+      "id": "health-1",
+      "task": "Einen Kontrolltermin beim Zahnarzt vereinbaren",
+      "expected": [
+        "health"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0005855075060934288,
+          "calendar": 0.2999648776820427,
+          "checklist": 0.0057891702459977185,
+          "priority": 0.000997151285501083,
+          "work": 0.010274973861709393,
+          "code": 3.386882022992872e-05,
+          "study": 2.0582471606941977e-06,
+          "creative": 6.993703597474188e-05,
+          "health": 0.6760828293181542,
+          "fitness": 2.2577952701872546e-06,
+          "home": 0.00022635539469155813,
+          "shopping": 1.984178597555259e-06,
+          "food": 1.6182259162242187e-06,
+          "finance": 0.0009495240764706667,
+          "admin": 0.0040208495813869516,
+          "call": 0.0006324521415742879,
+          "travel": 8.932657972595262e-06,
+          "maintenance": 0.0003289756817348844,
+          "personal": 1.2401590007394924e-05,
+          "other": 1.4274673513781602e-05
+        },
+        "choice": "health",
+        "max_probability": 0.6760828293181542
+      },
+      "seconds": 4.723015050000072,
+      "correct": true
+    },
+    {
+      "id": "health-2",
+      "task": "Das verschriebene Medikament einnehmen",
+      "expected": [
+        "health"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.03348155382660981,
+          "calendar": 0.0001978397250297914,
+          "checklist": 0.0006053193928326217,
+          "priority": 0.7486528461881465,
+          "work": 0.1768564892083983,
+          "code": 0.00015877232716406432,
+          "study": 9.624565249290707e-06,
+          "creative": 0.00017857305740297033,
+          "health": 0.007264922290195537,
+          "fitness": 6.7663693674271745e-06,
+          "home": 0.003558596999470565,
+          "shopping": 6.086031244080553e-06,
+          "food": 8.10755683820559e-06,
+          "finance": 0.018668013630683697,
+          "admin": 0.010088005151528245,
+          "call": 0.00016130769807288454,
+          "travel": 1.645701664700881e-05,
+          "maintenance": 1.397271061848425e-05,
+          "personal": 3.8479981513095126e-05,
+          "other": 2.8266272987504712e-05
+        },
+        "choice": "priority",
+        "max_probability": 0.7486528461881465
+      },
+      "seconds": 2.7517656769999803,
+      "correct": false
+    },
+    {
+      "id": "health-3",
+      "task": "Zum Hausarzt zur Untersuchung gehen",
+      "expected": [
+        "health"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.012240385301666134,
+          "calendar": 0.0019053210027155378,
+          "checklist": 0.043691800222611564,
+          "priority": 0.18015557000211135,
+          "work": 0.03888302528305785,
+          "code": 0.0007520904240766039,
+          "study": 2.920014239299245e-05,
+          "creative": 0.0005600987030256044,
+          "health": 0.3557462407807547,
+          "fitness": 2.0888789933045564e-05,
+          "home": 0.008838125482808854,
+          "shopping": 1.7306468998580498e-05,
+          "food": 1.9166035467869424e-05,
+          "finance": 0.0023642126832696645,
+          "admin": 0.003409749521191453,
+          "call": 0.0013326640545699056,
+          "travel": 0.3493834324727977,
+          "maintenance": 9.378774209465953e-05,
+          "personal": 0.00036351222683257174,
+          "other": 0.00019342265962338738
+        },
+        "choice": "health",
+        "max_probability": 0.3557462407807547
+      },
+      "seconds": 2.634362321000026,
+      "correct": true
+    },
+    {
+      "id": "fitness-1",
+      "task": "Eine halbe Stunde joggen gehen",
+      "expected": [
+        "fitness"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0011731149239596896,
+          "calendar": 0.0020890360400585167,
+          "checklist": 0.011905801489436364,
+          "priority": 0.04491254336770338,
+          "work": 0.4655886942402048,
+          "code": 0.0008107638158225866,
+          "study": 0.0001331099484403274,
+          "creative": 0.0028827528167521617,
+          "health": 0.0004808204491495184,
+          "fitness": 0.4303788932168989,
+          "home": 0.0032628180484573547,
+          "shopping": 2.9428481762256705e-05,
+          "food": 3.563115692505769e-05,
+          "finance": 0.005335148390044574,
+          "admin": 0.02690910720894823,
+          "call": 0.0006407882973944543,
+          "travel": 0.0030660197355461658,
+          "maintenance": 7.133925340551862e-05,
+          "personal": 0.0002429800269435575,
+          "other": 5.120909214652812e-05
+        },
+        "choice": "work",
+        "max_probability": 0.4655886942402048
+      },
+      "seconds": 1.9310210009999764,
+      "correct": false
+    },
+    {
+      "id": "fitness-2",
+      "task": "Im Fitnessstudio trainieren",
+      "expected": [
+        "fitness"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 1.861100756729306e-05,
+          "calendar": 3.09194804207985e-05,
+          "checklist": 0.00028749726489359415,
+          "priority": 0.007196566293430509,
+          "work": 0.1408035951159199,
+          "code": 9.291018983583889e-05,
+          "study": 8.289010310856523e-06,
+          "creative": 6.188025670196055e-05,
+          "health": 0.0006303668086485697,
+          "fitness": 0.8474452943606542,
+          "home": 0.0009002176542856857,
+          "shopping": 3.3619655678713338e-06,
+          "food": 3.707315124014452e-06,
+          "finance": 0.0009707087106386012,
+          "admin": 0.001439559281447633,
+          "call": 1.6494195071627964e-05,
+          "travel": 1.7737793009515066e-05,
+          "maintenance": 1.5253443851263412e-05,
+          "personal": 4.7917443594228e-05,
+          "other": 9.112409026116859e-06
+        },
+        "choice": "fitness",
+        "max_probability": 0.8474452943606542
+      },
+      "seconds": 1.7501871640000672,
+      "correct": true
+    },
+    {
+      "id": "fitness-3",
+      "task": "Die Dehnübungen machen",
+      "expected": [
+        "fitness"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00047495348981496833,
+          "calendar": 0.0008230671450111542,
+          "checklist": 0.0014647508624224621,
+          "priority": 0.5218949315654926,
+          "work": 0.23022252789649808,
+          "code": 0.08475932673173042,
+          "study": 0.0020655165325336026,
+          "creative": 0.007246620194144856,
+          "health": 0.0010911753185000378,
+          "fitness": 0.045741749140164704,
+          "home": 0.0010946163591409428,
+          "shopping": 1.0431253943613974e-05,
+          "food": 9.515806883632596e-06,
+          "finance": 0.0024596559054044444,
+          "admin": 0.06707513697164172,
+          "call": 3.891625596322545e-05,
+          "travel": 0.00016214736143944802,
+          "maintenance": 0.03321836644305075,
+          "personal": 0.00010498054323803027,
+          "other": 4.1614222981237585e-05
+        },
+        "choice": "priority",
+        "max_probability": 0.5218949315654926
+      },
+      "seconds": 2.4229406020000397,
+      "correct": false
+    },
+    {
+      "id": "home-1",
+      "task": "Die Küche aufräumen",
+      "expected": [
+        "home"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 5.5247174865390886e-05,
+          "calendar": 5.7337218217261335e-05,
+          "checklist": 0.0005419260354357618,
+          "priority": 0.0005790465953130043,
+          "work": 0.006576175428075838,
+          "code": 6.781644596397486e-05,
+          "study": 8.895657910519801e-07,
+          "creative": 0.00017049824968647095,
+          "health": 9.961063772078608e-06,
+          "fitness": 9.767984498469441e-07,
+          "home": 0.0010546127379512632,
+          "shopping": 1.7180089888066874e-06,
+          "food": 0.2349379844491431,
+          "finance": 0.00015431374938673655,
+          "admin": 0.001447051992289152,
+          "call": 6.368037941247465e-06,
+          "travel": 4.431794439279552e-06,
+          "maintenance": 0.7543248459657728,
+          "personal": 5.943067171623365e-06,
+          "other": 2.855621345300366e-06
+        },
+        "choice": "maintenance",
+        "max_probability": 0.7543248459657728
+      },
+      "seconds": 1.1626452470000004,
+      "correct": false
+    },
+    {
+      "id": "home-2",
+      "task": "Die Wäsche waschen",
+      "expected": [
+        "home"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 2.9401910367923825e-05,
+          "calendar": 7.825191863875723e-06,
+          "checklist": 0.00021356967611713934,
+          "priority": 0.0010426194265802853,
+          "work": 0.01961960186933646,
+          "code": 0.00010504646089214212,
+          "study": 4.999945175144062e-07,
+          "creative": 0.00017073487715353147,
+          "health": 5.149940664311534e-05,
+          "fitness": 4.912720401173736e-07,
+          "home": 0.00039999030139482194,
+          "shopping": 4.929366714703658e-07,
+          "food": 4.441374674863055e-06,
+          "finance": 0.00011278699779145107,
+          "admin": 0.0045708277213584655,
+          "call": 5.1001603898620586e-06,
+          "travel": 2.862561371948072e-06,
+          "maintenance": 0.9736571794061064,
+          "personal": 2.6416055986899134e-06,
+          "other": 2.386849129954658e-06
+        },
+        "choice": "maintenance",
+        "max_probability": 0.9736571794061064
+      },
+      "seconds": 1.9154227370000854,
+      "correct": false
+    },
+    {
+      "id": "home-3",
+      "task": "Den Boden im Wohnzimmer saugen",
+      "expected": [
+        "home"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.006809021370541382,
+          "calendar": 0.0022042154629974024,
+          "checklist": 0.3846131000807871,
+          "priority": 0.11094814433444204,
+          "work": 0.3192478931753324,
+          "code": 0.006248127494643295,
+          "study": 6.168265260149132e-05,
+          "creative": 0.010318302672452605,
+          "health": 0.0006168174279052684,
+          "fitness": 3.251002300336649e-05,
+          "home": 0.023886936692267144,
+          "shopping": 2.958998754975525e-05,
+          "food": 0.06177132759664524,
+          "finance": 0.014139024168080109,
+          "admin": 0.05713327984564458,
+          "call": 0.0004072835785486682,
+          "travel": 0.00013594477594146878,
+          "maintenance": 0.0011264657353833379,
+          "personal": 0.00020023525866179722,
+          "other": 7.009766657151046e-05
+        },
+        "choice": "checklist",
+        "max_probability": 0.3846131000807871
+      },
+      "seconds": 1.3940842439999415,
+      "correct": false
+    },
+    {
+      "id": "shopping-1",
+      "task": "Milch und Brot einkaufen",
+      "expected": [
+        "shopping"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0020729764524540324,
+          "calendar": 0.0006861158281905875,
+          "checklist": 0.006296627329277254,
+          "priority": 0.004853712074375399,
+          "work": 0.09825507447194773,
+          "code": 0.0002545271021231707,
+          "study": 9.492954215772182e-06,
+          "creative": 0.002214732985612554,
+          "health": 0.00013254376482059533,
+          "fitness": 7.182050057278744e-06,
+          "home": 0.0017668777958107962,
+          "shopping": 0.8746390321344106,
+          "food": 0.002828219232077663,
+          "finance": 0.002037265718031481,
+          "admin": 0.0036604972668022096,
+          "call": 0.00017164202933437844,
+          "travel": 3.2529822991427563e-05,
+          "maintenance": 1.9879848589246527e-05,
+          "personal": 4.948341796601318e-05,
+          "other": 1.1587720911683849e-05
+        },
+        "choice": "shopping",
+        "max_probability": 0.8746390321344106
+      },
+      "seconds": 0.5336454430000686,
+      "correct": true
+    },
+    {
+      "id": "shopping-2",
+      "task": "Im Supermarkt Obst kaufen",
+      "expected": [
+        "shopping"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.012593267151337444,
+          "calendar": 0.0025367859703491463,
+          "checklist": 0.00402352247167042,
+          "priority": 0.05312657072966185,
+          "work": 0.4366968605710906,
+          "code": 0.0003097356863435439,
+          "study": 4.7989707785462534e-05,
+          "creative": 0.003459977755985453,
+          "health": 0.0008893643062627557,
+          "fitness": 4.098893862245578e-05,
+          "home": 0.023348676802363053,
+          "shopping": 0.3979487388251429,
+          "food": 0.015617414162366514,
+          "finance": 0.02562028252475051,
+          "admin": 0.021549025227423888,
+          "call": 0.0013322239649201397,
+          "travel": 0.00016569946815304934,
+          "maintenance": 0.0002781010756022376,
+          "personal": 0.0003319779655969802,
+          "other": 8.279669457158623e-05
+        },
+        "choice": "work",
+        "max_probability": 0.4366968605710906
+      },
+      "seconds": 1.6708033669999622,
+      "correct": false
+    },
+    {
+      "id": "shopping-3",
+      "task": "Eine neue Zahnbürste besorgen",
+      "expected": [
+        "shopping"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.016980970029919763,
+          "calendar": 0.0005480017275823716,
+          "checklist": 0.0010053211345802907,
+          "priority": 0.18168040343118297,
+          "work": 0.1489372693341092,
+          "code": 0.0005140640805375641,
+          "study": 3.797249234183156e-05,
+          "creative": 0.006055295575035927,
+          "health": 0.121978654930338,
+          "fitness": 3.5195494069288585e-05,
+          "home": 0.007979505723360102,
+          "shopping": 0.0008726063918326751,
+          "food": 6.440823207295705e-05,
+          "finance": 0.011983627203543162,
+          "admin": 0.02498711404631156,
+          "call": 0.0006232125422502633,
+          "travel": 8.189935259050961e-05,
+          "maintenance": 0.475239734660664,
+          "personal": 0.00020565435706255882,
+          "other": 0.00018908926061514156
+        },
+        "choice": "maintenance",
+        "max_probability": 0.475239734660664
+      },
+      "seconds": 1.3132631559999481,
+      "correct": false
+    },
+    {
+      "id": "food-1",
+      "task": "Das Abendessen kochen",
+      "expected": [
+        "food"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 1.0899071415472476e-05,
+          "calendar": 3.825202529019604e-05,
+          "checklist": 6.522361740747638e-05,
+          "priority": 0.000950739816544759,
+          "work": 0.002465880348837854,
+          "code": 1.674049375106024e-05,
+          "study": 8.27697590030511e-07,
+          "creative": 5.567343559809497e-05,
+          "health": 8.457463791452714e-06,
+          "fitness": 7.690139255802344e-07,
+          "home": 0.00022931273443683596,
+          "shopping": 7.266504605311665e-07,
+          "food": 0.9935984854660607,
+          "finance": 0.0023933118899084433,
+          "admin": 0.00015154536029313376,
+          "call": 4.70123992357424e-06,
+          "travel": 1.7619363442526817e-06,
+          "maintenance": 1.017663161672584e-06,
+          "personal": 4.412036496735974e-06,
+          "other": 1.2620387622852753e-06
+        },
+        "choice": "food",
+        "max_probability": 0.9935984854660607
+      },
+      "seconds": 1.90839112499998,
+      "correct": true
+    },
+    {
+      "id": "food-2",
+      "task": "Eine Suppe zubereiten",
+      "expected": [
+        "food"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0006233237257360217,
+          "calendar": 0.0017916823445747936,
+          "checklist": 0.007478155242473202,
+          "priority": 0.04919300097994379,
+          "work": 0.7023046008325222,
+          "code": 0.002018415559018817,
+          "study": 5.0138825107145206e-05,
+          "creative": 0.018237213382772233,
+          "health": 0.0005282003811947373,
+          "fitness": 3.313433586066132e-05,
+          "home": 0.024005262606334267,
+          "shopping": 2.9300295271486417e-05,
+          "food": 0.14668601688035812,
+          "finance": 0.029244493351439277,
+          "admin": 0.01721437393706751,
+          "call": 8.539286494378676e-05,
+          "travel": 0.0001529098966433685,
+          "maintenance": 8.374904425165695e-05,
+          "personal": 0.00015562746540624708,
+          "other": 8.500804908069635e-05
+        },
+        "choice": "work",
+        "max_probability": 0.7023046008325222
+      },
+      "seconds": 1.4966885830000365,
+      "correct": false
+    },
+    {
+      "id": "food-3",
+      "task": "Das Rezept für den Kuchen ausprobieren",
+      "expected": [
+        "food"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 7.574472930419519e-06,
+          "calendar": 2.020341049016429e-05,
+          "checklist": 6.6077858837489e-05,
+          "priority": 0.006305271911594807,
+          "work": 0.0052442371059900775,
+          "code": 7.64764161550632e-05,
+          "study": 3.16682550703069e-06,
+          "creative": 0.00010771057927467538,
+          "health": 2.9817017674782617e-05,
+          "fitness": 1.6084422069967519e-06,
+          "home": 0.00040735156717180586,
+          "shopping": 1.7981876114338118e-06,
+          "food": 0.9865990830511487,
+          "finance": 0.00033409833979353593,
+          "admin": 0.0007715345014386482,
+          "call": 3.7050361551817344e-06,
+          "travel": 3.102906206322998e-06,
+          "maintenance": 3.7862920926353003e-06,
+          "personal": 1.0891430933016474e-05,
+          "other": 2.5046467871687456e-06
+        },
+        "choice": "food",
+        "max_probability": 0.9865990830511487
+      },
+      "seconds": 1.5981073420000484,
+      "correct": true
+    },
+    {
+      "id": "finance-1",
+      "task": "Die Stromrechnung bezahlen",
+      "expected": [
+        "finance"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0016616286342821059,
+          "calendar": 6.791511081096418e-05,
+          "checklist": 0.0007367255715782095,
+          "priority": 0.06605571466194184,
+          "work": 0.026641080467945995,
+          "code": 0.0005239019521027623,
+          "study": 3.416841367086627e-06,
+          "creative": 0.0001113152513530623,
+          "health": 3.373131358061171e-05,
+          "fitness": 2.582622889037443e-06,
+          "home": 0.0014816054758660141,
+          "shopping": 2.8716629396779905e-06,
+          "food": 2.5138814851634615e-06,
+          "finance": 0.8937170327716184,
+          "admin": 0.008521734328039494,
+          "call": 0.00015690916915554664,
+          "travel": 7.440745581650746e-06,
+          "maintenance": 0.00024374975007612854,
+          "personal": 2.4574010907590564e-05,
+          "other": 3.5557764786193305e-06
+        },
+        "choice": "finance",
+        "max_probability": 0.8937170327716184
+      },
+      "seconds": 1.387771554999972,
+      "correct": true
+    },
+    {
+      "id": "finance-2",
+      "task": "Die Kontoauszüge prüfen",
+      "expected": [
+        "finance"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.05267272039320018,
+          "calendar": 0.02686076423095721,
+          "checklist": 0.001955744513832443,
+          "priority": 0.14219944733142512,
+          "work": 0.0833304240193736,
+          "code": 0.0020732367202835537,
+          "study": 3.293780233734383e-05,
+          "creative": 0.007668231942619298,
+          "health": 0.00015566605011109274,
+          "fitness": 8.748198261946126e-06,
+          "home": 0.0015947904367970606,
+          "shopping": 4.9523742319374684e-05,
+          "food": 6.377470131212925e-06,
+          "finance": 0.4790230707370329,
+          "admin": 0.0032516647472283114,
+          "call": 0.0062515953728522825,
+          "travel": 0.19273349414493,
+          "maintenance": 6.169351128972252e-05,
+          "personal": 5.3683432498772074e-05,
+          "other": 1.61852025186199e-05
+        },
+        "choice": "finance",
+        "max_probability": 0.4790230707370329
+      },
+      "seconds": 1.9751816829999598,
+      "correct": true
+    },
+    {
+      "id": "finance-3",
+      "task": "Die monatlichen Ausgaben zusammenrechnen",
+      "expected": [
+        "finance"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 5.095486304360381e-05,
+          "calendar": 0.0027863255114566735,
+          "checklist": 0.003289697322639594,
+          "priority": 0.001096937593688884,
+          "work": 0.007808156520649092,
+          "code": 2.3095944512021543e-06,
+          "study": 1.0827220459628033e-07,
+          "creative": 1.958174011745888e-05,
+          "health": 1.2652100129315152e-06,
+          "fitness": 1.0355040228833589e-07,
+          "home": 7.905386045859151e-05,
+          "shopping": 3.774334974266656e-07,
+          "food": 8.769672345646732e-08,
+          "finance": 0.9841878302691331,
+          "admin": 0.000632013958238177,
+          "call": 4.191420711708541e-05,
+          "travel": 3.049995089257667e-07,
+          "maintenance": 1.7273574094642425e-07,
+          "personal": 2.618975963937034e-06,
+          "other": 1.8568495194807804e-07
+        },
+        "choice": "finance",
+        "max_probability": 0.9841878302691331
+      },
+      "seconds": 2.7975383420001663,
+      "correct": true
+    },
+    {
+      "id": "admin-1",
+      "task": "Den Antrag für den Reisepass ausfüllen",
+      "expected": [
+        "admin"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0018692221139932738,
+          "calendar": 0.0017897139354922527,
+          "checklist": 5.9491840162000196e-05,
+          "priority": 0.021585984551760463,
+          "work": 0.0017705647909807595,
+          "code": 6.842536779660852e-06,
+          "study": 2.648668574538131e-06,
+          "creative": 0.00013453403471570208,
+          "health": 0.00012081090298068815,
+          "fitness": 1.8766975916167016e-06,
+          "home": 0.00010211196568571032,
+          "shopping": 1.4813258801347636e-06,
+          "food": 1.9890634970096496e-06,
+          "finance": 0.012200929742430209,
+          "admin": 0.001654937010241085,
+          "call": 0.00018569078391649985,
+          "travel": 0.958475989196467,
+          "maintenance": 5.591094618463641e-06,
+          "personal": 2.508188633630914e-05,
+          "other": 4.507857896516493e-06
+        },
+        "choice": "travel",
+        "max_probability": 0.958475989196467
+      },
+      "seconds": 2.3046131270000387,
+      "correct": false
+    },
+    {
+      "id": "admin-2",
+      "task": "Die Versicherungsunterlagen abheften",
+      "expected": [
+        "admin"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 9.419103325233924e-05,
+          "calendar": 3.1936081431936912e-06,
+          "checklist": 6.883053074327119e-06,
+          "priority": 0.006098544885705232,
+          "work": 0.0010975490430372773,
+          "code": 1.7678027340335232e-06,
+          "study": 4.873571006425582e-07,
+          "creative": 2.154682608987393e-05,
+          "health": 2.3350323528331117e-06,
+          "fitness": 6.357222803724519e-08,
+          "home": 1.0899528228900098e-05,
+          "shopping": 1.588106537577852e-07,
+          "food": 7.029513302531717e-08,
+          "finance": 0.9925611528294812,
+          "admin": 9.303971124641544e-05,
+          "call": 6.8301726409256945e-06,
+          "travel": 3.0163275903246247e-07,
+          "maintenance": 5.553089452171026e-07,
+          "personal": 2.906542020070395e-07,
+          "other": 1.3884299178980832e-07
+        },
+        "choice": "finance",
+        "max_probability": 0.9925611528294812
+      },
+      "seconds": 2.1358884619999117,
+      "correct": false
+    },
+    {
+      "id": "admin-3",
+      "task": "Das Formular für die Behörde abschicken",
+      "expected": [
+        "admin"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.01248385332804616,
+          "calendar": 5.581859941740527e-05,
+          "checklist": 0.42020582527401035,
+          "priority": 0.00605751879443249,
+          "work": 0.041207556936645275,
+          "code": 1.4625142420830293e-05,
+          "study": 6.999077469785584e-07,
+          "creative": 0.00045680195931982107,
+          "health": 2.844019817581195e-06,
+          "fitness": 4.35689348400708e-07,
+          "home": 7.988038831557375e-05,
+          "shopping": 3.466427294570022e-07,
+          "food": 4.230460238321226e-07,
+          "finance": 0.006648563156040119,
+          "admin": 0.5127281205516951,
+          "call": 5.052249116672623e-05,
+          "travel": 8.453988061017789e-07,
+          "maintenance": 8.910969265109392e-07,
+          "personal": 3.818126430459835e-06,
+          "other": 6.094506607350875e-07
+        },
+        "choice": "admin",
+        "max_probability": 0.5127281205516951
+      },
+      "seconds": 2.097139587999891,
+      "correct": true
+    },
+    {
+      "id": "call-1",
+      "task": "Anna anrufen",
+      "expected": [
+        "call"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.3382090773839459,
+          "calendar": 0.0006990697959276433,
+          "checklist": 0.04874036948701659,
+          "priority": 0.07921399932409626,
+          "work": 0.3314175884117683,
+          "code": 0.00029562082532281537,
+          "study": 1.866722881848116e-05,
+          "creative": 0.011852762945645388,
+          "health": 0.001400682640659639,
+          "fitness": 1.2941872440319323e-05,
+          "home": 0.005340035440872685,
+          "shopping": 1.2097102468822975e-05,
+          "food": 1.4013666451132122e-05,
+          "finance": 0.11814815590807848,
+          "admin": 0.05204473996535319,
+          "call": 0.012303584886990923,
+          "travel": 0.00013115067439069925,
+          "maintenance": 5.1118095726671064e-05,
+          "personal": 7.678097961556193e-05,
+          "other": 1.7543364410508714e-05
+        },
+        "choice": "mail",
+        "max_probability": 0.3382090773839459
+      },
+      "seconds": 0.6554515130001164,
+      "correct": false
+    },
+    {
+      "id": "call-2",
+      "task": "Beim Kunden telefonisch nachfragen",
+      "expected": [
+        "call"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.8924618134696165,
+          "calendar": 0.00035191290038158246,
+          "checklist": 0.00014430608523634855,
+          "priority": 0.0015869587347254698,
+          "work": 0.004101701048215722,
+          "code": 3.130760191004937e-05,
+          "study": 4.6491368790496824e-06,
+          "creative": 0.0005182571381790257,
+          "health": 1.6577933434642905e-05,
+          "fitness": 1.1312820044253632e-06,
+          "home": 0.00034370544702351947,
+          "shopping": 2.5343490491581677e-06,
+          "food": 1.1229290600481829e-06,
+          "finance": 0.009481498289253033,
+          "admin": 0.0005106204885553637,
+          "call": 0.09033734275123327,
+          "travel": 8.90754077752728e-05,
+          "maintenance": 6.00199991606002e-06,
+          "personal": 5.404832508735384e-06,
+          "other": 4.0781750427638315e-06
+        },
+        "choice": "mail",
+        "max_probability": 0.8924618134696165
+      },
+      "seconds": 2.314730205999922,
+      "correct": false
+    },
+    {
+      "id": "call-3",
+      "task": "Den verpassten Anruf zurückrufen",
+      "expected": [
+        "call"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.8178923840522596,
+          "calendar": 5.678331735450397e-05,
+          "checklist": 0.0013201358949106053,
+          "priority": 0.0027707148623012474,
+          "work": 0.12467123117814535,
+          "code": 7.767120002828069e-05,
+          "study": 6.938283875046711e-06,
+          "creative": 7.111289642757401e-05,
+          "health": 0.0008105876333332807,
+          "fitness": 7.770531566451402e-06,
+          "home": 0.007969840226859226,
+          "shopping": 6.798150580180979e-06,
+          "food": 5.650691767727233e-06,
+          "finance": 0.007918262742230123,
+          "admin": 0.02199733014785542,
+          "call": 0.014212777040270195,
+          "travel": 5.05573777392156e-05,
+          "maintenance": 1.7246880457172214e-05,
+          "personal": 9.035176720183879e-05,
+          "other": 4.585512483687428e-05
+        },
+        "choice": "mail",
+        "max_probability": 0.8178923840522596
+      },
+      "seconds": 2.067711147999944,
+      "correct": false
+    },
+    {
+      "id": "travel-1",
+      "task": "Die Zugfahrt nach Berlin buchen",
+      "expected": [
+        "travel"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00024348197043520857,
+          "calendar": 0.0045030946819365055,
+          "checklist": 0.001558800339406006,
+          "priority": 0.002130459311482384,
+          "work": 0.009356973048452054,
+          "code": 1.0418893832919104e-05,
+          "study": 7.495299503487202e-07,
+          "creative": 0.0001365329517933945,
+          "health": 1.4319826293240896e-05,
+          "fitness": 7.674311455815286e-07,
+          "home": 0.00011172822020310499,
+          "shopping": 6.599034672919117e-07,
+          "food": 9.07077479603268e-07,
+          "finance": 0.0013675393496493447,
+          "admin": 0.001106729631162648,
+          "call": 6.0263341520839734e-05,
+          "travel": 0.9793657285133307,
+          "maintenance": 4.811981307497545e-06,
+          "personal": 2.3028941414040145e-05,
+          "other": 3.005055737291118e-06
+        },
+        "choice": "travel",
+        "max_probability": 0.9793657285133307
+      },
+      "seconds": 2.4483117560000665,
+      "correct": true
+    },
+    {
+      "id": "travel-2",
+      "task": "Den Koffer für die Reise packen",
+      "expected": [
+        "travel"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.012457081269102313,
+          "calendar": 0.004024558626481972,
+          "checklist": 0.003243653491506418,
+          "priority": 0.010525352882904095,
+          "work": 0.0673636141850804,
+          "code": 9.470095965408566e-05,
+          "study": 1.0932634940238544e-05,
+          "creative": 0.0012660762319596831,
+          "health": 9.06144629580208e-05,
+          "fitness": 1.002887731982048e-05,
+          "home": 0.0017353682930044843,
+          "shopping": 1.4204134526923574e-05,
+          "food": 1.4403346073608187e-05,
+          "finance": 0.0019048916216968625,
+          "admin": 0.01994683659601891,
+          "call": 0.00014791248174340945,
+          "travel": 0.8759896080390973,
+          "maintenance": 0.0010447445656577195,
+          "personal": 0.00010403400299210187,
+          "other": 1.1383297281643664e-05
+        },
+        "choice": "travel",
+        "max_probability": 0.8759896080390973
+      },
+      "seconds": 0.6991258660000312,
+      "correct": true
+    },
+    {
+      "id": "travel-3",
+      "task": "Die Route für den Urlaub planen",
+      "expected": [
+        "travel"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0002766850913341094,
+          "calendar": 0.5123822924443845,
+          "checklist": 6.541014946603567e-05,
+          "priority": 0.01047830949419965,
+          "work": 0.0065942192529746275,
+          "code": 0.0002251409413956764,
+          "study": 1.147018590957477e-06,
+          "creative": 0.0004024328850286022,
+          "health": 1.181969955846898e-05,
+          "fitness": 5.882039208653866e-07,
+          "home": 5.082249276783637e-05,
+          "shopping": 6.436756571014319e-07,
+          "food": 6.176110569386511e-07,
+          "finance": 0.00032520842670864813,
+          "admin": 0.0003810366007750541,
+          "call": 7.284791925861433e-05,
+          "travel": 0.46871022351378216,
+          "maintenance": 4.347959081923109e-06,
+          "personal": 1.540227480649925e-05,
+          "other": 8.04345251760131e-07
+        },
+        "choice": "calendar",
+        "max_probability": 0.5123822924443845
+      },
+      "seconds": 0.9887811439998586,
+      "correct": false
+    },
+    {
+      "id": "maintenance-1",
+      "task": "Den undichten Wasserhahn reparieren",
+      "expected": [
+        "maintenance"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 2.6568444651473302e-05,
+          "calendar": 1.2210590726868825e-06,
+          "checklist": 7.624199602463761e-06,
+          "priority": 0.00024756344038354524,
+          "work": 0.0012291553377919181,
+          "code": 9.489773146825616e-05,
+          "study": 1.1139610139059328e-07,
+          "creative": 1.9505092155132508e-05,
+          "health": 1.2166310252769539e-05,
+          "fitness": 9.53636783857183e-08,
+          "home": 6.414693452533809e-05,
+          "shopping": 6.950199258364468e-08,
+          "food": 8.19096852067672e-08,
+          "finance": 5.8204257538470686e-05,
+          "admin": 0.0020450941674124553,
+          "call": 6.589937882446501e-06,
+          "travel": 6.167988187798624e-07,
+          "maintenance": 0.9961843090336668,
+          "personal": 1.1476078851225523e-06,
+          "other": 8.314754348138229e-07
+        },
+        "choice": "maintenance",
+        "max_probability": 0.9961843090336668
+      },
+      "seconds": 2.55356709900002,
+      "correct": true
+    },
+    {
+      "id": "maintenance-2",
+      "task": "Das Fahrrad zur Wartung bringen",
+      "expected": [
+        "maintenance"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0016362455461156192,
+          "calendar": 0.00034987940130385103,
+          "checklist": 0.30196323128237984,
+          "priority": 0.13955193701734106,
+          "work": 0.008190320669601,
+          "code": 0.0008142965621736643,
+          "study": 1.990115417431864e-05,
+          "creative": 0.0004032379107185804,
+          "health": 0.00013436335580595783,
+          "fitness": 1.0803386866454161e-05,
+          "home": 0.0003214495903203066,
+          "shopping": 6.359274574153723e-06,
+          "food": 6.637657283730115e-06,
+          "finance": 0.000791243436468901,
+          "admin": 0.06988850931613129,
+          "call": 0.0001807477307071658,
+          "travel": 0.0005168419734167379,
+          "maintenance": 0.4751425402005789,
+          "personal": 4.889778604182442e-05,
+          "other": 2.2556747996525083e-05
+        },
+        "choice": "maintenance",
+        "max_probability": 0.4751425402005789
+      },
+      "seconds": 1.2658662590001768,
+      "correct": true
+    },
+    {
+      "id": "maintenance-3",
+      "task": "Die kaputte Lampe austauschen",
+      "expected": [
+        "maintenance"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0009936414430064934,
+          "calendar": 2.4295423549143844e-05,
+          "checklist": 3.927085222099054e-05,
+          "priority": 0.0027664371751909543,
+          "work": 0.025265996879736383,
+          "code": 6.705463197310286e-05,
+          "study": 7.677805739100638e-07,
+          "creative": 8.691370126252992e-05,
+          "health": 8.59239824193471e-06,
+          "fitness": 8.145521594523861e-07,
+          "home": 0.0003382864442080679,
+          "shopping": 5.734600209587971e-07,
+          "food": 5.239130181736004e-07,
+          "finance": 0.0014176955068578787,
+          "admin": 0.004174703439649209,
+          "call": 5.9719274542203245e-06,
+          "travel": 1.7009006499574312e-06,
+          "maintenance": 0.9647958869745535,
+          "personal": 3.663774120539105e-06,
+          "other": 7.2088215525222235e-06
+        },
+        "choice": "maintenance",
+        "max_probability": 0.9647958869745535
+      },
+      "seconds": 2.1082780019999063,
+      "correct": true
+    },
+    {
+      "id": "personal-1",
+      "task": "Zeit mit der Familie verbringen",
+      "expected": [
+        "personal"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.006907614658559324,
+          "calendar": 0.5250681615837992,
+          "checklist": 0.05784517533358674,
+          "priority": 0.07545951413832357,
+          "work": 0.09071187917269558,
+          "code": 0.0008202373205758306,
+          "study": 8.417355676762928e-05,
+          "creative": 0.0037986157535740044,
+          "health": 0.00031550022381063433,
+          "fitness": 3.8723582521559684e-05,
+          "home": 0.01822920880543228,
+          "shopping": 3.625099818283304e-05,
+          "food": 3.8432677685560305e-05,
+          "finance": 0.01617382017765757,
+          "admin": 0.01912509226582123,
+          "call": 0.004110076719094527,
+          "travel": 0.172269078362484,
+          "maintenance": 7.476426688728627e-05,
+          "personal": 0.008827494837717153,
+          "other": 6.618556482345547e-05
+        },
+        "choice": "calendar",
+        "max_probability": 0.5250681615837992
+      },
+      "seconds": 1.2486364979999962,
+      "correct": false
+    },
+    {
+      "id": "personal-2",
+      "task": "Meinen Bruder besuchen",
+      "expected": [
+        "personal"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.005581393264336937,
+          "calendar": 0.016707142304805075,
+          "checklist": 0.02288581677955964,
+          "priority": 0.009050214623222497,
+          "work": 0.06067957512213448,
+          "code": 0.00013479719966486112,
+          "study": 2.615747257175078e-05,
+          "creative": 0.0027052351302058308,
+          "health": 0.00035263321703840085,
+          "fitness": 7.228652480774445e-06,
+          "home": 0.0008812976813369925,
+          "shopping": 7.111385743121923e-06,
+          "food": 6.971850794702028e-06,
+          "finance": 0.0072601901553649775,
+          "admin": 0.015068982586949064,
+          "call": 0.0012311841883448033,
+          "travel": 0.8569062867864519,
+          "maintenance": 1.850460824495155e-05,
+          "personal": 0.00047597087236976105,
+          "other": 1.3306118379552484e-05
+        },
+        "choice": "travel",
+        "max_probability": 0.8569062867864519
+      },
+      "seconds": 1.384498198000074,
+      "correct": false
+    },
+    {
+      "id": "personal-3",
+      "task": "Mit meiner Tochter spielen",
+      "expected": [
+        "personal"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0059978035861380655,
+          "calendar": 0.006752775782629097,
+          "checklist": 0.03895850466743612,
+          "priority": 0.6032639146958175,
+          "work": 0.12937776253884492,
+          "code": 0.01258345104374405,
+          "study": 0.08093078783138062,
+          "creative": 0.015045094543650647,
+          "health": 0.0007011473886697196,
+          "fitness": 0.0020219319296077495,
+          "home": 0.008771906238690064,
+          "shopping": 0.0001350406318113041,
+          "food": 0.0001419809938065011,
+          "finance": 0.027810516317241,
+          "admin": 0.06245162860081012,
+          "call": 0.0032273794432579376,
+          "travel": 0.0004244416462150606,
+          "maintenance": 0.0002937342123754375,
+          "personal": 0.0007730353502224238,
+          "other": 0.00033716255765165723
+        },
+        "choice": "priority",
+        "max_probability": 0.6032639146958175
+      },
+      "seconds": 2.2379568249998556,
+      "correct": false
+    },
+    {
+      "id": "other-1",
+      "task": "Irgendwas mit dem Ding machen",
+      "expected": [
+        "other"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.00045314862940585925,
+          "calendar": 0.00022530528945594993,
+          "checklist": 0.0005278684807425541,
+          "priority": 0.9432680403796321,
+          "work": 0.015239651884587634,
+          "code": 0.008842800354478432,
+          "study": 5.395285905432943e-06,
+          "creative": 0.007963483782946448,
+          "health": 2.0540560808244383e-05,
+          "fitness": 3.0549399971605385e-06,
+          "home": 0.0005815442515088332,
+          "shopping": 2.924204681842318e-06,
+          "food": 3.066621773430405e-06,
+          "finance": 0.0038663214950932817,
+          "admin": 0.018827725463513495,
+          "call": 0.0001087619938315745,
+          "travel": 5.5106252276120655e-06,
+          "maintenance": 2.830461612145685e-05,
+          "personal": 1.8338382719227024e-05,
+          "other": 8.212757569529513e-06
+        },
+        "choice": "priority",
+        "max_probability": 0.9432680403796321
+      },
+      "seconds": 2.4885970620000535,
+      "correct": false
+    },
+    {
+      "id": "other-2",
+      "task": "Das später noch klären",
+      "expected": [
+        "other"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.014443986674794967,
+          "calendar": 0.003236139561993458,
+          "checklist": 0.02868206034648729,
+          "priority": 0.30904149939130443,
+          "work": 0.17675916676532782,
+          "code": 0.0005884285362135449,
+          "study": 0.00011684149300226503,
+          "creative": 0.019834768905831968,
+          "health": 0.00018928954005100043,
+          "fitness": 1.3054956433440521e-05,
+          "home": 0.002166447657853587,
+          "shopping": 1.3574566614776256e-05,
+          "food": 1.2351311456306564e-05,
+          "finance": 0.3550564301608002,
+          "admin": 0.08761611930676134,
+          "call": 0.002085955404966526,
+          "travel": 3.5177324710735106e-05,
+          "maintenance": 4.629231527150679e-05,
+          "personal": 4.655893815401244e-05,
+          "other": 1.5856841970929103e-05
+        },
+        "choice": "finance",
+        "max_probability": 0.3550564301608002
+      },
+      "seconds": 1.1942464049998307,
+      "correct": false
+    },
+    {
+      "id": "other-3",
+      "task": "Blablabla xyz",
+      "expected": [
+        "other"
+      ],
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.1523803022672013,
+          "calendar": 0.21797512366655722,
+          "checklist": 0.008035291194043143,
+          "priority": 0.02234980533426171,
+          "work": 0.4205775331368135,
+          "code": 0.0006928042935557437,
+          "study": 2.1043237993742123e-05,
+          "creative": 0.007636857313310578,
+          "health": 6.434184721606496e-05,
+          "fitness": 4.7680264440036496e-06,
+          "home": 0.0013549930150656316,
+          "shopping": 4.4007425523025765e-06,
+          "food": 3.985039764144294e-06,
+          "finance": 0.03810709696912724,
+          "admin": 0.13017237307597057,
+          "call": 0.0005571289569582372,
+          "travel": 1.001064333784652e-05,
+          "maintenance": 9.266679185734137e-06,
+          "personal": 3.816147663611218e-05,
+          "other": 4.713084005168724e-06
+        },
+        "choice": "work",
+        "max_probability": 0.4205775331368135
+      },
+      "seconds": 1.3614516580000782,
+      "correct": false
+    },
+    {
+      "id": "ambiguous-1",
+      "task": "Die Arztrechnung bezahlen",
+      "expected": [
+        "finance",
+        "health"
+      ],
+      "ambiguous": true,
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0007858223247268009,
+          "calendar": 7.0480150291164e-05,
+          "checklist": 0.0016414228204866496,
+          "priority": 0.034870899689786725,
+          "work": 0.01262163559685306,
+          "code": 4.611620628964762e-05,
+          "study": 7.649212372351139e-07,
+          "creative": 1.6734652881542428e-05,
+          "health": 1.6496187123170446e-05,
+          "fitness": 6.415044651977837e-07,
+          "home": 9.556689262707078e-05,
+          "shopping": 8.226505828085223e-07,
+          "food": 5.953549312045421e-07,
+          "finance": 0.9490514006016817,
+          "admin": 0.0007208907241537475,
+          "call": 3.4071411828536117e-05,
+          "travel": 1.2089539896204697e-06,
+          "maintenance": 1.363419330238772e-05,
+          "personal": 1.0084796895714173e-05,
+          "other": 7.103658659568943e-07
+        },
+        "choice": "finance",
+        "max_probability": 0.9490514006016817
+      },
+      "seconds": 0.7593720550000853,
+      "correct": true
+    },
+    {
+      "id": "ambiguous-2",
+      "task": "Mama anrufen",
+      "expected": [
+        "call",
+        "personal"
+      ],
+      "ambiguous": true,
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.4502139261961144,
+          "calendar": 0.0010046946077218982,
+          "checklist": 0.018921239899437413,
+          "priority": 0.01733508613230899,
+          "work": 0.39132695244031934,
+          "code": 0.0004576500749582081,
+          "study": 2.5590773536195347e-05,
+          "creative": 0.003995328345312463,
+          "health": 0.0020228800447926114,
+          "fitness": 1.620600456785445e-05,
+          "home": 0.010561809517561327,
+          "shopping": 1.498594588769771e-05,
+          "food": 1.918179939246048e-05,
+          "finance": 0.025734074641188133,
+          "admin": 0.05314587388085164,
+          "call": 0.024810723125550525,
+          "travel": 0.00010221140629728786,
+          "maintenance": 6.083813388793736e-05,
+          "personal": 0.00020535191850859426,
+          "other": 2.539511180500098e-05
+        },
+        "choice": "mail",
+        "max_probability": 0.4502139261961144
+      },
+      "seconds": 0.6749601110000185,
+      "correct": false
+    },
+    {
+      "id": "ambiguous-3",
+      "task": "Einen Arzttermin in den Kalender eintragen",
+      "expected": [
+        "calendar",
+        "health"
+      ],
+      "ambiguous": true,
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.004323614556218571,
+          "calendar": 0.966152327442995,
+          "checklist": 0.0032188632188760143,
+          "priority": 0.0053652888520454465,
+          "work": 0.00891244804139812,
+          "code": 8.402199030476827e-05,
+          "study": 2.1790392179796187e-06,
+          "creative": 0.00034078937430414446,
+          "health": 0.0002875367985535917,
+          "fitness": 1.664307416352991e-06,
+          "home": 0.00025372843448423455,
+          "shopping": 1.6692159364191024e-06,
+          "food": 1.6456472622130086e-06,
+          "finance": 0.003907620442924892,
+          "admin": 0.006145986171709213,
+          "call": 0.0009494105133699404,
+          "travel": 9.889565232219766e-06,
+          "maintenance": 1.1103072969053107e-05,
+          "personal": 2.5479765858090844e-05,
+          "other": 4.733548923728055e-06
+        },
+        "choice": "calendar",
+        "max_probability": 0.966152327442995
+      },
+      "seconds": 0.12225943500016001,
+      "correct": true
+    },
+    {
+      "id": "ambiguous-4",
+      "task": "Ersatzteile für das Fahrrad kaufen",
+      "expected": [
+        "shopping",
+        "maintenance"
+      ],
+      "ambiguous": true,
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 4.067972845881512e-06,
+          "calendar": 1.4425468859305884e-06,
+          "checklist": 1.8920817315401842e-05,
+          "priority": 0.00011935469504870534,
+          "work": 0.0008187461374928758,
+          "code": 2.646041808284905e-06,
+          "study": 6.186786025622472e-08,
+          "creative": 1.4754460165214326e-06,
+          "health": 1.4801983779665717e-06,
+          "fitness": 7.582623581195526e-08,
+          "home": 6.491095988452394e-06,
+          "shopping": 4.391642615047331e-08,
+          "food": 4.701755104084447e-08,
+          "finance": 3.2095164572236715e-05,
+          "admin": 0.00010541750162546242,
+          "call": 5.004982869267136e-07,
+          "travel": 1.0272403548364852e-06,
+          "maintenance": 0.9988854579879588,
+          "personal": 4.1924075260923185e-07,
+          "other": 2.287865958709758e-07
+        },
+        "choice": "maintenance",
+        "max_probability": 0.9988854579879588
+      },
+      "seconds": 1.4817696800000704,
+      "correct": true
+    },
+    {
+      "id": "ambiguous-5",
+      "task": "Den Bericht für die Arbeit schreiben",
+      "expected": [
+        "work",
+        "creative"
+      ],
+      "ambiguous": true,
+      "prediction": {
+        "type": "choice",
+        "probabilities": {
+          "mail": 0.0016544533331293342,
+          "calendar": 0.003016386762710015,
+          "checklist": 0.00422389720851016,
+          "priority": 0.007342085143319696,
+          "work": 0.8515099347545381,
+          "code": 4.083533027747918e-05,
+          "study": 3.941745483304744e-06,
+          "creative": 0.09911440960441618,
+          "health": 7.468150828370244e-06,
+          "fitness": 1.3740741282611679e-06,
+          "home": 0.0001985221801024812,
+          "shopping": 1.500568950867168e-06,
+          "food": 1.1556671129441e-06,
+          "finance": 0.006597398076818788,
+          "admin": 0.026179166104421926,
+          "call": 9.509464302120888e-05,
+          "travel": 4.146172195944463e-06,
+          "maintenance": 2.9344711330494805e-06,
+          "personal": 4.2444391663319865e-06,
+          "other": 1.0515697355578985e-06
+        },
+        "choice": "work",
+        "max_probability": 0.8515099347545381
+      },
+      "seconds": 0.39916025100001207,
+      "correct": true
+    }
+  ]
+}

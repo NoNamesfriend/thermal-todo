@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 // API base defaults to the host that served the frontend
-export const apiBase = writable(`http://${location.hostname}:3000`);
+export const apiBase = writable('');
 
 // Toast notifications store
 function createToasts() {
